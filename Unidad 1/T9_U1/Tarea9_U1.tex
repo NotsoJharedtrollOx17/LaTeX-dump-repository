@@ -1,0 +1,53 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    \setcounter{page}{1}
+    \thispagestyle{fancy}
+    \lhead{\textbf{Tarea 8, U1}}
+    \rhead{\textbf{29/09/2020}}
+    \section{Vectores en el espacio}
+    \subsection*{Encuentre la recta dado los planos \(5x-4y-9z=8\) y \(x+4y+3z=4\); Encuentre el punto de intersección de 
+    \(<\!x,y,z\!>\,=\,<\!1+2t,2-t,-3t\!>,\,2x-3y+2z=-7\)}
+    \subsubsection*{Calculos:}
+    \justify
+    \emph{Para la recta dado los planos:}\\ \newline
+    \(\begin{matrix}
+        5x-4y-9z=8\\
+        x+4y+3z=4
+    \end{matrix},\,z=t\,\)
+    \(\begin{matrix}
+        5x-4y=8+9t\\
+        x+4y=4-3t\\
+        \Sigma: 6x=12+6t \\
+        \therefore x=2+t
+    \end{matrix}\rightarrow\begin{matrix}
+        x+4y=4-3t\\
+        4y=4-3t-x\\
+        y=1-\frac{3}{4}t-\frac{1}{4}x\\
+        y=1-\frac{3}{4}t-\frac{1}{4}(2+t)
+    \end{matrix}\)\\ \newline
+    \(\therefore y=\frac{1}{2}-t \therefore\,<\!x,y,z\!>\,=\,<\!2+t,\frac{1}{2}-t,t\!>\)
+    \\ \newline
+    \emph{Para el punto de intersección:}\\ \newline
+    \(<\!x,y,z\!>\,=\,<\!1+2t,2-t,-3t\!>\,=\,<\!x_0,y_0,z_0\!>\,\therefore \text{Eq}_{\text{plano}}(<\!x_0,y_0,z_0\!>)\)
+    \\ \newline
+    \(\rightarrow 2x_0-3y_0+2z_0=-7 \rightarrow 2(1+2t)-3(2-t)+2(-3t)=-7\rightarrow 2+4t-6+3t-6t=-7\)
+    \\ \newline
+    \(t-4=-7 \rightarrow t=-3 \therefore P_{\text{intersección}}=\,<\!1+2(-3),2-(-3),-3(-3)\!>\,=\,<\!-5,5,9\!>\)
+\end{document}
