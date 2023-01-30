@@ -1,0 +1,39 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 8, U1}}
+\rhead{\textbf{17 de marzo de 2021}}
+\section*{Ecuaciones Diferenciales Lineales}
+\subsection*{Terminar de resolver la siguiente Ecuación Diferencial:}
+\justify
+\[x^3y=\int x\ln x\, dx\]
+{\large \textbf{ • Solución:}
+\begin{equation*}
+    \begin{aligned}
+        x^3y&=\underbrace{\int x\ln x\, dx}_{A}\\[5pt]
+        A:= \int x\ln x\, dx&=\underbrace{\frac{x^2\ln x}{2}}_{uv}-\int \underbrace{\frac{x^2}{2}\cdot \frac{1}{x}\, dx}_{vdu}=\\[5pt]
+        =\frac{x^2\ln x}{2}-\frac{1}{2}\int x\, dx&=\frac{x^2\ln x}{2}-\frac{x^2}{4}+c\therefore\\[5pt]
+        \therefore x^3y&=\frac{x^2\ln x}{2}-\frac{x^2}{4}+c\\[5pt]
+        y&=\frac{\ln x}{2x}-\frac{1}{4x}+\frac{c}{x^3}\: \textbf{(1.1)}
+    \end{aligned}
+\end{equation*}
+Por lo que \textbf{(1.1)} es la respuesta a nuestra ecuación diferencial.}
+\end{document}

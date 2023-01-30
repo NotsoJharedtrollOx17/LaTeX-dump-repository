@@ -1,0 +1,47 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 6, U1}}
+\rhead{\textbf{10 de marzo de 2021}}
+\section*{Ecuaciones Diferenciales Exáctas}
+\subsection*{Resolver la siguiente Ecuación Diferencial Exacta usando \(\frac{\partial f}{\partial x}=M(x,y)\):}
+\justify
+\[\left(2x+\frac{y}{x}\right)\, dx+\left(4y+\ln x\right)\, dy=0\]
+{\large \textbf{ • Solución:}
+\begin{equation*}
+    \begin{aligned}
+        \frac{\partial f}{\partial x}&=M(x,y)\\[5pt]
+        \frac{\partial f}{\partial x}&=2x+\frac{y}{x}\\[5pt]
+        \partial f&=\left(2x+\frac{y}{x}\right)\, dx\\[5pt]
+        \int \partial f&=\int \left(2x+\frac{y}{x}\right)\, \partial x\\[5pt]
+        f&=x^2+y\ln x+c(y)\\[5pt]
+        \frac{\partial f}{\partial y}&=\frac{\partial}{\partial y} \left(x^2+y\ln x+c(y)\right)\\[5pt]
+        &=\ln x+c^{\prime}\\[5pt]
+        \underbrace{\ln x+c^{\prime}(y)}_{\frac{\partial M}{\partial y}}&=\underbrace{4y+\ln x}_{\frac{\partial N}{\partial x}}\\[5pt]
+        c^{\prime}(y)&=4y\\[5pt]
+        \int c^{\prime}(y)&=\int 4y\\[5pt]
+        c(y)&=2y^2+c\therefore\\[5pt]
+        \therefore f:= x^2+y\ln x+c(y)&=x^2+y\ln x+2y^2+c\\[5pt]
+        c&=2y^2+y\ln x+x^2\: \textbf{(1.1)}\\[10pt]
+    \end{aligned}
+\end{equation*}
+Por lo que \textbf{(1.1)} es la respuesta a nuestra ecuación diferencial.}
+\end{document}

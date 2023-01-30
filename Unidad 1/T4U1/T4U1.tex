@@ -1,0 +1,92 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 4, U1}}
+\rhead{\textbf{5 de marzo de 2021}}
+\section*{Ecuaciones Diferenciales Homogéneas de grado n}
+\subsection*{Comprobar si las siguientes Ecuaciones Diferenciales son homogéneas:}
+\subsubsection*{\emph{Problema 1:}}
+\[xy^2\, dx-4x^2y\, dy=0\: \textbf{(1.1)}\]
+\justify
+\textbf{ • Solución:}
+Para ésta solución y las subsecuentes, se debe recordar lo siguiente:
+\[z=f(x,y) \text{ es homogenea de grado } n \text{ si satisface } f(tx,ty)=t^nf(x,y)\: \forall n\in\mathbb{R}\]
+Y que:
+\[M(x,y)\, dx+N(x,y)\, dy=0 \text{ si }M(x,y)\text{ y }N(x,y) \text{ son }f \text{ homogéneas de grado }n\]
+Entonces:
+\begin{equation*}
+    \begin{aligned}
+        M(x,y)&=xy^2\\[5pt]
+        M(tx,ty)&=(tx)(ty)^2\\[5pt]
+                &=(tx)(t^2y^2)\\[5pt]
+                &=t^3(xy^2) \therefore\\[5pt]
+                &\therefore M(x,y) \text{ sí es homogénea de grado } 3\\[10pt]
+        N(x,y)&=-4x^2y\\[5pt]
+        M(tx,ty)&=-4(tx)^2(ty)\\[5pt]
+                &=-4t^2x^2(ty)\\[5pt]
+                &=t^3(-4x^2y) \therefore\\[5pt] 
+                &\therefore N(x,y) \text{ sí es homogénea de grado } 3
+    \end{aligned}
+\end{equation*}
+Por lo que \textbf{(1.1)} sí es una Ecuación Diferencial Homogénea.
+\newpage
+\subsubsection*{\emph{Problema 2:}}
+\[\sqrt{x^3+y^3}\, dx-x^{\frac{3}{2}}\, dy=0\: \textbf{(1.2)}\]
+\justify
+\textbf{ • Solución:}
+\begin{equation*}
+    \begin{aligned}
+        M(x,y)&=\sqrt{x^3+y^3}\\[5pt]
+        M(tx,ty)&=\sqrt{(tx)^3+(ty)^3}\\[5pt]
+                &=\sqrt{t^3x^3+t^3y^3}\\[5pt]
+                &=\left(t^3(x^3+y^3)\right)^{\frac{1}{2}}\\[5pt]
+                &=t^{\frac{3}{2}}\left(x^3+y^3\right)^{\frac{1}{2}}\\[5pt]
+                &=t^{\frac{3}{2}}\sqrt{x^3+y^3}\therefore\\[5pt]
+                &\therefore M(x,y) \text{ sí es homogénea de grado } \frac{3}{2}\\[10pt]
+        N(x,y)&=-x^{\frac{3}{2}}\\[5pt]
+        N(tx,ty)&=-(tx)^{\frac{3}{2}}\\[5pt]
+                &=t^{\frac{3}{2}}\left(-x^\frac{3}{2}\right)\therefore\\[5pt]
+                &\therefore N(x,y) \text{ sí es homogénea de grado } \frac{3}{2}
+    \end{aligned}
+\end{equation*}
+Por lo que \textbf{(1.2)} sí es una Ecuación Diferencial Homogénea.
+\newpage
+\subsubsection*{\emph{Problema 3:}}
+\[x\sqrt{x^2+y^2}\, dx-y^2e^{\frac{y}{x}}\, dy=0\: \textbf{(1.3)}\]
+\justify
+\textbf{ • Solución:}
+\begin{equation*}
+    \begin{aligned}
+        M(x,y)&=x\sqrt{x^2+y^2}\\[5pt]
+        M(tx,ty)&=(tx)\sqrt{(tx)^2+(ty)^2}\\[5pt]
+                &=(tx)\sqrt{t^2x^2+t^2y^2}\\[5pt]
+                &=(tx)\left(t^2(x^2+y^2)\right)^{\frac{1}{2}}\\[5pt]
+                &=(tx)t\left(x^2+y^2\right)^{\frac{1}{2}}\\[5pt]
+                &=t^2\left(x\sqrt{x^2+y^2}\right)\therefore\\[5pt]
+                &\therefore M(x,y) \text{ sí es homogénea de grado } 2\\[10pt]
+        N(x,y)&=-y^2e^{\frac{y}{x}}\\[5pt]
+        N(tx,ty)&=-(ty)^2e^{\frac{ty}{tx}}\\[5pt]
+                &=-t^2\left(y^2e^{\frac{y}{x}}\right)\therefore\\[5pt]
+                &\therefore N(x,y) \text{ sí es homogénea de grado } 2
+    \end{aligned}
+\end{equation*}
+Por lo que \textbf{(1.3)} sí es una Ecuación Diferencial Homogénea.
+\end{document}

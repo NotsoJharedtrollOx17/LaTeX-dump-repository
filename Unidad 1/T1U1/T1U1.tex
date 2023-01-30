@@ -1,0 +1,51 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{float}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+\setcounter{page}{1}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 1, U1}}
+\rhead{\textbf{25 de febrero de 2021}}
+\section*{Escribe ecuaciones diferenciales}
+\subsection*{Resolver lo siguiente:}
+\subsubsection*{Problema 1:}
+La tasa de cambio de calentamiento o enfriamiento es proporcional a la diferencia entre la temperatura ambiente
+\(T_a\) y la temperatura actual \(T\) de la bebida. 
+\\\newline
+\textbf{¿Cuál ecuación describe esta relación?}
+\[\frac{dT}{dt}=k(T_a-T)\]
+\subsubsection*{Problema 2:}
+Un químico se diluye en un tanque al inyectar agua puta en el tanque y extraer de él la solución existente, de manera que el volúmen en cualquier
+momento \(t\) es \(20+2t\).
+\\\newline
+La cantidad \(z\) de químico en el tanque disminuye a una tasa proporcional a \(z\), e inversamente proporcional al volúmen de la solución en el tanque.
+\\\newline
+\textbf{¿Cuál ecuación describe esta relación?}
+\[\frac{dz}{dt}=-\frac{kz}{20+2t}\]
+\subsubsection*{Problema 3:}
+Cada me el saldo \(B\) del préstamo de Harper crece un \(0\dot22\%\) y decrece \(\$250.00\).
+\\\newline
+\textbf{¿Cuál ecuación describe esta relación?}
+\[\frac{dB}{dt}=0.0022B-250\]
+\subsubsection*{Problema 4:}
+La tasa de cambio del estímulo percibido, \(p\), con respecto a la intensida medida, \(s\), del estímulo es inversamente proporcional a la intensidad del estímulo.
+\\\newline
+\textbf{¿Cuál ecuación describe esta relación?}
+\[\frac{dp}{ds}=\frac{k}{s}\]
+\end{document}

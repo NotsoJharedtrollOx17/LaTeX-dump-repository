@@ -1,0 +1,79 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage[scr=rsfso]{mathalpha} %para obtener la L de la transformada de Laplace
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 1, U4}}
+\rhead{\textbf{13 de mayo de 2021}}
+\section*{Trasformada de Laplace}
+\subsection*{Obtener las siguientes Transformadas de Laplace}
+\justify
+{\large
+    \begin{equation*}
+        \begin{aligned}
+            \mathscr{L} & \left\{\left(t^3-5t^2\right)^2\right\}\: & \textbf{(1.1)}\\
+            \mathscr{L} & \{\sin t \cos t\}\: & \textbf{(1.2)}\\
+            \mathscr{L} & \{\left(e^{-6t}+4\right)^2\}\: & \textbf{(1.3)}\\
+            \mathscr{L} & \left\{4\sinh t\right\}\: & \textbf{(1.4)}
+        \end{aligned}
+    \end{equation*}
+\\\newline
+%solución 1
+{\large \textbf{• Solución de (1.1):}
+\begin{equation*}
+    \begin{aligned}
+        \mathscr{L}&\left\{\left(t^3-5t^2\right)^2\right\}=\mathscr{L}\{\left(t^3-5t^2\right)\left(t^3-5t^2\right)\}=\mathscr{L}\{t^6-5t^5-5t^5+25t^4\}\\[5pt]
+        =\mathscr{L}&\{t^6-10t^5+25t^4\}=\mathscr{L}\{t^6\}+\mathscr{L}\{-10t^5\}+\mathscr{L}\{25t^4\}=\mathscr{L}\{t^6\}\\[5pt]
+        -10&\mathscr{L}\{t^5\}+25\mathscr{L}\{t^4\}={6! \over s^{6+1}}-10{5! \over s^{5+1}}+25{4! \over s^{4+1}}={720 \over s^7}-10{120 \over s^6}\\[5pt]
+        +25&\,{24 \over s^5}={720 \over s^7}-{1200 \over s^6}+{600 \over s^5}\: \textbf{(1.1.1)}
+    \end{aligned}
+\end{equation*}}
+\justify
+Donde \textbf{(1.1.1)} es la respuesta.\\\newline
+%solución 2    
+\justify
+{\large \textbf{• Solución de (1.2):}
+\begin{equation*}
+    \begin{aligned}
+        \mathscr{L}&\{\sin t \cos t\}=\mathscr{L}\left\{{\sin 2t \over 2}\right\}=\frac{1}{2}\mathscr{L}\{\sin 2t\}=\frac{1}{2}\left({2 \over s^2+4}\right)={1 \over s^2+4}\: \textbf{(1.2.1)}
+    \end{aligned}
+\end{equation*}}
+\justify
+Donde \textbf{(1.2.1)} es la respuesta.\\\newline
+%solución 3
+\justify
+{\large \textbf{• Solución de (1.3):}
+\begin{equation*}
+    \begin{aligned}
+        \mathscr{L}&\left\{\left(e^{-6t}+4\right)^2\right\}=\mathscr{L}\{\left(e^{-6t}+4\right)\left(e^{-6t}+4\right)\}=
+        \mathscr{L}\{e^{-12t}+8e^{-6t}+16\}=\\[5pt]
+        =\mathscr{L}&\{e^{-12t}\}+\mathscr{L}\{8e^{-6t}\}+\mathscr{L}\{16\}=\mathscr{L}\{e^{-12t}\}+8\mathscr{L}\{e^{-6t}\}+16\mathscr{L}\{1\}=\\[5pt]
+        =&{1 \over s+12}+{8 \over s+6}+\frac{16}{s}\: \textbf{(1.3.1)}
+    \end{aligned}
+\end{equation*}}
+Donde \textbf{(1.3.1)} es la respuesta.\\\newline
+\justify
+{\large \textbf{• Solución de (1.4):}
+\begin{equation*}
+    \begin{aligned}
+        \mathscr{L} & \{4\sinh t\}=4\mathscr{L}\{\sinh t\}=4\left({1 \over s^2-1}\right)={4 \over s^2-1}\: \textbf{(1.4.1)}
+    \end{aligned}
+\end{equation*}}
+Donde \textbf{(1.4.1)} es la respuesta.
+\end{document}

@@ -1,0 +1,40 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float} %centrado de imágenes
+\usepackage{polynom} %formato de polinómios
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 4, U2}}
+\rhead{\textbf{21 de abril de 2021}}
+\section*{ED de orden superior}
+\subsection*{Resolver la siguiente ecuación diferencial}
+\justify
+{\large \centering
+\(y^{\prime\prime\prime}-5y^{\prime\prime}+17y^{\prime}-13y=0\)\\
+}
+\justify
+%solución 1
+{\large \textbf{• Solución:}
+\begin{equation*}
+    \begin{aligned}
+        y^{\prime\prime\prime}-5y^{\prime\prime}+17y^{\prime}-13y=0&\rightarrow m^3-5m^2+17m-13=0; \\[5pt]
+        \text{Factor}(13)= \pm 1,\, \pm 13 \therefore &\:\frac{m^3-5m^2+17m-13}{x-a}=\\[5pt]
+        \frac{m^3-5m^2+17m-13}{x-1}\:&=\polyhornerscheme[x=1] {m^3-5m^2+17m-13}
+    \end{aligned}
+\end{equation*}}
+\end{document}

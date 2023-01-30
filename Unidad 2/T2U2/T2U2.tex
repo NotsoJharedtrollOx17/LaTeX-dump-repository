@@ -1,0 +1,45 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 2, U2}}
+\rhead{\textbf{14 de abril de 2021}}
+\section*{Reducción de orden}
+\subsection*{Determinar \(y_2\) dado lo siguiente:}
+\justify
+{\large
+\(y_1=\sin 7x \,\text{ es una solución a }\, y^{\prime\prime}+49y=0\)\\\newline
+{\large \textbf{ • Solución}\\
+Se recuerda que \(y_2=u(x)y_1\) y que:
+\[u(x)=\int \frac{\text{exp}\left(-\int p(x)\, dx\right)}{y_1^2}\, dx\]
+Por lo tanto:
+\begin{equation*}
+    \begin{aligned}
+u(x)=\int \frac{\text{exp}\left(-\int 0\, dx\right)}{\sin^2 (7x)}\, dx=& 
+\int \frac{e^c}{\sin^2 (7x)}\, dx= e^c\!\int \frac{dx}{\sin^2 (7x)} =\\[5pt]
+e^c\!\int \csc^2 (7x)\, dx = \underbrace{\frac{e^c}{7}\!\int \csc^2 (u)\, du}_{u=7x\, \rightarrow\, du=7\, dx}=&
+-\frac{e^c}{7} \cot u = -\frac{e^c}{7} \cot (7x) \therefore \\[5pt]
+\therefore\, y^2 =& -\frac{e^c}{7}\cot (7x)\sin (7x)\\[5pt]
+                 =& -\frac{e^c}{7}\left(\frac{\cos (7x)}{\sin (7x)}\sin (7x)\right)\\[5pt]
+             y^2 =& -\frac{e^c}{7}\cos (7x)\: \textbf{(1.1)}\\[5pt]
+    \end{aligned}
+\end{equation*}}
+Donde la ecuación \textbf{(1.1)} es la respuesta a lo solicitado.
+\end{document}

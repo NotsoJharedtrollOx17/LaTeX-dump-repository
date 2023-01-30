@@ -1,0 +1,113 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 3, U2}}
+\rhead{\textbf{19 de abril de 2021}}
+\section*{EDL con coeficientes constantes}
+\subsection*{Resolver las siguientes ecuaciones diferenciales}
+\justify
+{\large
+\(y^{\prime\prime}-30y^{\prime}+200y=0,\: \text{s.a: } y(0)=1,\, y^{\prime}(0)=30\:\textbf{(1.1)}\)\\\newline
+\(y^{\prime\prime}+y=0,\: \text{s.a: } y\left(\frac{\pi}{2}=2\right),\, y^{\prime}\left(\frac{\pi}{2}=1\: \right)\:\textbf{(1.2)}\)\\\newline}
+%solución 1
+{\large \textbf{• Solución para (1.1):}
+\begin{equation*}
+    \begin{aligned}
+        y^{\prime\prime}-30y^{\prime}+200y=0\rightarrow m^2-30m+200&=0\therefore\\[5pt]
+        \therefore m_{1,\,2}={-b\pm\sqrt{b^2-4ac}\over 2a}={30\pm\sqrt{900-800}\over 2}&=\\[5pt]
+        =15\pm {\sqrt{100}\over 2}=15\pm {10 \over 2}=15\pm 5
+        \therefore\: \begin{matrix}
+            m_1=20\\
+            m_2=10
+        \end{matrix}\: \therefore\\[5pt]
+        \therefore\: \begin{matrix}
+            y&=&c_1e^{20x}&+&c_2e^{10x}\\
+            y^{\prime}&=&20c_1e^{20x}&+&10c_2e^{10x}
+        \end{matrix}\\[5pt]
+    \end{aligned}
+\end{equation*}
+Ahora se procede a evaluar las soluciones generales en los valores indicados para obtener \(c_1\) y \(c_2\).\\\newline
+\textbf{  • \(y(0)=1:\)}\\
+\begin{equation*}
+    \begin{aligned}
+        y=&\, c_1e^{20x}+c_2e^{10x}\\[5pt]
+        1=&\, c_1e^{20(0)}+c_2e^{10(0)}\\[5pt]
+        1=&\, c_1+c_2\\[5pt]
+        c_1+c_2=&\, 1\: \textbf{(1.1.1)}
+    \end{aligned}
+\end{equation*}
+\textbf{• \(y^{\prime}(0)=30:\)}\\
+\begin{equation*}
+    \begin{aligned}
+        y^{\prime}=&\, 20c_1e^{20x}+10c_2e^{10x}\\[5pt]
+        30=&\, 20c_1e^{20(0)}+10c_2e^{10(0)}\\[5pt]
+        30=&\, 20c_1+10c_2\\[5pt]
+        20c_1+10c_2=&\, 30\: \textbf{(1.2.1)}      
+    \end{aligned}
+\end{equation*}
+En este caso, se resuelve el sistema de ecuaciones formado por \textbf{(1.1.1)} y \textbf{(1.2.1)}.\\
+\begin{equation*}
+    \begin{aligned}
+        \begin{matrix} c_1&+&c_2&=&1\\ 20c_1&+&10c_2&=&30 \end{matrix}\rightarrow\left[\begin{array}{cc|c} 1 & 1 & 1\\ 20 & 10 & 30 \end{array}\right]=&
+        \left[\begin{array}{cc|c} 1 & 1 & 1\\ 0 & -10 & 10 \end{array}\right]=\left[\begin{array}{cc|c} 1 & 1 & 1\\ 0 & 1 & -1\end{array}\right]=\\[5pt]
+        \left[\begin{array}{cc|c} 1 & 0 & 2\\ 0 & 1 & -1\end{array}\right]\therefore\: \begin{matrix} c_1=& 2\\ c_2=& -1\end{matrix}\:\therefore&\:\: y=2e^{20x}-e^{10x}\: \\[5pt]
+    \end{aligned}
+\end{equation*}
+Por lo que \(y\) es la solución particular a \textbf{(1.1)}.
+}
+\\\newline
+%solución 2
+{\large \textbf{• Solución para (1.2):}
+\begin{equation*}
+    \begin{aligned}
+        y^{\prime\prime}+y=0\rightarrow m^2+1=0\therefore m_{1,\,2}=&\,{-b\pm\sqrt{b^2-4ac}\over 2a}={\pm \sqrt{-4}\over 2}=\\[5pt]
+        ={\pm \sqrt{4}\sqrt{-1}\over 2}={\pm 2 i\over 2}=&\, {\pm i} \therefore 
+        \begin{matrix}
+            m_1=&i\\
+            m_2=&-i
+        \end{matrix} \therefore\\[5pt]
+        \therefore\: \begin{matrix}
+            y&=&c_1\cos (x) &+& c_2\sin (-x)\\
+            y^{\prime}&=&-c_1\sin (x) &-&c_2\cos (-x)
+        \end{matrix}&\\[5pt]
+    \end{aligned}
+\end{equation*}
+Ahora se procede a evaluar las soluciones generales en los valores indicados para obtener \(c_1\) y \(c_2\).\\\newline
+\textbf{• \(y(\frac{\pi}{2})=2:\)}\\
+\begin{equation*}
+    \begin{aligned}
+        y=&\, c_1\cos (x) + c_2\sin (-x)\\[5pt]
+        2=&\, c_1\cos \left(\frac{\pi}{2}\right) + c_2\sin \left(-\frac{\pi}{2}\right)\\[5pt]
+        2=&\, -c_2\therefore c_2=-2\\[5pt]
+    \end{aligned}
+\end{equation*}
+\textbf{• \(y^{\prime}(\frac{\pi}{2})=1:\)}\\
+\begin{equation*}
+    \begin{aligned}
+        y^{\prime}=&\,-c_1\sin (x) -c_2\cos (-x)\\[5pt]
+        1=&\, -c_1\sin \left(\frac{\pi}{2}\right) - c_2\cos \left(-\frac{\pi}{2}\right)\\[5pt]
+        1=&\, -c_1 \therefore c_1=-1\\[5pt]
+    \end{aligned}
+\end{equation*}
+Sustituyendo \(c_1\) y \(c_2\) en \(y\) obtenemos la solución particular para \textbf{(1.2)}:
+\[y=-\cos (x) -2\sin (-x)\]
+}
+\end{document}

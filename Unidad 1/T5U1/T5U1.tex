@@ -1,0 +1,81 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 5, U1}}
+\rhead{\textbf{5 de marzo de 2021}}
+\section*{Ecuaciones Diferenciales Homogéneas de grado n}
+\subsection*{Resolver las siguientes Ecuaciones Diferenciales}
+\subsubsection*{\emph{Problema 1:}}
+\justify
+\[\frac{dy}{dx}=\frac{y}{x}+\csc \frac{y}{x}\]
+\textbf{ • Solución:}
+\begin{equation*}
+    \begin{aligned}
+        \frac{dy}{dx}&=\frac{y}{x}+\csc \frac{y}{x}\\[5pt]
+        \frac{dy}{dx}&=u + \csc u\\[5pt]
+        u+\csc u&=u+x\, \frac{du}{dx}\\[5pt]
+        \csc u&=x\, \frac{du}{dx}\\[5pt]
+        \frac{dx}{x}&= \frac{du}{\csc u}\\[5pt]
+        \int \frac{dx}{x}&=\int \frac{du}{\csc u}\\[5pt]
+        \int \frac{dx}{x}&=\int \frac{\frac{du}{1}}{\frac{1}{\sin u}}\\[5pt]
+        \int \frac{dx}{x}&=\int \sin u\, du\\[5pt]
+        \ln |x| + c&=-\cos u\\[5pt]
+                  c&=-\cos \frac{y}{x} - \ln |x|\\[5pt]
+                  c&=\cos \frac{y}{x} + \ln |x|\: \textbf{(1.1)}
+    \end{aligned}
+\end{equation*}
+Por lo que \textbf{(1.1)} es la respuesta a nuestra ecuación diferencial.
+\newpage
+\subsubsection*{\emph{Problema 2:}}
+\justify
+\[x\left(\ln \frac{x}{y} + 1\right)\, dy - y\, dx=0\]
+\textbf{ • Solución:}
+    \begin{equation*}
+        \begin{aligned}
+            x\left(\ln \frac{x}{y} + 1\right)\, dy - y\, dx&=0\\[5pt]
+            x\left(\ln \frac{x}{y} + 1\right)\, dy&=y\, dx\\[5pt]
+            \frac{x\left(\ln \frac{x}{y} + 1\right)}{y}&=\frac{dx}{dy}\\[5pt]
+            \frac{y\cdot \frac{x}{y}\left(\ln \frac{x}{y} + 1\right)}{y\, (1)}&=\\[5pt]
+            v\left(\ln v + 1\right)&=\\[5pt]
+            v\left(\ln v + 1\right)&=v+y\, \frac{dv}{dy}\\[5pt]
+            v\ln v + v &= v+y\, \frac{dv}{dy}\\[5pt]
+            v\ln v&=y\, \frac{dv}{dy}\\[5pt]
+            \frac{dy}{y}&=\frac{dv}{v\ln v}\\[5pt]
+            \int\frac{dy}{y}&=\int\frac{dv}{v\ln v}\\[5pt]
+            \int\frac{dy}{y}&=\underbrace{\int\frac{d\beta}{\beta}}_{\beta=\ln v\,\rightarrow\, d\beta=\frac{dv}{v}}\\[5pt]
+            \ln|y|+c&=\ln|\beta|\\[5pt]
+            \ln|y|+c&=\ln|\ln|v||\\[5pt]
+        \end{aligned}
+    \end{equation*}
+    \begin{equation*}
+        \begin{aligned}
+            c&=\ln|\ln|v||-\ln|y|\\[5pt]
+            e^c&=e^{\ln|\ln|v||-\ln|y|}\\[5pt]
+            c&=\frac{e^{\ln|\ln|v||}}{e^{\ln|y|}}\\[5pt]
+            c&=\frac{\ln|v|}{y}\\[5pt]
+            e^c&=e^{\frac{\ln|v|}{y}}\\[5pt]
+            c&=\left(e^{\ln|v|}\right)^{\frac{1}{y}}\\[5pt]
+            c&=\left(v\right)^{\frac{1}{y}}\\[5pt]
+            c&=\sqrt[y]{\frac{x}{y}}\: \textbf{(1.2)}
+        \end{aligned}
+    \end{equation*}
+    Por lo que \textbf{(1.2)} es la respuesta a nuestra ecuación diferencial.
+\end{document}
