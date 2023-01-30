@@ -1,0 +1,150 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+%\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel}
+%\usepackage{listings} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+%\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+%\captionsetup[table]{textfont=it,format=plain,justification=justified,
+%  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{\(\bullet\)}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1015SC6C Lenguajes y Automatas I\par}
+        \vspace{1cm}
+        {\Large Unidad 2\par}
+        \vspace{1.5cm}
+        {\Large\bfseries Ejercicios de Clase\par}
+        \vspace{2cm}
+        {\large Lic. Gloria Leticia Morales Rios\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 4 de abril de 2022}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+% \renewcommand\contentsname{Contenido}
+% \tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section*{Introducción}
+\begin{justifying}
+El manejo de las expresiones regulares generalmente tiende a ser muy abstracto sin previa práctica analítica de dichas operaciones.
+En esta breve redacción mostramos el desarrollo de los ejercicios solicitados respecto a \emph{regex} para ilustrar el álgebra
+que rige a dichas expresiones.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section*{Ejercicios de clase}
+\subsection*{Ejercicio 1}
+\begin{justifying}
+Sea el alfabeto = \(\{a, b, c\}\), resolver \((a+b)c^*\).
+\end{justifying}
+\begin{equation*}
+    \begin{align}
+        a & = & \{a\}\\
+        b & = & \{b\}\\
+        c & = & \{c\}\\
+        r & = & \{a+b\} = \{a, b\}\\
+        j & = & c^* = \{\epsilon, c, cc, ccc, \dots\}\\
+        (a+b)c^* & = & \{\epsilon, a, b, ac, bc, \dots\}
+    \end{align}
+\end{equation*}
+\vspace{\baselineskip}
+\subsection*{Ejercicio 2}
+\begin{justifying}
+Resolver la expresión regular \((00)^{*}+\left(1(11)^{*}\right)\) definida en \(\Sigma=\{0, 1\}\).\par
+\vspace{\baselineskip}
+Permitamos que \(A=\left(00\right)^*\), \(B=\left(11\right)^{*}\) y \(C=1B\) para resolver dichas \emph{regex}
+modularmente.
+\end{justifying}
+\begin{equation*}
+    \setlength{\jot}{10pt}
+    \begin{align}
+        \begin{split}
+            A ={}& (00)^{*} {}=\{\varepsilon, 00, 0000, \dots\} \\
+        \end{split}\\
+        \begin{split}
+            B ={}& \left(11\right)^{*} {}= \{\varepsilon, 11, 1111, \dots\} \\
+        \end{split}\\
+        \begin{split}
+            C ={}& 1B {}= 1\{\varepsilon, 11, 1111, \dots\} \\
+              ={}& \{1, 111, 11111, \dots\}\\
+        \end{split}
+    \end{align}
+\end{equation*}\par
+\begin{justifying}
+Finalmente realizamos la operación \(A+C\) para obtener el resultado del \emph{regex} solicitado.
+\end{justifying}
+\[A + C = \{\epsilon, 00, 0000, \dots\} \cup \{1, 111, 11111, \dots\} = \{\epsilon, 00, 0000, \dots, 1, 111, 11111, \dots\}\]
+\newpage
+\subsection*{Ejercicio 3}
+\begin{justifying}
+Resolver \((a^{*}c)+(ab^{*})\).\par
+\vspace{\baselineskip}
+Similar al ejercicio anterior, permitamos que \(r=\left(a^{*}c\right)\) y que \(s=\left(ab^{*}\right)\) para resolver modularmente.
+\end{justifying}
+\begin{equation*}
+    \setlength{\jot}{10pt}
+    \begin{align*}
+        \begin{split}
+            r ={}& \left(a^{*}c\right) {}= \{\varepsilon, a, aa, \dots\}c\\
+              ={}& \{c, ac, aac, \dots\}
+        \end{split}\\
+        \begin{split}
+            s ={}& \left(ab^{*}\right) {}= a\{\varepsilon, b, bb ,\dots\}\\
+              ={}& \{a, ab, abb, \dots\}
+        \end{split}
+    \end{align*}
+\end{equation*}\par
+\begin{justifying}
+Por lo que el resultado de la \emph{regex} solicitada se obtiene por \(r+s\).
+\end{justifying}
+\[s+r = \{c, ac, aac, \dots\}\cup\{a, ab, abb, \dots\}=\{a, c, ab, ac, aac,abb,\dots\}\]
+\vspace{\baselineskip}
+\section*{Conclusión}
+\begin{justifying}
+El realizar los ejercicios analíticos de las expresiones regulares permite familiarizarnos con sus mecanismos
+que nos permiten aplicarlas de mewjor manera en nuestras aplicaciones programáticas.\par
+\end{justifying}
+\end{document}

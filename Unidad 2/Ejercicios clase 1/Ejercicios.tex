@@ -1,0 +1,128 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+%\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel}
+%\usepackage{listings} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+%\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+%\captionsetup[table]{textfont=it,format=plain,justification=justified,
+%  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{\(\bullet\)}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1015SC6C Lenguajes y Automatas I\par}
+        \vspace{1cm}
+        {\Large Unidad 2\par}
+        \vspace{1.5cm}
+        {\Large\bfseries Ejercicios de Clase\par}
+        \vspace{2cm}
+        {\large Lic. Gloria Leticia Morales Rios\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 4 de abril de 2022}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+% \renewcommand\contentsname{Contenido}
+% \tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section*{Resumen}
+\begin{justifying}
+El video adjunto explica a grandes rasgos las propiedades formales de las expresiones regulares, las cuales utilizamos
+para esta actividad. Con dicha explicacion inicial, se procede a ejemplificar con soluciones a los ejercicios\par
+\end{justifying}
+\vspace{\baselineskip}
+\section*{Ejercicio propuesto}
+\begin{justifying}
+Indica \emph{Verdadero} o \emph{Falso}, jutificando:\par
+\begin{enumerate}
+    \item \((a\cdot b)^{*}=a^{*}\cdot b^{*}\).
+    \item \((a+b)^{*}=a^{*}+b^{*}\).
+    \item \((a+b)^{*}=\{a, b\}^{*}\).
+    \item \(\left(a^{*}\cdot b^{*}\right)^{*}=(a+b)^{*}\).
+\end{enumerate}
+\subsection*{1)}
+\begin{justifying}
+    Permitamos que \(A=(a\cdot b)^{*}\) y que \(B=a^{*}\cdot b^{*}\) para comprobar de manera mas cómoda si \(A=B\).
+    Empezando por \(A\)
+\end{justifying}
+\begin{equation*}
+    \begin{align*}
+        A = {}& (a\cdot b)^{*} = (ab)^{*} = \{\lambda, ab, abab, \dots\}. \\
+        B = {}& a^{*}\cdot b^{*} = \{\lambda, a , aa, \dots\} \cdot  \{\lambda, b , bb, \dots\} \\
+          = {}& \{\lambda, a, aa, aab, aabb, b, bb, \dots\}.
+    \end{align*}
+\end{equation*}
+\begin{justifying}
+    Debido a que \(a,b \notin A\), \(A=B\) es FALSO.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection*{2)}
+\begin{justifying}
+    Permitamos que \(A=(a+b)^{*}\) y que \(B=a^{*}+b^{*}\). Empezando por \(A\)
+\end{justifying}
+\begin{equation*}
+    \begin{align*}
+        A = {}& (a+b)^{*} = \{a, b\}^{*} = \{\lambda, a, b, aa, ab, ba, bb, aaa, \dots\}. \\
+        B = {}& a^{*}+b^{*} = \{\lambda, a , aa, \dots\} + \{\lambda, b , bb, \dots\} \\
+          = {}& \{\lambda, a, aa, b, bb, \dots\}.
+    \end{align*}
+\end{equation*}
+\begin{justifying}
+    Debido a que \(a^{*}\) nunca contendrá elementos de \(b^{*}\) y viceversa, \(A=B\) es FALSO.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection*{3)}
+\begin{justifying}
+    Retomando \(A\) de 2), tenemos que \((a+b)^{*} = \{a, b\}^{*}\) lo cual es derivado de la definición de \(+\)
+    el cual indica que \(L_1+L_2=\{L_1, L_2\}\), por lo que 3) es VERDADERO.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection*{4)}
+    Retomando \(B\) de 1), tenemos que \(a^{*}\cdot\, b^{*} = \{\lambda, a, aa, aab, aabb, b, bb, \dots\}\) 
+    por lo que \(\left(a^{*}\cdot b^{*}\right)^{*} = \{\lambda, a, aa, aab, aabb, b, bb, \dots\}^{*}\), y 
+    retomando 3), se puede notar que ambos conjuntos son iguales, por lo que 4) es VERDADERO.\par
+\vspace{\baselineskip}
+\end{document}
