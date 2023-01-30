@@ -1,0 +1,231 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{amsmath,multienum,booktabs}
+\renewcommand{\regularlisti}{\setcounter{multienumi}{0}%
+  \renewcommand{\labelenumi}%
+  {\addtocounter{multienumi}{1}\alph{multienumi}}}
+
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+%\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large\scshape Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1021SC6C Redes de computadoras\par}
+        \vspace{1cm}
+        {\Large Unidad 2\par}
+        \vspace{2cm}
+        {\Large\bfseries Direccionamiento IP\par}
+        \vspace{2cm}
+        {\large Lic. Sergio Contreras Hernandez\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 8 de abril de 2021}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+%\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section*{Tabla 1}
+\subsection*{Datos}
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \begin{tabular}[c]{@{}l@{}}Dirección del host\end{tabular}              & 10       & 14       & 1        & 124      \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Máscara  de subred\end{tabular}              & 255      & 255      & 240      & 0        \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Dirección del  host \\en binario\end{tabular}  & 00001010 & 00001110 & 00000001 & 01111100 \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Máscara de subred \\en binario\end{tabular} & 11111111 & 11111111 & 11110000 & 00000000 \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Dirección de\\ red en decimal\end{tabular}     &     10     &    14      &    0      &    0      \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Dirección de\\ red en binario\end{tabular}     &   00001010       &  00001110        &  00000000        &  00000000        \\ \hline
+    \end{tabular}
+    \end{table}
+\subsection*{Procedimiento}
+Debido \begin{justifying}
+    a que estas direcciones usualmente se componen de 4 bytes (4 dígitos de 8 bits) podemos partír dichos valores de la siuiente manera:
+    \[ \begin{matrix}
+        \textbf{H} & = & H_1&.&H_2&.&H_3&.&H_4 \\
+        \textbf{S} & = & S_1&.&S_2&.&S_3&.&S_4 \\
+        \textbf{R} & = & R_1&.&R_2&.&R_3&.&R_4 \\
+        \end{matrix}  \]\par
+\end{justifying}
+donde \begin{justifying}
+    \textbf{H} representa todos los dígitos de la dirección del host y $H_1$ hasta $H_4$ son los bytes que lo componen.
+Similarmente tenemos dicha convención para \textbf{S} y \textbf{R} que representa la máscara de subred y la dirección de red respectimiente;
+junto a las convenciones respectivas de $S_1$ hasta $S_4$ y de $R_1$ hasta $R_4$.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+La fórmula general para obtener \textbf{R} es la siguiente:
+\[\textbf{R}=\textbf{H}\land\textbf{S}\, .\]\par 
+Por \begin{justifying}
+    las convenciones de notación planteadas, podemos aplicar dicha operación a cada grupo de bytes para facilitar el cálculo y 
+la presentación en la redacción como una operación aritmética vertical:
+\[
+\begin{array}{lr}
+   & \textbf{H}  \\
+\land  & \textbf{S} \\
+\cmidrule(lr){2-2}
+  & \textbf{R}  \\
+\end{array}
+\]
+\end{justifying}\par
+\vspace{\baselineskip}
+Ahora podemos calcular sin mucho problema los bytes de \textbf{R} que son $R_1, R_2, R_3$ y $R_4$:
+\[
+    \begin{matrix}
+        \begin{array}{lr}
+           R_1:   & \\
+               & 00001010  \\ %Host
+            \land  & 11111111 \\ %Subnet
+            \cmidrule(lr){2-2}
+              & 00001010  \\ %Red
+            \end{array}\,\,
+        & 
+        \begin{array}{lr}
+            R_2:   & \\
+               & 00001110  \\
+            \land  & 11111111 \\
+            \cmidrule(lr){2-2}
+              & 00001110  \\
+            \end{array}\,\,
+        & 
+        \begin{array}{lr}
+            R_3:   & \\
+               & 00000001  \\
+            \land  & 11110000 \\
+            \cmidrule(lr){2-2}
+              & 00000000  \\
+            \end{array}\,\,
+        & 
+        \begin{array}{lr}
+            R_4:   & \\
+               & 01111110  \\
+            \land  & 00000000 \\
+            \cmidrule(lr){2-2}
+              & 00000000  \\
+            \end{array}
+        \end{matrix}
+\]
+por lo que $\textbf{R}_2=R_1$.$R_2$.$R_3$.$R_4=00001010$.$00001110$.$00000000$.$00000000$.\par
+\vspace{\baselineskip}
+Para calcular $\textbf{R}_{10}$ debemos aplicar la siguiente fórmula:
+\[b_n2^{n-1}+b_{n-1}2^{n-2}+\dots+b_12^0\]
+donde $b_n$ es el dígito binario de la $n$-ésima posición. Modularizamos los bytes de $\textbf{R}_2$ para
+calcularos individualmente y después juntarlos sin problema.
+\[\begin{matrix}
+    R_1: & 0\times2^7+0\times2^6+0\times2^5+0\times2^4+1\times2^3+0\times2^2+1\times2^1+0\times2^0=8+2=10_{10} \\
+    R_2: & 0\times2^7+0\times2^6+0\times2^5+0\times2^4+1\times2^3+1\times2^2+1\times2^1+0\times2^0=8+4+2=14_{10} \\
+    R_3: & 0\times2^7+0\times2^6+0\times2^5+0\times2^4+0\times2^3+0\times2^2+0\times2^1+0\times2^0=0_{10}\\
+    R_4: & 0\times2^7+0\times2^6+0\times2^5+0\times2^4+0\times2^3+0\times2^2+0\times2^1+0\times2^0=0_{10}\\     
+\end{matrix}\]\par
+por lo que $\textbf{R}_{10}=R_1$.$R_2$.$R_3$.$R_4=10$.14.0.0.
+\vspace{\baselineskip}
+\section*{Tabla 2}
+\subsection*{Datos}
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+    \begin{tabular}[c]{@{}l@{}}Dirección del host\end{tabular}              & 172      & 184      & 169      & 75       \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Máscara de subred\end{tabular}              & 255      & 255      & 0        & 0        \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Dirección del  host \\en binario\end{tabular}  & 10101100 & 10111000 & 10101001 & 01001011 \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Máscara de subred \\en binario\end{tabular} & 11111111 & 11111111 & 00000000 & 00000000 \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Dirección de red \\en decimal\end{tabular}     &      172    &   184       &    0      &   0       \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Dirección de red \\en binario\end{tabular}     &      10101100    &     10111000     &     00000000     &    00000000      \\ \hline
+    \end{tabular}
+    \end{table}
+\subsection*{Procedimiento}
+Usaremos la misma notación de la Tabla 1 para encontrar \textbf{S} en ésta tabla. Calculamos los bytes de \textbf{R}:
+\[
+    \begin{matrix}
+        \begin{array}{lr}
+           R_1:   & \\
+               & 10101100  \\ %Host
+            \land  & 11111111 \\ %Subnet
+            \cmidrule(lr){2-2}
+              & 10101100  \\ %Red
+            \end{array}\,\,
+        & 
+        \begin{array}{lr}
+            R_2:   & \\
+               & 10111000  \\
+            \land  & 11111111 \\
+            \cmidrule(lr){2-2}
+              & 10111000  \\
+            \end{array}\,\,
+        & 
+        \begin{array}{lr}
+            R_3:   & \\
+               & 10101001  \\
+            \land  & 00000000 \\
+            \cmidrule(lr){2-2}
+              & 00000000  \\
+            \end{array}\,\,
+        & 
+        \begin{array}{lr}
+            R_4:   & \\
+               & 01001011  \\
+            \land  & 00000000 \\
+            \cmidrule(lr){2-2}
+              & 00000000  \\
+            \end{array}
+        \end{matrix}
+\]
+por lo que $\textbf{R}_2=R_1$.$R_2$.$R_3.R_4=10101100$.$10111000$.$00000000$.$00000000$.\par
+\vspace{\baselineskip}
+Ahora procedemos a calcular $\textbf{R}_{10}$ de manera similar a la Tabla 1:
+\[\begin{matrix}
+    R_1: & 1\times2^7+0\times2^6+1\times2^5+0\times2^4+1\times2^3+1\times2^2+0\times2^1+0\times2^0=8+2=\\
+        & 128+32+8+4=172_{10}\\
+    R_2: & 1\times2^7+0\times2^6+1\times2^5+1\times2^4+1\times2^3+0\times2^2+0\times2^1+0\times2^0=\\
+        & 128+32+16+8=184_{10}\\
+    R_3: & 0\times2^7+0\times2^6+0\times2^5+0\times2^4+0\times2^3+0\times2^2+0\times2^1+0\times2^0=0_{10}\\
+    R_4: & 0\times2^7+0\times2^6+0\times2^5+0\times2^4+0\times2^3+0\times2^2+0\times2^1+0\times2^0=0_{10}\\     
+\end{matrix}\]\par
+por lo que $\textbf{R}_{10}=R_1$.$R_2$.$R_3$.$R_4=172$.184.0.0.
+\end{document}
