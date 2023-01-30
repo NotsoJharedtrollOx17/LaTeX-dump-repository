@@ -1,0 +1,196 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{fancyvrb} % for "\Verb" macro
+\usepackage{amsmath}
+%Includes "References" in the table of contents
+\usepackage[nottoc]{tocbibind}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+%Customize a bit the look
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstset{ %
+backgroundcolor=\color{white}, % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize\ttfamily, % the size of the fonts that are used for the code
+breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+breaklines=true, % sets automatic line breaking
+captionpos=b, % sets the caption-position to bottom
+commentstyle=\color{mygreen}, % comment style
+deletekeywords={...}, % if you want to delete keywords from the given language
+escapeinside={\%*}{*)}, % if you want to add LaTeX within your code
+extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+frame=single, % adds a frame around the code
+keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+keywordstyle=\color{blue}, % keyword style
+% language=Octave, % the language of the code
+morekeywords={*,...}, % if you want to add more keywords to the set
+numbers=left, % where to put the line-numbers; possible values are (none, left, right)
+numbersep=9pt, % how far the line-numbers are from the code
+numberstyle=\footnotesize, % the style that is used for the line-numbers
+rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+showstringspaces=false, % underline spaces within strings only
+showtabs=false, % show tabs within strings adding particular underscores
+stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
+stringstyle=\color{mymauve}, % string literal style
+tabsize=2, % sets default tabsize to 2 spaces
+title=\lstname % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%END of listing package%
+
+
+% Portada
+%\thispagestyle{empty}
+\title{\Large Tarea 27}
+\author{Abraham J. Flores A.\: 19211640} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Tecnológico Nacional de México | Instituto Tecnológico de Tijuana}
+\course{SCC-1010SC5C Graficación}
+\professor{M.C. Margarita Ramirez Ramirez}
+\duedate{1 de diciembre de 2021}
+
+\begin{document}
+    % Índices
+    \pagenumbering{arabic}
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=16cm]{logosITT.png}
+    \end{figure}
+    \maketitle
+
+    %indice
+    \tableofcontents 
+
+    % Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %    
+    \newpage
+    \section*{Triggers}
+    \addcontentsline{toc}{section}{Triggers}
+    \subsection*{Concepto}
+    \addcontentsline{toc}{subsection}{Concepto}
+    A \begin{justifying}
+      grandes rasgos, un Trigger es un objeto de bases de datos que se dispara cuando un
+    evento ocurra dentro de una base de datos. Por poner un ejemplo, un trigger puede configurarse en
+    en un registro INSERT de una tabla de la base de datos \citep{middha-no-date} %citar al hindú
+     . Sus tipos son:\par
+    \end{justifying}
+    \begin{itemize}
+      \item DDL Trigger: se ejecutan en respuesta a eventos de comandos del lenguaje de definición de datos.
+      \item DML Trigger: se ejecutan en respuesta a eventos de comandos del lenguaje de manipulación de datos.
+    \end{itemize}\par
+    En ámbas, su sintáxis básica es la siguiente:
+    \vspace{\baselineskip}
+    \begin{lstlisting}[language=SQL]
+      CREATE TRIGGER <nombre_trigger> ON <objeto_db>
+      AS
+        BEGIN
+          <sentencias DDL/DML>
+        END\end{lstlisting}
+    \subsection*{Ejemplos de Aplicación}
+    \addcontentsline{toc}{subsection}{Ejemplos de Aplicación}
+    \subsubsection*{Registro de cambios dentro de una tabla}
+    \addcontentsline{toc}{subsubsection}{Registro de cambios dentro de una tabla}
+    Como \begin{justifying}
+      se vió en clase, un muy buen ejemplo de estos gatillos es el de poder registrar
+    los cambios hechos dentro de una tabla al momento que se hace una inserción, una eliminación o alguna modificación.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \begin{lstlisting}[language=SQL]
+      --creacion de los gatillos
+    --PARA 'INSERT'
+    CREATE TRIGGER altaAlumno ON Alumno
+    FOR INSERT
+    AS
+        begin
+            PRINT('Alumno agregado')
+            INSERT INTO bitacora VALUES
+            (
+                'Insercion',
+                CONVERT(date, getdate()),
+                CURRENT_USER
+            )
+        end
+    GO
+        --PARA 'DELETE'
+    CREATE TRIGGER bajaAlumno ON Alumno
+    FOR DELETE
+    AS
+        begin
+            PRINT('Alumno eliminado')
+            INSERT INTO bitacora VALUES
+            (
+                'Eliminacion',
+                CONVERT(date, getdate()),
+                CURRENT_USER
+            )
+        end
+    GO
+            --PARA 'UPDATE'
+    CREATE TRIGGER modAlumno ON Alumno
+    FOR UPDATE
+    AS
+        begin
+            PRINT('Alumno modificado')
+            INSERT INTO bitacora VALUES
+            (
+                'Modificacion',
+                CONVERT(date, getdate()),
+                CURRENT_USER
+            )
+        end
+    GO\end{lstlisting}
+    \subsubsection*{Notificación de cambios a la BD por medio de correos electrónicos}
+    \addcontentsline{toc}{subsubsection}{Notificación de cambios a la BD por medio de correos electrónicos}
+    Podemos \begin{justifying}
+      usar los TRIGGER's como una herramienta que envía correos electrónicos al correo ingresado para
+    notificar sobre cambios al respecto u otros detalles relevantes \citep{unknown-author-2021}.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \begin{lstlisting}[language=SQL]
+CREATE TRIGGER reminder2  
+ON Sales.Customer  
+AFTER INSERT, UPDATE, DELETE   
+AS  
+   EXEC msdb.dbo.sp_send_dbmail  
+        @profile_name = 'AdventureWorks2012 Administrator',  
+        @recipients = 'danw@Adventure-Works.com',  
+        @body = 'Don''t forget to print a report for the sales force.',  
+        @subject = 'Reminder';  
+GO\end{lstlisting}
+    \subsubsection*{Mensajes de aviso al momento de modificar la BD}
+    \addcontentsline{toc}{subsubsection}{Mensajes de aviso al momento de modificar la BD}
+    Otra \begin{justifying}
+      utilidad de estos es mostrar mensajes personalizados en la ocnsola de SQL Server para lo que se necesite.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \begin{lstlisting}[language=SQL]
+      CREATE TRIGGER reminder1  
+      ON Sales.Customer  
+      AFTER INSERT, UPDATE   
+      AS RAISERROR ('Notify Customer Relations', 16, 10);  
+      GO
+    \end{lstlisting}
+    
+    \newpage   
+    % Referencias
+    \renewcommand\refname{\textbf{Referencias}}
+    \bibliography{referencias}
+\end{document}
