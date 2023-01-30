@@ -1,0 +1,175 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{color}
+\usepackage{fancyvrb} % for "\Verb" macro
+\usepackage{amsmath}
+%Includes "References" in the table of contents
+\usepackage[nottoc]{tocbibind}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+% Portada
+%\thispagestyle{empty}
+\title{\Large Instalación de Máquiina Virtual y Sistemas Operativos}
+\author{Abraham J. Flores A.\: 19211640} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Tecnológico Nacional de México | Instituto Tecnológico de Tijuana}
+\course{SCC-1010SC5C Graficación}
+\professor{Ing. Erasmo Estrada Peña}
+\duedate{13 de diciembre de 2021}
+
+\begin{document}
+    % Índices
+    \pagenumbering{arabic}
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=16cm]{logosITT.png}
+    \end{figure}
+    \maketitle
+
+    %indice
+    \tableofcontents
+
+    % Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %    
+    \newpage
+    \section*{Introducción}
+    \addcontentsline{toc}{section}{Introducción}
+    \subsection*{¿Qué es una Máquina Virtual?}
+    \addcontentsline{toc}{subsection}{¿Qué es una Máquina Virtual?}
+    Una \begin{justifying}
+      máquina virtual es un recurso computacional que usa software en vez de una computadora física para
+    ejecutar programas y desplegar aplicaciones. Una o muchas máquinas ``huesped'' corren dentro de una máquina
+    ``anfitriona'' en donde cada máquina virtual esta ejecutando su propio sistema operativo y sus respectivas funciones
+    separadamente de otras máquinas virtuales, aúnque éstas estén dentro del mismo anfitrión. Lo anterior significa que
+    una máquina virtual con MacOS puede ejecutarse dentro de una computadora física \citep{unknown-author-no-dateA}.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsection*{¿Qué es un Sistema Operativo?}
+    \addcontentsline{toc}{subsection}{¿Qué es un Sistema Operativo?}
+    Un \begin{justifying}
+      sistema operativo es un programa que actua como una interfáz entre los componentes físicos de la computador y el usuario. Cualquier
+    sistema computacional debe tener al menos un sistema operativo para que las aplicaciones puedan usar los recursos del computador sin muchos problemas \citep{williams-no-date}.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \section*{Instalación de una Máquina Virtual}
+    \addcontentsline{toc}{section}{Instalación de una Máquina Virtual}
+    \subsection*{Software de Máquina Virtual Instalado}
+    \addcontentsline{toc}{subsection}{Software de Máquina Virtual Instalado}
+    \subsection*{Proceso de Instalación}
+    \addcontentsline{toc}{subsection}{Proceso de Instalación}
+    \subsubsection*{Paso 1}
+    \addcontentsline{toc}{subsubsection}{Paso 1}
+    Se \begin{justifying}
+      necesita el software de la máquina virtual. Dentro de un buscador en linea se busca ``Maquinas Virtuales'' y se descarga el más asequible, que 
+    en este caso es Oracle VM VirtualBox, el cual es gratuito. Su tiempo de descarga en mucho menor comparado a los sistemas operativos seleccionados.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsubsection*{Paso 2}
+    \addcontentsline{toc}{subsubsection}{Paso 2}
+    Habiendo \begin{justifying}
+      descargado VirtualBox, procedemoos a ejecutar el programa, dentro del programa buscamos la opción de ``Nuevo'' para la creación
+    de nuestra maquina virtual a la cual queremos instalar el Dual Boot.\par
+    \end{justifying}
+    En \begin{justifying}
+      el menu que aparece, se procede a llenar/seleccionar lo que se necesite. En este caso, el tipo de sistema operativo y version son Linux de 64 bits.\par
+    \end{justifying}
+    \section*{Instalación de un Sistema Operativo}
+    \addcontentsline{toc}{section}{Instalación de Un Sistema Operativo}
+    \subsection*{Sistemas Operativos Instalados}
+    \addcontentsline{toc}{subsection}{Sistemas Operativos Instalados}
+    Los sistemas operativos instalados en la máquina virtual fueron Linux Mint Xfce y Ubuntu.\par
+    \subsubsection*{Linux Mint Xfce}
+    \addcontentsline{toc}{subsubsection}{Linux Mint Xfce}
+    Es \begin{justifying}
+      una distribución de Linux Mint ``más estable y más ligera'' \citep{unknown-author-no-dateB}. Esto es debido a que, en comparación de otras distribuciones de 
+    Linux Mint, esta posee menos caracteristicas que Cinammon o MATE, lo cuál lo hace más estable y por ende más ligero en uso derecursos.\par
+    La principal razón por la cuál se decidió instalar dicho Sistema Operativo fue porque este sistema operativo permitia instalar sin muchos problemas
+    el menú GNU Boot Loader que permite elegír cualesquiera sistemas operativos que se encuentren dentro de un dispositivo de almacenamiento al momento de la instalación,
+    dejando listo los posibles sistemas operativos a usar en el arranque de la máquina virtual.\par 
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsubsection*{Ubuntu}
+    \addcontentsline{toc}{subsubsection}{Ubuntu}
+    Es \begin{justifying}
+      una distribución muy popular de Linux basada en Debian \citep{unknown-author-2018}. Es facil de manejar, se actualiza frecuentemente, se actualiza frecuentemente,
+    la instalación del sistema operativo es muy simple así como la instalación de los programas. La razón por la cuál se eligió
+    este Sistema Operativo fue porque en un tutoríal de Youtube se mostró el como instalar dos sistemas operativos dentro de una máquina virtual y el propósito
+    del haber instalado Ubuntu dentro de la misma máquina virtual fue para establecer las particiones del almacenamiento de la máquina virtual y así preparar
+    los detalles de cada partición para una instalación fructífera tanto de Ubuntu como el segundo sistema operativo elegido.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsection*{Proceso de Instalación}
+    \addcontentsline{toc}{subsection}{Proceso de Instalación}
+    A continuación se muestra el listado de pasos seguidos en el proceso de instalación. Cada uno se explica con mayor detalle a lo largo de esta sección.\par
+    \begin{enumerate}
+      \item Descargar los archivos .iso de los sistemas operativos elegidos.
+      \item Seleccionar las opciones de una máquina virtual previamente hecha; elegír ``Almacenamiento'' y elegir la unidad de disco para cargar el .iso.
+      \item Iniciar la máquina virtual y de ahí seguir las instrucciones de instalación.
+      \item Hasta llegar a ``Lugar de instalación'', seleccionar ``Personalizado'' y crear las particiones correspondientes.
+      \item Instalar el .iso dentro de una partición.
+      \item Al terminar la primer instalación, apagar la máquina virtual, abrir su ocnfiguración y volver a cargar en disco la segunda imágen .iso.
+      \item Iniciar la máquina virtual y seguir las isntrucciones de instalación del segundo sistema operativo.
+      \item En el lugar de instalación seleccionar la segunda partición realizada con anterioridad.
+      \item Al terminar la instalación, volver a a apagar la máquina virtual, volverla a prender y confirmar si aparece el menú de GNU Boot Loader con el nombre de los SO instalados.
+    \end{enumerate}
+    \vspace{\baselineskip}
+    \subsubsection*{Paso 1}
+    \addcontentsline{toc}{subsubsection}{Paso 1}
+    Como \begin{justifying}
+      parte primordial, es totalmente necesario descargar los archivos .iso de los sistemas operativos elegidos. Esto simplemente requiere de buscar
+    en cualquier buscador en linea el nombre del sistema operativo deseado y seleccionar la versión más reciente. Esto se debe de realizar con cierta anterioridad
+    debido a que estos archivos tienden a tardar bastante tiempo en descargar.\par
+    \end{justifying}
+    \subsubsection*{Paso 4}
+    \addcontentsline{toc}{subsubsection}{Paso 4}
+    Seleccionando \begin{justifying}
+      la máquina virtual previamente configurada, seleccionamos la opción de ``Configuración''. Nos va aparecer un menú con distintas opciones, elegimos la opción de ``Almacenamiento''.\par
+    Seleccionamos dentro de la opción ``IDE'' el disco vacio. A la derecha nos aparece la opción de atributos donde selecionaremos el botón de disco que va a desplegar las opciones de .iso disponibles y procedemos
+    a elegír el distro de Ubuntu.\par
+    \end{justifying}
+    \subsubsection*{Paso 5}
+    \addcontentsline{toc}{subsubsection}{Paso 5}
+    Ahora cerramos la ventana de configuración y arrancamos la máquina virtual con el botón Iniciar.\par
+    Posteriormente va a cargar el distro de Ubuntu para instalarlo.\par
+    Estando \begin{justifying}
+      en las opciones de instalaciones, seguimos las instrucciones de instalación hasta llegar al punto de la localización de la instalación del Sistema Operativo. En esta parte elegimos la opción de
+    ``Especificar Particiones Manualmente'' para preparar el almacenamiento de la Máquina Virtual para ámbos Sistemas Operativos.\par
+    \end{justifying}
+    Dentro \begin{justifying}
+      del administrador de las particiones, procedemos a crear una nueva tabla de particiones donde crearemos la primer partición, de preferencia que tenga un espacio de más o menos la mitád del espacio total del 
+    almacenamiento de la máquina virtual. Se debe cerciorar que el lugar de montaje de la primer partición debe ser en ``/'' para evitar problemas de arranque.\par
+    \end{justifying}
+    Procedemos \begin{justifying}
+      a realizar otra partición con un tamaño similar a la anterior el cual la vamos a montar en ``/home''. De ahí solamente seguimos las indicaciones restantes para instalar correctamente el sistema operativo.\par
+    \end{justifying}
+    \subsubsection*{Paso 6}
+    \addcontentsline{toc}{subsubsection}{Paso 6}
+    \subsubsection*{Paso 7}
+    \addcontentsline{toc}{subsubsection}{Paso 7}
+    \subsubsection*{Paso 8}
+    \addcontentsline{toc}{subsubsection}{Paso 8}
+    \subsubsection*{Paso 9}
+    \addcontentsline{toc}{subsubsection}{Paso 9}
+    \subsubsection*{Paso 10}
+    \addcontentsline{toc}{subsubsection}{Paso 10}
+    \subsubsection*{Paso 11}
+    \addcontentsline{toc}{subsubsection}{Paso 11}
+    
+    \newpage   
+    % Referencias
+    \renewcommand\refname{\textbf{Referencias}}
+    \bibliography{referencias}
+\end{document}
