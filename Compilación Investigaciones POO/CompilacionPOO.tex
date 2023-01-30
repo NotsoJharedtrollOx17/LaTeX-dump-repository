@@ -1,0 +1,1124 @@
+\documentclass[letterpaper, 12pt]{article}
+
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[backend=biber]{biblatex}\addbibresource{Bibliografia.bib} %manejo de bibliografía (BORRAR SI NO ES NECESARIO)
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de numeros de pagina
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}        
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+    \thispagestyle{empty}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=15cm]{logosITT.png}
+    \end{figure}
+    \begin{LARGE}
+        \centering
+        \textbf{Tecnológico Nacional de México}
+        \\
+            \bigbreak
+        \textbf{Instituto Tecnológico de Tijuana}
+        \\
+            \bigbreak
+            \bigbreak
+            \bigbreak
+        \textbf{Materia:}
+        \\
+            \bigbreak
+        Programación Orientada a Objetos
+        \\
+            \bigbreak 
+            \bigbreak
+            \bigbreak
+        \textbf{Unidad:} 6. Flujos y Archivos
+        \\
+            \bigbreak
+            \bigbreak
+            \bigbreak 
+        \textbf{Recopilación de Investigaciones}
+        \\
+            \bigbreak
+            \bigbreak
+            \bigbreak
+        \textbf{Maestro:} M.C. Luz Elena Cortez Galvan
+        \\
+            \bigbreak
+            \bigbreak
+            \bigbreak 
+        \textbf{Alúmno:} Abraham Jhared Flores Azcona
+        \\
+            \bigbreak
+            \bigbreak
+            \bigbreak
+        \textbf{Núm. Control:} 19211640
+        \\
+            \bigbreak
+            \bigbreak
+            \bigbreak
+        \textbf{Fecha de entrega:} Desconocido
+        \\ 
+    \end{LARGE}
+    \thispagestyle{empty}
+
+    \newpage
+        \setcounter{page}{1}
+        \begin{justify}
+        \section*{\huge{Nota al lector}}
+        Este documento fue redactando usando el lenguaje de marcado \LaTeX{} el cual permite 
+        realizar ediciones muy exigentes al documento sin tanto problema por el acomodo. 
+        Aparte, éste permite el uso de expresiones matemáticas complejas.
+        La finalidad de esta compilación es la de hacer una revision total de los trabajos y solamente agregar
+        los temas mas relevantes que se vieron en la materia asi como ciertos consejos al momento de estar escribiendo el código
+        de los ejemplos.
+        \end{justify}
+    
+    \newpage
+        \tableofcontents
+
+    \newpage
+        \justify
+        \begin{huge}
+            \bigbreak
+            \bigbreak
+            \bigbreak
+            \section*{\huge{Unidad 1.}}
+            \subsection*{\huge{Introducción al Paradigma de la \\Programación Orientada \\a Objetos (POO)}}
+        \end{huge}
+    
+    \newpage
+        \begin{justify}
+            \section{Elementos del modelo de objetos}
+            \subsection{Clase}
+            Es un plano para crear objetos provisto de valores iniciales para el estado (variables miembro o atributos) e 
+            implementaciones de comportamiento (funciones miembro o métodos).
+            Una clase proporciona una definición para instancias creadas dinámicamente de la clase, también conocidas como objetos. 
+            Las clases admiten herencia y polimorfismo, mecanismos por los que las clases derivadas pueden extender y especializar clases base. 
+            Los miembros de una clase son miembros estáticos o miembros de instancia. Los miembros estáticos pertenecen a clases y los miembros de instancia 
+            pertenecen a objetos (instancias de clases).
+            Este permite la abstracción de datos de una manera util.
+            \\
+            \newline
+            A continuación se proporciona una visión general de los tipos de miembros mas importantes que puede contener una clase:
+            \begin{itemize}
+                \item \emph{Campos:} Variables de la clase. 
+                \item \emph{Métodos:} Cálculos y acciones que pueden realizarse en dicha clase.
+                \item \emph{Constructores:} Acciones que permiten la instancia (creación) de la clase.
+                \item \emph{Destructores} Acciones que permiten la destrucción de la clase.
+                \item \emph{Operadores:} Conversiones y operadores de expresión admitidos por la clase.
+                \item \emph{Propiedades:} Acciones asociadas a la lectura y escritura de la clase.
+                \item \emph{etc.}
+            \end{itemize}
+            \textbf{\\Sintáxis:}
+            \begin{verbatim}
+//<acceso> class <nombre de la clase>
+//{
+    //Campos:
+    //<acceso> <tipo de variable> <identificador>;
+
+    //Métodos:
+    //<acceso> <tipo de método> <nombre>(){}
+
+    //Constructor:
+    //public <nombre de la clase>(//campos)
+    //{//asignación de campos}
+
+    //Destructor:
+    //~<nombre de la clase>(){}
+//}
+
+//Ejemplo:
+public class Carro
+{
+    public int year;
+    public string model;
+
+    public void Datos()
+    {
+        Console.WriteLine("Datos del vehículo:");
+        Console.WriteLine("Modelo: {0}", model);
+        Console.WriteLine("Año: {0}", year);
+    }
+
+    public Carro(int year, string model)
+    {
+        this.year=year;
+        this.model=model;
+    }
+
+    ~Carro(){}
+}
+            \end{verbatim}
+        \subsection{Objeto}
+        Es un componente auto-contenido el cual consiste en métodos y propiedades para 
+        hacer útil a un tipo de dato en particular. El objeto determina el comportamiento de 
+        una clase y este puede ser una variable o una función. Es una unidad básica de la programación 
+        orientada a objetos y representa entidades de la vida real. 
+        \\
+        \newline
+        Un objeto consiste en lo siguiente:
+        \begin{itemize}
+            \item \emph{Estado:} Refleja las propiedades del objeto. Es representado por los atributos (valores) del objeto.
+            \item \emph{Comportamiento:} Refleja la respuesta del objeto con otros objetos. Es representado por los métodos (funciones) del objeto.
+            \item \emph{Identidad:} Le da al objeto un nombre específico y esto permite que interactúe con otros objetos.
+        \end{itemize}
+        Cabe aclarar que al momento de crear un objeto en base a una clase, se dice que estamos \emph{“instanciando una clase”}.\newline
+        \textbf{\\Sintáxis:}
+            \begin{verbatim}
+//<nombre de la clase> <nombre para el objeto> = 
+new <nombre de la clase>(<parametros (si son necesarios)>);
+
+//Ejemplo:
+public void Main(string[] args)
+{
+    int year = 2001;
+    string model = Model S;
+    Carro Tesla = new Carro(year,model);
+}
+            \end{verbatim}
+        \subsection{Abstracción}
+        Es el proceso de ocultación de datos e implementaciones del mundo exterior. Es usado para crear un límite entre la aplicación y los programas del cliente.
+        Un objeto se le puede proveer acceso a ciertas funciones y propiedades requeridas hacia otros programas. Hay dos típos:
+        \begin{itemize}
+            \item \emph{De datos:} los datos del objeto no son visibles hacia el mundo exterior. Si es necesario, el acceso es provisto por unos métodos.
+            \item \emph{De procesos:} no se necesita proveer detalles sobre todas las funciones de un objeto, por lo tanto, las ocultamos en la operación del usuario.
+        \end{itemize}
+        \subsection{Modularidad}
+        Es la propiedad que permite subdividir una aplicación en partes más pequeñas (llamadas \emph{módulos}), cada una de las cuales debe se tan independiente
+        como sea posible de la aplicación en sí y de las partes restantes. Se recomienda escribir el código fuente de un objeto puede ser escrito así para darle
+        mantenimiento, independientemente del código fuente de otros objetos. Así mismo, un objeto puede ser transferido alrededor del sistema sin alterar su estado y conducta.
+        \subsection{Herencia}
+        Es un mecanismo que permite derivar una clase de otra para una jerarquia de clases que comparten un mismo conjunto de atributos y métodos. Se puede considerar
+        la capacidad de crear nuevas clases a partir de otras ya definidas. Existen dos tipos de clases en la herencia las cuales son las siguientes:
+        \begin{itemize}
+            \item \emph{Base:} aquellas cuyos miembros se heredan a sus clases derivadas.
+            \item \emph{Derivada:} aquellas que reciben los miembros de su clase base. A esta se le pueden definir atributos y/o métodos nuevos propios. En ella se le puede clasificar 
+            la herencia en los dos tipos siguientes:
+            \begin{itemize}
+                \item \emph{Simple:} se encuentra generalmente en lenguajes modernos como C\# y Java. Es simple cuando la clase derivada solo tiene una clase base.
+                \item \emph{Múltiple:} signifíca que una clase derivada es heredada de dos o más clases base. Puede utilizarse para agrupar atributos y métodos desde varias clases de una sola.
+            \end{itemize}
+        \end{itemize}
+        \textbf{\\Sintáxis:}
+            \begin{verbatim}
+<Acceso> class <Clase derivada>:<Clase base>
+{
+    //cuerpo de la clase
+    //Constructor de la clase derivada\
+    public <Clase derivada>(//declaración de parámetros que recibe):
+    base(//nombre de parámetros heredados)
+    {//asignación de parámetros}
+}
+
+//Ejemplo:
+public class Camión:Carro
+{
+    int Cantidad_remolques;
+    public Camión(int Cantidad_remolques, int year, string model):base
+    (year,model)
+    {
+        //asignación
+    }
+}
+            \end{verbatim}
+        \subsection{Encapsulación}
+        Conocido de mejor manera como los tipos de acceso. En la encapsulación, los datos no son accesados directamente; son accesados entre las otras funciones presentes dentro de la clase. 
+        En otras palabras, los atributos de la clase se mantienen como captadores públicos y privados, y los métodos de establecimiento son provistos para manipularlos.
+        Sirven para limitar el acceso a distintos elementos de una clase, para evitar discrepancias en la ejecución de un programa.
+        Los modificadores de acceso mas comúnes son los siguientes:
+        \begin{itemize}
+            \item \emph{public: }el tipo o miembro puede ser accedido por cualquier código dentro del ensamble u otro ensamble que lo referencie. 
+            \item \emph{private: }el tipo o miembro solo puede ser accesado por el código que esté dentro de la misma clase o estructura.
+            \item \emph{protected: }el tipo o miembro solo puede ser accesado por el código de la clase o por una clase derivada.
+        \end{itemize}
+        \subsection{Polimorfísmo}
+        Es la habilidad de un lenguaje de programación de procesar objetos de manera diferente dependiendo del tipo de datos o clase. Específicamente, es la habilidad de redefinir métodos 
+        para clases derivadas. También se define como la propiedad que permite enviar mensajes sintácticamente iguales a objetos de distintos tipos. 
+        Permite procesar objetos de distintas maneras según lo que más convenga para el programa.
+        Existen distintos tipos de polimorfísmo:
+        \begin{itemize}
+            \item \emph{Sobrecarga: }representa diferentes maneras de realizar una misma acción.
+            \item \emph{Herencia: }una subclase hereda los elementos de una clase base.
+            \item \emph{Sobreescritura: }una subclase re-define los elementos heredados de una clase base.
+        \end{itemize}
+        \end{justify}
+
+    \newpage
+        \justify
+        \begin{huge}
+            \bigbreak
+            \bigbreak
+            \bigbreak
+            \section*{\huge{Unidad 2.}}
+            \subsection*{\huge{Clases y Objetos}}
+        \end{huge}
+
+    \newpage
+    \begin{justify}
+        \section{Clases y Objetos}
+        \subsection{Métodos}
+        Es un conjunto de instrucciones que realizan una tarea específica y bien definida. Se invocan a través de su nombre asignado en un proceso,
+        todas las veces que se necesite. También es un algoritmo asociado a un objeto cuya ejecución se desencadena tras la recepción de un mensaje (llamada al método).
+        Lo que los diferencia a las funciones es que los métodos no tienen un valor de retorno específico (por lo cual se escribe \emph{void}) y no aceptan
+        la palabra reservada \emph{return.} Cabe destecar que la asociación entre la clase y el método se conoce como \emph{binding.}
+        
+        \textbf{\\Sintáxis:}
+            \begin{verbatim}
+//<acceso> <tipo retorno> <nombre>(<parámetros>)
+{
+    //cuerpo del método
+}
+
+//Ejemplo:
+public void Mensaje()
+{
+    Console.WriteLine("Desplegué el mensaje");
+}
+            \end{verbatim}
+        \subsection{Constructor}
+        Es un método de una clase o estructura que inicializa un objeto de ese tipo. Un constructor tiene el mismo nombre que el de la clase, y puede
+        ser usado para establecer los valores de los miembros de un objeto, a los defecto o a los valores definidos por el usuario. Cabe destacar lo siguiente:
+        \begin{itemize}
+            \item El constructor tiene el mismo nombre de la clase.
+            \item Este no tiene un tipo de valor de retorno.
+            \item Si no se especifica un constructor, C\# genera uno para nosotros.
+            \item Se puede dotar de mas de un constructor a la clase.
+            \item Debe ser público.
+        \end{itemize}
+        \textbf{\\Sintaxis:}
+            \begin{verbatim}
+//public <nombre de la clase>(//parámetros)
+{
+    //asignación de parametros;
+}
+
+//Ejemplo:
+class Persona
+{
+    int edad;
+    string nombre;
+
+    //Constructor de la clase
+    public Persona(int edad, string nombre)
+    {
+        this.edad = edad;
+        this.nombre = nombre;
+    }
+}
+            \end{verbatim}
+        \subsection{Destructor}
+        Homologo del constructor. Es un método especial llamado automáticamente durante la destrucción de un objeto. Sus funciones principales son las de
+        cerrar conexiones de archivos o bases de datos y liberar recursos de la red, candados, etc. Cabe destacar que son escritos con el nombre de clase precedidos
+        por el símbolo "~". Cabe destacar que para que las instrucciones escritas dentro del destructor sean visibles, es necesario ejecutar el código con las sig. teclas:
+        CTRL + F5. Sus propiedades son las siguientes:
+        \begin{itemize}
+            \item Invocación automática sin llamada explícita en el código.
+            \item No se puede heredar y por ende, aplicar algún tipo de polimorfísmo.
+            \item El orden de ejecución va desde la clase con mayor a menor derivación.
+            \item Es usado en clases pero no en estructuras.
+            \item Se usa para liberar recursos costosos que el objeto mantiene.
+        \end{itemize}
+        \textbf{\\Sintáxis:}
+            \begin{verbatim}
+//~<nombre de la clase>()
+{
+    //Instrucciones a ejecutar durante su llamada
+}
+
+//Ejemplo:
+class Mensaje
+{
+    //Destructor
+    ~Mensaje(){}
+}
+            \end{verbatim}
+        \subsection{Sobrecarga de métodos}
+        Es una manera que permite a múltiples métodos tener el mismo nombre y contener parámetros distintos. Esto permite procesar objetos de
+        distintas maneras según lo que mas convenga para el programa.
+        Cabe recalcar los siguientes puntos:
+        \begin{itemize}
+            \item El compilador (al ejecutar el método) selecciona el que coincide con el número y tipo de dato de los parámetros que se le envían.
+            \item Pueden existir dos o más métodos con el mismo nombre, siempre y cuando tengan distintos parámetros.
+            \item Todos los métodos se pueden sobrecargar en una clase a excepción del destructor.
+        \end{itemize}
+        \textbf{\\Ejemplo:}
+            \begin{verbatim}
+class Sumas de enteros
+{
+    int respuesta;
+
+    //sobrecarga 1
+    public int Suma(int x1, int x2)
+    {
+        respuesta=x1+x2;
+        return respuesta;
+    }
+
+    //sobrecarga 2
+    public int Suma(int x1, int x2, int x3)
+    {
+        respuesta=x1+x2+x3;
+        return respuesta;
+    }
+}
+            \end{verbatim}
+        \subsection{Sobrecarga de operadores}
+        Es la habilidad de definir el significado de uno o varios operadores en el contexto de una determinada clase de objetos. Nos ofrece la oportunidad
+        de crear nuestras propias operaciones entre tipos sin ningun problema. Estos se definen de manera similar a una función. Deben ser estáticos y se utliza la palabra reservada \emph{operator} delante del operador a sobrecargar.
+        Generalmente la cantidad de argumentos que un operador acepta son dos pero existen ciertos operadores que utilizan un solo operando. Se debe definir cada operación
+        a soportar, incluyendo a cada uno de los parámetros de la operación y su respectivo orden. Cabe recalcar que:
+        \begin{itemize}
+            \item \emph{Operadores unarios: }representan las operacionesque reciben un solo operando.
+            \item \emph{Operadores binarios: }representan operaciones que reciben dos operandos.
+        \end{itemize}
+        \textbf{\\Sintáxis:}
+            \begin{verbatim}
+//public <valor de retorno> <nombre de clase> operator <símbolo del operador>
+(//argumentos que recibe)
+    => new <nombre de clase> (//operaciones)
+
+//Ejemplo:
+
+class Fraccion
+{
+    int numerador, denominador;
+
+    public Fraccion(int num, int den)
+    {
+        if(den==0)
+            throw new ArgumentException("El denominador no puede ser cero!", 
+            nameof(den));
+        numerador=num;
+        denominador=den;
+    }
+
+    //sobrecarga
+    public static Fraccion operator +(Fraccion a, Fraccion b)
+        => new Fraccion(a.numerador*b.denominador + b.numerador*a.denominador, 
+        a.denominador*b.denominador)
+}
+            \end{verbatim}
+    \end{justify}
+
+    \newpage
+        \justify
+        \begin{huge}
+            \bigbreak
+            \bigbreak
+            \bigbreak
+            \section*{\huge{Unidad 3.}}
+            \subsection*{\huge{Herencia}}
+        \end{huge}
+
+    \newpage
+    \begin{justify}
+        \section{Herencia}
+        \subsection{Reutilización de miembros heredados}
+        Es una manera que permite reusar el código existente por medio de alguna forma de interfaz provista por llamadas a una subrutína, a un objeto, o a una clase.
+        La reutilización de software reduce el tiempo de desarrollo de los programas, por ello una parte/totalidad del código de un programa se puede reemplazar en la construcción
+        de otro programa.
+        \textbf{\\Sintáxis:}
+        \begin{itemize}
+            \item Para declarar un nuevo atribúto con el mismo identificador que el heredado, quedando el atribúto oculto con "new":
+                \begin{verbatim}
+public class Punto { public int x,y; }
+
+public class Punto3D:Punto { new public int x,y; public int z; }
+                \end{verbatim}
+            \item Para declarar un nuevo método con misma cabecera que el de la clase. Se supone sobreescritura con "new":
+                \begin{verbatim}
+public class A { public void X()
+{ Console.WriteLine("A.X"); } }
+
+public class B:A { new public void X()
+{ Console.WriteLine("B.X"); } }
+                \end{verbatim}
+            \item Declarar un nuevo método/clase:
+                \begin{verbatim}
+public class A { public void X()
+{ Console.WriteLine("A.X"); } }
+
+public class B:A { public void Y()
+{   X();
+    Console.WriteLine("B.X"); } }
+                \end{verbatim}
+        \end{itemize}
+        \subsection{Constructores y destructores en clase base y derivada}
+        \begin{itemize}
+            \item \emph{Constructores: }al instanciar objetos de clases derivadas se inicia una cadena de invocaciones a constructores en las cuales
+            el constructor de la clase derivada (antes de realizar sus tareas propias) invoca al constructor de la clase base.
+            En resumen:
+            \begin{itemize}
+                \item \emph{1ro. se ejecuta el constructor de la clase base.}
+                \item \emph{2do. se ejecuta el constructor de la clase derivada.}
+            \end{itemize}
+            \item \emph{Destructores: }la cadena de invocación a destructores se ejecuta en orden contrario a su homólogo, esto es, primero se ejecuta
+            el destructor de la clase base.
+            En otras palabras:
+            \begin{itemize}
+                \item \emph{1ro. se ejecuta el destructor de la clase derivada.}
+                \item \emph{2do. se ejecuta el destructor de la clase base.}
+            \end{itemize}
+        \end{itemize}
+        Debido a esto, el constructor crea un objeto extra de la clase base por cada objeto creado de la misma clase o sus derivads en la ejecucción del programa para que el
+        objeto "extra" sea quien pueda heredar sus elementos a los derivados.
+        \subsection{Redefinición de métodos en clases derivadas}
+        Esta técnica se realiza cuando una subclase provée una implementación específica de un método provisto por la clase base y este método tiene el mismo nombre,
+        tipo de dato y parámetros. Para ello, se acostumbra a realizar lo siguiente:
+        \begin{itemize}
+            \item Los métodos de la clase base que usan la palabra reservada \emph{virtual} reciben el nombre de \emph{métodos virtuales.}
+            \item Los métodos de la clase derivada que usan la palabra reservada \emph{override} reciben el nombre de \emph{métodos de reemplazo.}
+        \end{itemize}
+        Cabe destacar que \emph{el modificador virtual no se puede utilizar con los siguientes modificadores: static, abstract, override}\\
+        \textbf{\\Ejemplo:}
+            \begin{verbatim}
+class A
+{
+    public virtual void X()
+    { Console.WriteLine("Método de la clase A"); }
+}
+
+class B:A
+{
+    public override void X()
+    { Console.WriteLine("Método X de la clase B"); }
+}
+            \end{verbatim}
+    \end{justify}
+
+    \newpage
+        \justify
+        \begin{huge}
+            \bigbreak
+            \bigbreak
+            \bigbreak
+            \section*{\huge{Unidad 4.}}
+            \subsection*{\huge{Polimorfísmo}}
+        \end{huge}
+
+    \newpage
+    \begin{justify}
+        \section{Polimorfísmo}
+        \subsection{Clases abstractas}
+        Es una definición de plantillas de métodos y variables de una clase que contiene uno o más métodos abstractos. Clases u objetos pueden ser abstraídos,
+        lo que signifíca que son resumidos en características que son relevantes en la operación del programa. 
+        Declarar una clase como abstracta signifíca que no puede ser instanciada directamente, lo que signifíca que un objeto no puede ser creado de él. Esto protege
+        al código de ser usado de manera inapropiada. Estas requieren subclases que definan aún mas los atributos necesarios para instanciarlos individualmente.     
+        Las características principales son las siguientes:
+        \begin{itemize}
+            \item Estas \emph{pueden contener o no métodos abstractos.}
+            \item \emph{Si una clase contiene (al menos) un método abstracto, la clase debe ser declarada como abstracta.}
+            \item Si una clase es declarada como abstracta, \emph{esta no puede ser instanciada.}
+        \end{itemize}
+        Para su creación solo necesitamos agregar la palabra reservada \emph{abstract} para definir una clase como abstracta. Su implementación se aplica cuando una
+        clase hereda características de la clase abstracta.
+        \newline
+        \textbf{\\Ejemplo:}
+            \begin{verbatim}
+//clase base
+public abstract class Figuras
+{
+    public double radio, altura, lado, volumen;
+
+    abstract public double calcularVolumen();
+    abstract public void desplegarVolumen();
+
+    ~Figuras()
+    {
+        Console.WriteLine("Memoria Objeto Clase Base Figuras Liberada");
+    }
+}
+
+//clase derivada
+public class Esfera:Figuras
+{
+    public Esfera(double radio)
+    {
+        this.radio = radio;
+        lado = 0;
+        altura = 0;
+    }
+
+    //implementación de los métodos abstractos
+    public override double calcularVolumen()
+    {
+        return voulmen = (4/3) * Math.PI
+        * Math.Pow(radio, 3);
+    }
+
+    public override void desplegarVolumen()
+    {
+        Console.WriteLine("Esfera");
+        Console.WriteLine("Radio: {0}m",radio);
+        Console.WriteLine("Volúmen: {0}m^3",volumen);
+    }
+}
+            \end{verbatim}
+        \subsection{Interfaces}
+        Es completamente "una clase abstracta", la cual solo puede contener métodos y propiedades abstractas. 
+        Sus características principales son las siguientes:
+        \begin{itemize}
+            \item Similar a las clases abstractas, \emph{no se pueden instanciar objetos con interfaces.}
+            \item \emph{Sus métodos no tienen cuerpo,} porque éste es provisto por la clase que los implementa.
+            \item Al implementar una interfaz, \emph{debemos sobreescribir todos los métodos de la misma.}
+            \item \emph{Pueden contener propiedades y métodos, pero no campos/variables.}
+            \item \emph{Las propiedades y métodos (por defecto) son abstractos y públicos.}
+        \end{itemize}
+        Para crear una interfaz, necesitamos usar la palabra reservada \emph{interface} seguida del nombre deseado para la misma. Dentro de los corchetes
+        definimos méetodos sin cuerpo agregando solamente \emph{void }debido a que por defecto, los métodos son abstractos y públicos. En lo que respecta
+        a su implementación, debemos crear una clase y los métodos serán aquellos que herede la interfaz, similar a la implementación de clases abstractas.
+        \newline
+        \textbf{\\Ejemplo:}
+            \begin{verbatim}
+public interface Figuras
+{
+    /Método
+    double calcularArea();
+    void desplegarArea();
+}
+
+public class Triangulo:Figuras
+{
+    //Campos
+    public float base, altura;
+    public double area;
+
+    //Constructor
+    public Triangulo(float base, floar altura)
+    {
+        this.base = base;
+        this.altura = altura;
+    }
+
+    //Implementación de métodos
+    public double calcularArea()
+    {
+        return this.area= (base * altura)/2;
+    }
+
+    public double desplegarArea()
+    {
+        Console.WriteLine("Triángulo");
+        Console.WriteLine("Base: {0}", this.base);
+        Console.WriteLine("Altura: {0}", this.altura);
+        Console.WriteLine("Area: {0}", this.area);
+    }
+}
+            \end{verbatim}
+            \subsection{Librerías en C\#}
+            Es un conjunto de campos y métodos que pueden ser llamados por una aplicación. En C\#, cualquier librería enfocada en .NET Standard 2.0 permite que cualquier
+            aplicación enfocada en implementaciones .NET Standard use la librería. Las librerías pueden tener extensiones diferentes, las más comunes son: \emph{.lib, .bpl, .a, .dll, .h}
+            entre otras. Nos permite crear nuestros programas de una manera más modular y reutilizable facilitando un desarrollo del mismo bastante complejo en pocas lineas de código.\newline
+            \\
+            Las librerías no son únicamente archivos externos creados por otros, también \emph{es posible crear e implementar nuestras propias librerias y utilizarlas en nuestros programas.}
+
+            \textbf{\\Para crear una librería en C\#:}
+            \begin{enumerate}
+                \item En la ventana de inicio de Visual Studio, elegir \textbf{Create a new proyect.}
+                \item Seleccionar \textbf{Class Library (.NET Framework).}
+                \item En el cuadro \textbf{Proyect name} escribir el nombre para la librería (será el \emph{namespace}).
+                \item En la clase \textbf{Class1} que se crea por defecto, modificar al nombre deseado.
+                \item Escribir el código necesario a la clase: campos, constructor, destructor, etc.
+                \item Añadir las clases necesarias.
+                \item Compilar \textbf{(Build)} la librería.
+                \item Verificar en la carpeta \textbf{bin}, subcarpeta \textbf{Debug} del proyecto, se encuentre el archivo .dll
+            \end{enumerate}
+            \textbf{Para agregar una librería en un proyecto de C\#:}
+            \begin{enumerate}
+                \item Seleccionar \textbf{File, New project.}
+                \item Elegir \textbf{ConsoleApp (.NET Framework).}
+                \item En \textbf{References} del \textbf{Solution Explorer} dar click en el botón derecho del mouse.
+                \item Presionar \textbf{Add Reference} en el cuadro de diálogo.
+                \item Buscar el archivo .dll en la carpeta de la librería, agregar y presionar OK.
+                \item Escribir el comando \textbf{using nombrelibrería;}
+                \item Añadir el código deseado al programa.
+                \item Grabar y ejecutarlo.
+            \end{enumerate}
+            \textbf{Ejemplo de la creación de la librería:}
+                \begin{verbatim}
+namespace VOLUMENES
+{
+    public class Esfera
+    {
+        \\campos
+        float radio;
+
+        \\constructor
+        public Esfera (float radio)
+        {
+            this.radio = radio;
+        }
+
+        \\métodos
+        public double calcularVolumen()
+        {
+            return (4/3) * Math.PI * Math.Pow(radio , 3);
+        }
+
+        public void desplegarVolumen()
+        {
+            Console.WriteLine("Esfera");
+            Console.WriteLine("Radio: {0}", radio);
+            Console.WriteLine("Volúmen: {0}", calcularVolumen());
+        }
+
+        \\destructor
+        ~Esfera(){}
+    }
+}
+                \end{verbatim}
+            \textbf{Ejemplo de la implementación de la librería en un proyecto:}
+                \begin{verbatim}
+using VOLUMENES;
+
+class Programación
+{
+    static void Main(string[] args)
+    {
+        //creación del objeto por parte de la librería VOLUMENES
+        Esfera E1 = new Esfera(1.3f);
+
+        //ejecución de métodos y despliegue de resultados
+        Console.WriteLine("RESULTADOS OBTENIDOS");
+        E1.desplegarVolumen();
+    }
+}
+                \end{verbatim}
+    \end{justify}
+
+    \newpage
+        \justify
+        \begin{huge}
+            \bigbreak
+            \bigbreak
+            \bigbreak
+            \section*{\huge{Unidad 5.}}
+            \subsection*{\huge{Excepciones}}
+        \end{huge}    
+
+    \newpage
+    \begin{justify}
+        \section{Excepciones}
+        \subsection{Definición}
+        Son problemas que surgen durante la ejecucción de un programa. Una excepción de C\# es la respuesta ante dicha circunstancia que surge.
+        Un ejemplo de ello es el intentar la división entre cero. Dichas excepciones están compuestas por los siguientes bloques/palabras reservadas:
+        \begin{itemize}
+            \item \emph{try:} Este bloque identifíca un bloque de código para el cual se le identificarán las excepciones. Es seguido por uno o más bloques \emph{catch.}
+            \item \emph{catch: }Por su traducción literal al español, este bloque atrapa la excepción con el manejador de excepciones en el lugar deseado del programa.
+            \item \emph{finally: }Este bloque es usado para ejecutar un bloque de código independientemente de que se haya atrapado una excepción o no.
+            \item \emph{throw: }Arroja una excepción cuando un problema aparece.
+        \end{itemize}
+        \textbf{\\Sintáxis:}
+            \begin{verbatim}
+try { //código que causa la excepción }
+
+catch( <Nombre para la excepción> <identificador> ) 
+{ //código que maneja la excepción <identificador> 
+  //pueden existir cualesquiera de estos bloques si se considera 
+  necesario }
+
+finally { //código a ejecutar despues de haberse ejecutado 
+el bloque "try" }
+            \end{verbatim}
+        \subsection{Tipos de excepciones:}
+        Estas son representadas por clases. La clase de excepciones en C\# esta directa o indirectamente derivada de la clase \emph{System.Excepction.}
+        \newline
+        \\
+        \emph{System.ApplicationException }soporta excepciones generadas por programas de aplicación. Por lo tanto las excepciones de
+        finidas por el programador deben derivarse de esta clase.
+        \newline
+        \\
+        \emph{System.SystemException }es la clase base para todas las excepciones predefinidas por el sistema. Sus excepciones son las siguientes:
+        \begin{itemize}
+            \item \emph{System.IOException:} maneja errores I/O.
+            \item \emph{System.IndexOutOfRangeException:} maneja errores generados cuando un método refere un índice fuera de rango de un arreglo.
+            \item \emph{System.ArrayMismatchException: }maneja errores generados cuando se encuentra una discrepancia con el tipo de dato manejado en un arreglo.            \item \emph{System.DivideByZeroException: }maneja errores generados por dividir un dividendo con cero.
+            \item \emph{System.InvalidCastException:} maneja errores generados al momento de invocar algún método.
+            \item \emph{System.OutofMemoryException: }maneja errores generados de memoria libre insuficiente.
+            \item \emph{System.StackOverflowException:}maneja errores generados por los stacks llenos que ya no pueden ser sobreescritos.
+        \end{itemize}
+        \textbf{\\Propiedades:}
+        \begin{itemize}
+            \item \emph{HelpLink: }puede mantener una liga a un archivo de ayuda que provee información extensiva sobre la causa de la excepción.
+            \item \emph{InnerException: }puede ser usada para crear y preservar una serie de excepciones durante el manejo de excepciones.
+            \item \emph{Message: }provee detalles acerca de la causa de la excepción.
+            \item \emph{Source: }obtiene o fija el nombre del objeto o aplicación que causa el error.
+            \item \emph{StackTrace: }contiene el trazo del stack que puede ser usado para determinar dónde ocurrió el error en el código.
+        \end{itemize}
+
+        \subsection{Propagación de excepciones}
+        Esta se realiza mediante los bloques \emph{try, catch y finally} mencionados anteriormente. El código que se desea evaluar para encontrar las excpeciones se escribe dentro del bloque \emph{try.}
+        Una vez iniciada, la excepción se propaga hasta que se encuentra y se atrapa con el bloque \emph{catch.} Aquellas no detectadas se controlan mediante mensajes preestablecidos por el sistema. El
+        bloque \emph{finally} se ejecuta después de haber evaluado todo lo anterior.
+
+        \subsection{Gestión de excepciones}
+        Una manera de generar explícitamente las excepciones donde sea necesario es con la palabra reservada \emph{throw.} Su sintáxis es la siguiente: \emph{throw [exp];} donde \emph{[exc]} es una instancia
+        de una clase derivada de \emph{System.Exception.}
+        \newline
+        \\
+        Estas deben de lanzarse si una o más de las siguientes condiciones son verdaderas:
+        \begin{itemize}
+            \item El método no puede completar su funcionalidad definida.
+            \item Se realiza una llamada inapropiada a un objeto, en función del estado del objeto.
+            \item Cuando un argumento a un método causa una excepción.
+        \end{itemize}
+
+        \subsection{Creación y manejo de excepciones en C\#}
+        Para ello debemos de realizar lo siguiente:
+        \begin{enumerate}
+            \item Crear una clase con el nombre de la excepción la cual hereda propiedades de la clase \emph{ApplicationException.} Su sintáxis es la siguiente:
+                \begin{verbatim}                    
+class <Nombre de la excepción>:ApplicationException{}                \end{verbatim}
+            \item Crear el constructor e indicarle en los campos que heredo el mensaje deseado a arrojar por nuestra excepción. Ejemplo:
+                \begin{verbatim}
+class NegativosException:ApplicationException
+{
+    public NegativosException():
+            base("NO SE PUEDE CALCULAR EL SENO DE UN 
+            ANGULO NEGATIVO!"){}
+} \end{verbatim}
+        \end{enumerate}
+        \textbf{Programa ejemplo:}
+                \begin{verbatim}
+using System;
+using System.Collection.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EJEMPLOEXCEPCION
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //variables auxiliares
+            int base, altura, area;
+
+            //manejo de exepciones
+            try
+            {
+                //Captura de datos
+                Console.Write("Base: ");
+                base = Int16.Parse(Console.ReadLine());
+                Console.Write("Altura: ");
+                altura = Int16.Parse(Console.ReadLine());
+
+                //Cálculo del área
+                area = base * altura / 2;
+
+                //Despliegue de resultados
+                Console.WriteLine("RESULTADOS");
+                Console.WriteLine("Area del triángulo: {0}", area);
+                Console.Write("\nPresione cualquier 
+                tecla para continuar: ");
+                Console.ReadKey();
+            }
+            catch (Format Exception fe)
+            {
+                Console.WriteLine("\nMensaje del  error: {0}", 
+                fe.Message);
+                Console.WriteLine("\nRuta del error: {0}", 
+                fe.StackTrace);
+                Console.Write("\nPresione cualquier tecla 
+                para continuar: ");
+                Console.ReadKey();
+            }
+            finally {}
+        }
+    }
+}
+                \end{verbatim}
+    \end{justify}
+
+    \newpage
+    \justify
+    \begin{huge}
+        \bigbreak
+        \bigbreak
+        \bigbreak
+        \section*{\huge{Unidad 6.}}
+        \subsection*{\huge{Flujos y Archivos}}
+    \end{huge}     
+
+    \newpage
+    \begin{justify}
+        \section{Flujos y Archivos}
+        \subsection{Archivos}
+        Se le conoce como archivo o fichero a un conjunto organizado de unidades de información (\emph{bits}) almacenados en un dispositivo. Se les 
+        denomina de esa manera debido a la metáfora de representar archivos tradicionales de oficina, escritos en papel. Estos poseen una identificación
+        única, la cual puede ser modificada o asignada a voluntad del usuario o programador y una extensión que determina el tipo de archivo y las funciones que cumple.
+        En C\# se utiliza la siguiente sentencia para manejar archivos: \emph{using System.IO;}
+        \newline
+        \\
+        Aunque C\# ve a los archivos como un flujo de bytes, es conveniente concebirlos como un conjunto de registros que poseen una marca de fín de archivo. Estos flujos 
+        se organizan en registros, los registros en campos, los campos en bytes, y los bytes en bits.
+        \newline
+        \\
+        Dependiendo del tipo de datos que se manejen en sus registros, los archivos se clasifican en \emph{archivos de texto y archivos binarios.}
+        \begin{itemize}
+            \item \emph{Archivos binarios: }Es un archivo que contiene información de cualquier tipo codificada en binario para el propósito de almacenamiento y procesamiento en ordenadores.
+            Para su formato, se piensa a estos archivos como una secuencia de bytes. Muchos de estos contienen partes que pueden ser interpretadas como texto. Se usan cuando se requiere efectuar operaciones
+            con datos de alguno de los tipos primitivos del lenguaje.
+            \item \emph{Archivos de texto: }Conocidos de mejor manero como \emph{archivos de texto plano.} Son aquellos que están compuestos únicamente por texto sin formato, sólo caracteres. Estos caracteres
+            se pueden codificar de distintos modos dependiendo de la lengua usada. Algunos sistemas de codificación usados para los mismos son: ASCII, ISO-8859-1, Unicode, etc. \emph{Su manejo se puede llevar a cabo
+            por medio de los flujos de bytes y de caracteres.}
+        \end{itemize}
+        \subsection{Flujos}
+        En el contexto de informática y computación un flujo signifíca la entrada, procesamiento y salida de datos en un mismo flujo. Por ende podemos decir que los flujos nos permiten el manejo de archivos de texto.
+        \newline
+        \\
+        Los flujos se clasifican en \emph{flujos de bytes y flujos de caracteres:}
+        \begin{itemize}
+            \item \emph{De bytes:} Al escribir un valor almacenado en un objeto a un flujo binario, este va a leer exactamente lo que fue almacenado en el objeto cuando fue escrito.
+            \item \emph{De caracteres:} Con este flujo, se le puede escribir al archivo una o más líneas de texto que pueden ser escritas a un despliegue. Cuando se escribe a un flujo de texto, el programa escribe una nueva línea
+            al final de cada línea de texto.
+        \end{itemize}
+        \subsection{Operaciones con archivos de texto}
+        Debido a la existencia de dos flujos distintos para los archivos de texto, las operaciones varían.
+        \newline
+        \\
+        Si se desea escribir o leer datos de tipo \emph{byte}, se declara el flujo correspondiente de la clase \emph{FileStream} con los siguientes constructores:
+            \begin{verbatim}
+FileStream(string <Nombre>, FileMode <Modo>)
+
+FileStream(string <Nombre>, FileMode <Modo>, FileAccess <Acceso>) \end{verbatim}
+        Donde:
+        \begin{itemize}
+        \item \emph{Nombre: }es el nombre del archivo que influye su ruta de ubicación. Ejemplo:
+            \begin{verbatim}
+C:\\POO\\TRABAJOSPOO\\archivo.txt \end{verbatim}
+        \item \emph{Modo: }es un valor del tipo enumerado \emph{FileMode;} este puede tomar uno de los siguientes valores:
+                \begin{itemize}
+                    \item \emph{CreateNew:} Crea un nuevo archivo. Si este existe, lanzará una excepción de tipo \emph{IOException.}
+                    \item \emph{Create:} Crea un nuevo archivo. Si este existe, se sobreescribe.
+                    \item \emph{Open:} Abre un archivo existente.
+                    \item \emph{OpenOrCreate:} Abre un archivo existente, si existe; en caso contrario, se crea un nuevo archivo.
+                    \item \emph{Truncate: }Abre in archivo existente y lo trunca a cero bytes de longitud.
+                    \item \emph{Append: }Abre un archivo para agregar datos al final. Si el archivo no existe, lo crea.
+                \end{itemize}
+        \item \emph{Acceso: }es un valor del tipo enumerado \emph{FileAccess;} puede tomar uno de los siguientes valores:
+                \begin{itemize}
+                    \item \emph{Read: }Permite leer un archivo.
+                    \item \emph{ReadWrite: }Permite leer o escribir en el archivo.
+                    \item \emph{Write: }Permite escribir en el archivo.
+                \end{itemize}
+        \end{itemize}
+        Para la escritura se utilíza \emph{StreamWriter} y sus constructores son los siguientes:
+        \begin{itemize}
+            \item \emph{StreamWriter(string Nombre):} Abre un nuevo flujo para escribir en un archivo especificado por nombre.
+            \item \emph{StreamWriter(Stream Flujo):} Utiliza un flujo existente para escribir.
+        \end{itemize}
+        Sus métodos más destacables son:
+        \begin{itemize}
+            \item \emph{Write().}
+            \item \emph{WriteLine().}
+            \item \emph{Flush().}
+        \end{itemize}
+        Para la lectura se utiliza \emph{StreamReader} y sus constructores son los siguientes:
+        \begin{itemize}
+            \item \emph{StreamReader(string Nombre):} Abre un nuevo flujo para leer de un archivo especificado por nombre.
+            \item \emph{StreamReader(Stream Flujo):} Utiliza un flujo existente para leer.
+        \end{itemize}
+        Sus métodos más destacables son:
+        \begin{itemize}
+            \item \emph{Read().}
+            \item \emph{ReadLine().}
+            \item \emph{Peek().}
+            \item \emph{DiscardBufferData().}
+        \end{itemize}
+        \subsection{Operaciones en Archivos Binarios}
+        Para la escritura se utiliza \emph{BinaryWriter} y su constructor es: \emph{BinaryWriter(Stream Flujo).} Como se puede apreciar, este constructor requiere un flujo de la clase
+        \emph{Stream} o sus derivadas. Un ejemplo es:
+        \begin{verbatim}
+FileStream fe = new FileStream("datos.dat", FileMode.Create, FileAccess.Write);
+
+BinaryWriter bw = new BinaryWriter(fe);
+        \end{verbatim}
+        A continuación se muestran algunos de los principales métodos y propiedades de la clase \emph{BinaryWriter:}
+        \begin{itemize}
+            \item \emph{Write(dato):} Escribe el valor deseado del tipo indicado. Los tipos de datos que acepta son:
+            \begin{itemize}
+                \item \emph{byte.}
+                \item \emph{byte[].}
+                \item \emph{char.}
+                \item \emph{char[].}
+                \item \emph{short.}
+                \item \emph{int.}
+                \item \emph{long.}
+                \item \emph{decimal.}
+                \item \emph{float.}
+                \item \emph{double.}
+                \item \emph{string.}
+            \end{itemize}
+            \item \emph{BaseStream:} Obtiene el flujo base.
+            \item \emph{Close:} Cierra el flujo y libera los recursos adquiridos.
+            \item \emph{Flush:} Limpia el buffer asociado con el flujo.
+            \item \emph{Seek:} Establece el apuntador de Lectura/Escritura en el flujo.
+        \end{itemize}
+        Para la lectura se utiliza \emph{BinaryReader} y su constructor es: \emph{BinaryReader(Stream Flujo).} Como se puede apreciar, este constructor requiere un flujo de la clase 
+        \emph{Stream} o sus derivadas. Un ejemplo es:
+        \begin{verbatim}
+FileStream fs = new FileStream("data.dat", FileMode.Open, FileAccess.Read);
+
+BinaryReader br = new BinaryReader(fs);
+        \end{verbatim}
+        A continuación se muestran algunos de los principales métodos y propiedades de la clase \emph{BinaryReader:}
+        \begin{itemize}
+            \item \emph{Read(dato):} Escribe el valor deseado del tipo indicado. Los tipos de datos que acepta son:
+            \begin{itemize}
+                \item \emph{byte.}
+                \item \emph{byte[].}
+                \item \emph{char.}
+                \item \emph{char[].}
+                \item \emph{short.}
+                \item \emph{int.}
+                \item \emph{long.}
+                \item \emph{decimal.}
+                \item \emph{float.}
+                \item \emph{double.}
+                \item \emph{string.}
+            \end{itemize}
+            \item \emph{BaseStream:} Obtiene el flujo base.
+            \item \emph{Close:} Cierra el flujo y libera los recursos adquiridos.
+            \item \emph{Flush:} Limpia el buffer asociado con el flujo.
+            \item \emph{PeekChar:} Obtiene el siguiente carácter, sin extraerlo.
+        \end{itemize}
+        \subsection{Ejemplo}
+        \begin{verbatim}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO; //librería para el manejo de archivos
+
+namespace EJEMPLO_ARCHIVO_texto
+{
+    class Program 
+    {
+        //clase para archivos
+        public class TextoBytes
+        {
+            //campos
+            FileStream fe = null //flujo de entrada-lectura 
+            y salida-escritura
+            char[] cBuffer = new char[81];  //arreglo de caracteres 
+            byte[] bBuffer = new byte[81]; //arreglo de bytes
+            int nbytes, car = 0;
+
+            //métodos
+            public void CrearArchivo(string archivo)
+            {
+                try
+                {
+                    //crea el flujo para el archivo
+                    fe = new FileStream(archivo, FileMode.Create,
+                    FileAccess.Write);
+
+                    Console.WriteLine("Escriba el texto a almacenar,
+                    al terminar presione ENTER:");
+
+                    while ((car = Console.ReadLine()) != '\r' 
+                    && (nbytes < bBuffer.Length))
+                    {
+                        //Convierte en byte el carácter leído
+                        bBuffer[nbytes] = (byte)car;
+                        nbytes++;
+                    }
+                    Console.Read();
+
+                    //Escribe la línea de texto en el archivo
+                    fe.Write(bBuffer, 0, nbytes);
+                    Console.WriteLine("El archivo ha sido creado\n");
+                }
+                catch (IOException es)
+                {
+                    Console.WriteLine("Mensaje del Error: {0}", 
+                    es.Message);
+                    Console.WriteLine("Ruta del Error: {0}", 
+                    es.StackTrace);
+                }
+                finally
+                {
+                    //Cierra el flujo de escritura
+                    if (fe != null) fe.Close();
+                    Console.Write("Presione ENTER para continuar:");
+                    Console.ReadKey();
+                }
+            }
+
+            public void LeerArchivo(string archivo)
+            {
+                try
+                {
+                    //Crea un flujo desde el archivo texto.txt
+                    fe = new FileStream(archivo, FileMode.Open,
+                    FileAccess.Read);
+
+                    //Lee una línea de texto del archivo
+                    nbytes = fe.Read(bBuffer, 0, 81);
+
+                    //Crea un objeto string con el texto leído
+                    Array.Copy(bBuffer, cBuffer, bBuffer.Length);
+                    String str = new String(cBuffer, 0, nbytes);
+
+                    //Muestra el texto leídp
+                    Console.WriteLine("\nCONTENIDO DEL ARCHIVO");
+                    Console.WriteLine(str);
+                }
+                catch (IOException le)
+                {
+                    Console.WriteLine("Mensaje del Error: {0}", 
+                    le.Message);
+                    Console.WriteLine("Ruta del Error: {0}", 
+                    le.StackTrace);
+                }
+                finally
+                {
+                    //Cierra el flujo de lectura
+                    if (fe != null) fe.Close();
+                    Console.Write("Presione ENTER para continuar:");
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            //Objeto para Archivos
+            TextoBytes tb = new TextoBytes();
+
+            //Variable auxiliar
+            string Arc;
+
+            //Captura del archivo
+            Console.Write("Nombre del archivo a Crear y Leer: ");
+            Arc = Console.ReadLine();
+
+            //Creación del archivo
+            Console.Clear();
+            tb.CrearArchivo(Arc);
+
+            //Lectura del archivo
+            Console.Write("\n");
+            tb.LeerArchivo();
+        }
+    }
+}
+        \end{verbatim}
+    \end{justify}
+
+    \newpage
+        \printbibliography[heading=bibintoc]    
+\end{document}
