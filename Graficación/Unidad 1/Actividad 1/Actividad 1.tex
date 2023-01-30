@@ -1,0 +1,138 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage[backend=biber]{biblatex}\addbibresource{Bibliografia.bib} %manejo de bibliografía (BORRAR SI NO ES NECESARIO)
+
+\pagestyle{empty}
+\fancyhf{}
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Graficación\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 1\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Actividad 1\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\\#: 19211640\par}
+        \vfill
+        Profesor: \par
+        Dra. Martha Elena Pulido
+        
+        \vfill
+
+        {\large 25 de agosto de 2021}
+    \end{titlepage}
+
+    \newpage
+    \begin{justify}
+        \thispagestyle{empty}
+        \justify
+        \section*{Antecedentes}
+        \justify
+        \subsection*{1941}
+        \begin{itemize}
+            \item Maquinas especiales tipo maquina de escribir eran usadas para perforar hojas gruesas de papel. Estas posteriormente podian ser leidas por computadoras basadas en óptica.
+        \end{itemize}
+        \subsection*{1950}
+        \begin{itemize}
+            \item Ben Laposky crea las primeras imágenes gráficas, un osciloscópio, generado por una máquina análoga electrónica. La imagen se producia al manipular haces electrónicos y grabandolos en fimle de alta velocidad.
+        \end{itemize}
+        \subsection*{1951}
+        \begin{itemize}
+            \item La computadora \emph{Whirlwind} del MIT fue la primer computadora con un despliegue de video de datos en tiempo real.
+        \end{itemize}
+        \subsection*{1955}
+        \begin{itemize}
+            \item Se introduce la \emph{light pen}.
+        \end{itemize}
+        \subsection*{1960}
+        \begin{itemize}
+            \item Se realiza el primer documento serio en Análisis de Elementos Finitos y posteriormente se publica. Esto nos permite probar productos virtualmente y produciendo resultados que son igual de certeros que las pruebas físicas.
+        \end{itemize}
+        \subsection*{1961}
+        \begin{itemize}
+            \item El primer videojuego, \emph{SpaceWar}, se ejecuta usando un osciloscopio como despliegue.
+            \item Ivan utherland escribe el primer programa de dibujo computarizado - \emph{SketchPad} - el cual incluye elementos como menús pop-up.
+        \end{itemize}
+        \subsection*{1963}
+        \begin{itemize}
+            \item Doug Engelbart inventa el ratón de coputadora.
+        \end{itemize}
+        \subsection*{1965}
+        \begin{itemize}
+            \item Jack Bresenham inventa el algorítmo de trazado lineal ``ideál''.
+            \item Se publica el software \emph{NASTRAN FEA.}
+        \end{itemize}
+        \subsection*{1972}
+        \begin{itemize}
+            \item Nolan Kay Bushnell crea \emph{Pong}, el videojuego arcade.
+            \item Empiezan a aparecer los despliegues Raster.
+            \item Se introduce el escáner CT.
+        \end{itemize}
+        \subsection*{1975}
+        \begin{itemize}
+            \item La diserción \emph{``Aplicaciones de diseño ayudadas por computadora de la forma aproximada B-Spline''} desarrolla la representación matemática de curvas arbitrarias acomodables para la computación.
+        \end{itemize}
+        \subsection*{1977}
+        \begin{itemize}
+            \item La \emph{Apple II} es la primer computadora personal con gráficos.
+            \item Se publica Star Wars; sus únicos efectos por computadora fueron basados en vectores, y después filmados.
+            \item Se publica \emph{CADAM}, el primer paquete de CAD 2D comercial.
+        \end{itemize}
+        \subsection*{1978}
+        \begin{itemize}
+            \item H. Voelcker et al desarrolla el primer estándar real para geometría solida contructiva.
+            \item Charles Lang en la Unversidad de Cambridge desarrolla la primer engine de modelado con representación restringida.
+        \end{itemize}
+        \subsection*{1982}
+        \begin{itemize}
+            \item La \emph{Commodore 64} personal usó graficos raste para que televisiones regulares pudiesen ser dispositivos de despliegue.
+            \item \emph{TRON} es la primer película que usa extensivamente graficos por computadora.
+        \end{itemize}
+        \subsection*{1985}
+        \begin{itemize}
+            \item Pixar publica Luxo, Jr.
+            \item La teconología Voxel se encuentra en la gram mayoria de software de imágenes médicas.
+        \end{itemize}
+        \subsection*{1995}
+        \begin{itemize}
+            \item Tras ser publicada, Toy Story se convierte en la primer película hecha completamente por CGI.
+            \item Se publica \emph{Solidworks.}
+            \item Se publica \emph{MS Internet Explorer}
+        \end{itemize}
+
+        \section*{Síntesis}
+        \justify
+        Como se puede apreciar, la historia/evolución de la disciplina de la graficación computarizada (junto con el resto de las disciplinas afines a las ciencias computacionales) ha tenido un avance exponencial
+        que hasta el momento de la redacción lo más seguro es que se está desarrollando la historia. A pesar de llegar a compilar ciertos años, la gran mayoria de los avances recientes han aparecido de una manera mucho más rápida con el advento del Internet
+        y de la globalización por medio de la misma. 
+        \\\newline
+        Otros avances prometedores que surgieron no más de una década atrás han sido la popularidad de equipos computacionales capaces de soportar videojuegos de calidad
+        gráfica muy elevada, el desarrollo de los ambientes de realidad virtual y aumentada, la llegada del telefono inteligente y con este la procuración de la UX y el UI como puntos relevantes para un software así como los aquellos a la 
+        visión de computadora, entre otros.
+    \end{justify}
+
+    \newpage
+        \thispagestyle{empty}
+        \printbibliography  
+\end{document}

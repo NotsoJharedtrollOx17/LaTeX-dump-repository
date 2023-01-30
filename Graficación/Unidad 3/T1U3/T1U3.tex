@@ -1,0 +1,107 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+% Portada
+%\thispagestyle{empty}
+\title{\Large Tarea 1 Unidad 3: Modelos de Graficación 3D}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{SCC-1010SC5C: Graficación}
+\professor{Dra. Martha Elena Pulido}
+\duedate{28 de septiembre de 2021}
+
+\begin{document}
+    % Índices
+    \pagenumbering{arabic}
+    \maketitle
+
+    % Contenido
+    \renewcommand\contentsname{Contenido}
+    \tableofcontents
+
+    % Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %    
+    \newpage
+    \section*{Introducción}
+    Como \begin{justifying}
+    parte relevante a la Graficación, un aspecto importante de aprender es aquél de la graficación tridimensional, la que nos permite la creación
+    de videojuegos como nuestras peliculas animadas favoritas. El poder aprender las herramientas que se emplean para ello es de suma relevancia para nuestra preparación profesional.\par  
+    \end{justifying}
+    \vspace{\baselineskip}
+    \section{Graficación 3D}
+    \subsection{Concepto}
+    También \begin{justifying}
+        conocido como el diseño tridimensional. Es el proceso de usar programas de modelado por computadora para crear un objeto el cuál contiene tres valores clave
+        asignados a él para entender que existe dentro del espacio. Un factor muy útil del diseño 3D es que
+        se puede usar para dar un mayo énfasis y variedad visual a los elementos de un diseño específico para UX \citep{silveira-2021}.
+        \par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsection{Modelos}
+    Como \begin{justifying}
+        cualquier estilo de diseño, el mercado nos ofrece distintas herramientas de modelado. Algunas de estas se explican a continuación.
+    \end{justifying}
+    \subsubsection{3D Transform}
+    Proporcionado \begin{justifying}
+        por Adobe XD como un medio para convertir íconos y elementos en objetos de apariencia 3D.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsubsection{Blender}
+    Es \begin{justifying}
+        una herramienta open-source que es gratuita. Soporta la gama completa de 3D: modelado, animación, simulación, renderizado, composición y
+        seguimiento de movimiento, e inclusive edición de video y creación de juegos \citep{unknown-author-no-date}. %citar al blender
+        \par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsubsection{Autodesk Maya}
+    Es \begin{justifying}
+        usado por los estudios Pixar. Este contiene Bitfrost que permite crear simulaciones fisicamente certeras en un solo entorno de programación visual. También
+        contiene Arlond el cual es el sistema de renderizado de la herramienta la cual permite cambiar entre renderizado CPU y GPU, y con una interfáz
+        amigable con controles intuitivos \citep{unknown-author-2021}. %citar al de autodesk
+        \par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsubsection{ZBrush}
+    Su \begin{justifying}
+        subscripción es muy asequible. Esta herramienta es de escultura 3D que se difrencia del rsto por hacer mímica de las técnicas de escultura tradicionales por medios
+        digitales. Sus elementos del programa permiten una mayor eficiencia comparado a otros programas \citep{petty-2018}. %citar a petty
+        \par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsubsection{TinkerCAD}
+    Otra \begin{justifying}
+        herramienta propiedad de Autodesk. Esta es basada en cómputo en la nube y es gratuita; con un enfoque para completos principiantes. Proveee un concepto de construcción por bloques muy intuitivo
+        que permite desarrollar modelos para un conjunto de figuras básicas \citep{p-2021}. %citar al de 3d natives
+        \par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \section{Conclusión}
+    Los \begin{justifying}
+        múltiples usos y herramientas de la graficación tridimensional nos permiten apreciar de mejor manera la labor que se debe hacer para crear
+        nuestros medios preferidos de entretenimiento.\par
+    \end{justifying}
+    
+    \newpage   
+    % Referencias
+    \renewcommand\refname{\textbf{Referencias}}
+    \bibliography{referencias}
+    
+\end{document}

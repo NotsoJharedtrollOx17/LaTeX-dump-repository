@@ -1,0 +1,66 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[a4paper, top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{float}
+\usepackage{pdflscape} %de vertical a horizontal
+
+\pagestyle{empty}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{2cm}
+        {\scshape\Large Graficación\par}
+        \vspace{2cm}
+        {\scshape\Large Unidad 1\par}
+        \vspace{3cm}
+        {\huge\bfseries Tarea 4\par}
+        \vspace{4cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\\#: 19211640\par}
+        \vfill
+        Profesor: \par
+        Dra. Martha Elena Pulido
+        
+        \vfill
+
+        {\large 9 de septiembre de 2021}
+    \end{titlepage}
+
+    \newpage
+    \begin{landscape}
+        \section*{Características de formatos gráficos conocidos}
+        \begin{center}
+            \begin{table}[H]
+                \begin{tabular}{|c|l|l|l|l|l|l|}
+                \hline
+                \multicolumn{1}{|l|}{\textbf{}}                                           & \multicolumn{1}{c|}{\textbf{TIFF}}                                                                            & \multicolumn{1}{c|}{\textbf{RAW}}                                            & \multicolumn{1}{c|}{\textbf{JPEG}}                                                            & \multicolumn{1}{c|}{\textbf{GIF}}                           & \multicolumn{1}{c|}{\textbf{PNG}}                                                                           & \multicolumn{1}{c|}{\textbf{PSD}}                                            \\ \hline
+                \textbf{\begin{tabular}[c]{@{}c@{}}Esquemas de\\ color\end{tabular}}      & \begin{tabular}[c]{@{}l@{}}RGB, CMYK, CIE \\ L*a*b, YUV/YcrCb\end{tabular}                                    & \begin{tabular}[c]{@{}l@{}}RGB, CMYK\\ escala de grises, \\ etc\end{tabular} & \begin{tabular}[c]{@{}l@{}}RGB, escala de\\ grises, CMYK\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}Colores\\ indexados\end{tabular} & \begin{tabular}[c]{@{}l@{}}RGB, escala de\\ grises, colores \\ indexados\end{tabular}                       & \begin{tabular}[c]{@{}l@{}}RGB, CMYK\\ escala de grises, \\ etc\end{tabular} \\ \hline
+                \textbf{\begin{tabular}[c]{@{}c@{}}Número de \\ colores\end{tabular}}     & \begin{tabular}[c]{@{}l@{}}Hasta 4.3 mil \\ millones\end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}Hasta 4.3 mil \\ millones\end{tabular}            & \begin{tabular}[c]{@{}l@{}}Hasta 16.7 \\ millones\end{tabular}                                & Hasta 256                                                   & \begin{tabular}[c]{@{}l@{}}Hasta 18\\ trillones\end{tabular}                                                & \begin{tabular}[c]{@{}l@{}}Hasta 18 \\ trillones\end{tabular}                \\ \hline
+                \textbf{\begin{tabular}[c]{@{}c@{}}Canales de\\ color\end{tabular}}       & 3, 4                                                                                                          & 3, 4                                                                         & 3                                                                                             & 1                                                           & \begin{tabular}[c]{@{}l@{}}3 (más \\ un canal \\ alfa)\end{tabular}                                         & 3, 4                                                                         \\ \hline
+                \textbf{\begin{tabular}[c]{@{}c@{}}Profundidad \\ de bits\end{tabular}}   & 1 a 64                                                                                                        & 48                                                                           & 8 o 24                                                                                        & 1 a 8                                                       & 1 a 48                                                                                                      & 1 a 64                                                                       \\ \hline
+                \textbf{Compresión}                                                       & \begin{tabular}[c]{@{}l@{}}Opcional, sin \\ pérdidas\end{tabular}                                             & Sin pérdidas                                                                 & \begin{tabular}[c]{@{}l@{}}Alta, con\\ pérdidas\end{tabular}                                  & Escasa                                                      & \begin{tabular}[c]{@{}l@{}}Alta, sin\\ pérdidas\end{tabular}                                                & Sin perdidas                                                                 \\ \hline
+                \textbf{\begin{tabular}[c]{@{}c@{}}Tamaño de los\\ archivos\end{tabular}} & Grande                                                                                                        & Grande                                                                       & Muy pequeño                                                                                   & Grande                                                      & Pequeño                                                                                                     & Grande                                                                       \\ \hline
+                \textbf{Animaciones}                                                      & No                                                                                                            & No                                                                           & No                                                                                            & Si                                                          & No                                                                                                          & No                                                                           \\ \hline
+                \textbf{Adecuada para}                                                    & \begin{tabular}[c]{@{}l@{}}Imágenes de alta calidad,\\ cámaras digitales, escáneres,\\ impresión\end{tabular} & \begin{tabular}[c]{@{}l@{}}Cámaras\\ digitales\end{tabular}                  & \begin{tabular}[c]{@{}l@{}}Fotos y distribución\\ de imágenes dentro\\ de la red\end{tabular} & Animaciones                                                 & \begin{tabular}[c]{@{}l@{}}Imágenes y gráficos\\ de pequeña envergadura, \\ fotos sin pérdidas\end{tabular} & \begin{tabular}[c]{@{}l@{}}Edición y \\ manipulación\end{tabular}            \\ \hline
+                \end{tabular}
+                \end{table}
+        \end{center}
+    \end{landscape}
+    
+\end{document}

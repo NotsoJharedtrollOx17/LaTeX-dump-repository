@@ -1,0 +1,79 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+% Portada
+%\thispagestyle{empty}
+\title{\Large Tarea 1 Unidad 5: Graficación por Computadora}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{SCC-1010SC5C: Graficación}
+\professor{Dra. Martha Elena Pulido}
+\duedate{28 de octubre de 2021}
+
+\begin{document}
+    % Índices
+    \pagenumbering{arabic}
+    \maketitle
+
+    % Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %    
+    \newpage
+    \section{Antecedentes}
+    Inicialmente \begin{justify}
+      solo era una herramienta exclusiva para científicos e ingenieros que trabajaban
+      en el gobierno y centros de investigación corporativos. Su desarrollo previo como se menciona
+      tomó lugar en centros académicos y en centros de investigación que lograron crear los gráficos
+      para transmisión televisiva y luego en películas de los 70's y 80's.\citep{unknown-author-2020}\par 
+    \end{justify}
+    \vspace{\baselineskip}
+    \section{Evolución}
+    Como \begin{justifying}
+      tal, los primeros indicios primitivos comienzan con el proyecto Whirlwind y el sistema computacional SAGE;
+      el primero fue en crear un simulador de vuelo y el segundo en proveer un sistema de defensa aerea para la USAF.
+      Eventualmente estos pryectos se provieron al mercado civil en forma de una expo de proyectos de IBM. Eventualmente,
+      compañias como IBM no tenian computadoras con algún tipo de despliegue gráfico hasta que se presenta la investigación
+      \emph{Sketchpad} dpmde explica la interacción de diseño con un monitor gráfico y una pluma táctil. 
+      Eventualmente se desarrolló el cómo dibujar lineas en un dispositivo de rasterizado, el cuál se extiende a los círculos.
+      El renderizado se descubre en los 70's y se demuestra la animación tridimensional por cuadros.
+      Hasta la actualidad, los avances recaen en las comercialización de las tarjetas gráficas para el consumidor promedio que le permiten
+      tener procesamiento gráfico muy asequible; en este mercado, el principal competidor es NVIDIA. \citep{unknown-author-no-date}\par   
+    \end{justifying}
+    \vspace{\baselineskip}
+    \section{Area de Aplicación}
+    A \begin{justifying}
+      continuación se listan algunas aplicaciones: \par
+      \begin{itemize}
+        \item Gráficos de transmisión televisiva.
+        \item Efectos computarizados para películas.
+        \item Visualización de funciones matemáticas como gráficas.
+        \item Simulaciones de carácter mecánico.
+        \item Imágenes dadas por rayos X.
+        \item etc.
+      \end{itemize}\par
+    \end{justifying}
+    
+    \vspace{\baselineskip}
+    \newpage   
+    % Referencias
+    \renewcommand\refname{\textbf{Referencias}}
+    \bibliography{referencias}
+    
+\end{document}

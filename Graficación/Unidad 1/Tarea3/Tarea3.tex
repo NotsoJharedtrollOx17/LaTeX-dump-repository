@@ -1,0 +1,131 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{float}
+\usepackage[backend=biber]{biblatex}\addbibresource{referencias.bib} %manejo de bibliografía (BORRAR SI NO ES NECESARIO)
+
+\pagestyle{empty}
+\fancyhf{}
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Graficación\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 1\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Tarea 3\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\\#: 19211640\par}
+        \vfill
+        Profesor: \par
+        Dra. Martha Elena Pulido
+        
+        \vfill
+
+        {\large 8 de septiembre de 2021}
+    \end{titlepage}
+
+    \newpage
+    \section*{Introducción}
+    En los aspectos que competen a la Graficación computarizada, uno de los principales puntos de gestión es de los formatos gráficos para
+    salvaguardar nuestros resultados creados por las herramientas gráficas. En esta breve redacción se recopilan los formatos más conocidos 
+    para futura referencia en las actividades de la materia.\par
+    \vspace{\baselineskip}
+    \section*{Formatos gráficos de almacenamiento}
+    A grandes rasgos, todos los formatos gráficos de alamacenamiento son medios estandarizados para organizar y almacenar imágenes digitales.
+    Un formato puede almacenar datos en un formato no-compreso o compreso. Estas imágenes están compuestas de datos digitales en uno de estos formatos
+    para que estos datos puedan ser rasterizados para su uso en un monitor de computadora o impresora.\par
+    \vspace{\baselineskip}
+    \subsection*{TIFF}
+    Formato de Archivo de Imagenes con Etiquetas (\emph{Tagged Image File Format en inglés}). Concebido para almacenar imágenes de mapa de bits. Desarrollado en
+    1987 por Aldus (ahora propiedad de Adobe). Sus caracteristicas son:
+    \begin{itemize}
+        \item El más antiguo.
+        \item Almacena mapas de bits muy grandes (de más de 4GB comprimidos).
+        \item No pierde calidad.
+        \item También permite almacenar imágenes en blanco y negro, en colores verdaderos (hasta 32 bits por pixel).
+        \item Puede indexar imágenes itilizando una paleta.
+        \item Permite que se utilicen varios espacios de color: RGB, CMYKM, CIE L*a*b, YUV/YcrCb. 
+    \end{itemize}\par
+    \vspace{\baselineskip}
+    \subsection*{RAW}
+    Quiere decir ``crudo'' en inglés. Coloquialmente se usa para describir algo sin algun tipo de censura. El formato de imágen funciona similar a su interpretación
+    como palabra coloquial; es un formato que no se comprime y se procesa de forma mínima. Su razón de uso es para guardar imágenes con la mayor fidelidad posible a la
+    resolución en megapíxeles de una cámara, por ende la necesidad de que dicho formato tenga un tamaño grande de almacenamiento. Sus caracteristicas sonÑ
+    \begin{itemize}
+        \item Como se menciona, almacena imágenes con una compresion casi nula.
+        \item Por lo anterior, este formato es de tamaño grande.
+        \item Permite edición posterior sin pérdida de calidad de imágen.
+        \item Ofrece hasta 4.3 mil millones de tonos de colores.
+        \item Permite ofrecer más brillo y menor ruido de imágen.
+        \item Balance de blancos.
+        \item Ideal para impresión.
+    \end{itemize}\par
+    \vspace{\baselineskip}
+    \subsection*{JPEG}
+    El formato más usado para la compresión de imágenes digitales. El acrónimo del formato viene del \emph{Joint Photographics Experts Group} quienes crearon el estándar en 1992.
+    Su base de compresión es con la Transformada del Coseno Discreta. Sus características incluyen:
+    \begin{itemize}
+        \item Su compresión genera pérdidas de calidad de imágen.
+        \item Por lo anterior, su profundidad de color es menor (de 8 a 24 bits).
+        \item Se pueden visualizar dentro de navegadores Web.
+        \item No admite transparencia.
+        \item Descarta selectivamente datos de la imágen, por lo que un ajuste de mayor calidad descarta menos datos.
+        \item Degrada detalles nítidos de una imagen, como aquellas que contiene texto o imágenes vectoriales.
+    \end{itemize}\par
+    \vspace{\baselineskip}
+    \subsection*{GIF}
+    El \emph{Graphic Interchange Format}. Fue desarrollado por Compuserve y las variantes más utilizadas son las de GIF 87a y GIF 89a, desarrolladas en 1987 y 1989 respectivamente.
+    Cada una tiene caracteristicas que las distinguen, como aquella que soporta compresión LZW, entrelazdo, paleta de 256 colores y la posibilidad de crear imágenes animadas almacenando varias
+    imágenes en un mismo archivo propias del GIF 87a. El GIF 89a añade la posibilidad de definir un color transparente en la paleta y permite precisar el tiempo de las animaciones. Otras caracteristicas son:
+    \begin{itemize}
+        \item Pueden contener de 2 a 256 colores.
+        \item El tamaño de las imágenes con esta paleta es pequeño.
+        \item Permite hacer animaciones con secuencia de imágenes.
+        \item Su compresión no tiene pérdidas.
+    \end{itemize}\par
+    \vspace{\baselineskip}
+    \subsection*{PNG}
+    Conocido como el \emph{Portable Graphics Format}. Usado frecuentemente como un formato de rasterizado no-comprimido alrededor del internet. Esto fue creado para reemplazar el formato GIF. Sus caracteristicas son:
+    \begin{itemize}
+        \item No solamente se uede hacer un color transparente, pero el grado de transparencia, llamado opacidad puede ser controlado.
+        \item Soporta interlazado de imágenes y este se desenvuelve más rápido que en los GIF,
+        \item La correción Gamma permite ajustar el brillo de color de una imágen  requerida por manufacturadores de monitores específicos.
+        \item Las imagenes pueden ser guardadas usando color verdadero, así como en la paleta y escala de grises.
+    \end{itemize}\par
+    \vspace{\baselineskip}
+    \subsection*{PSD}
+    Es el formato para Adobe Photoshop. Como el nombre lo indica, este formato es usado principalmente en Adobe Photoshop como el formato predeterminado para almacenaje. Generalmente
+    este formato soporta múltiples imágenes, objetos, filtros, texto, así como el usar capas, caminos y formas vectoriales, y transparencia. En general:
+    \begin{itemize}
+        \item Formato propietario de Adobe Photoshop.
+        \item Soporta muchos de los aspectos esperados del editor Adobe Photoshop.
+    \end{itemize}\par
+    \vspace{\baselineskip}
+    \section*{Conclusión}
+    Tener una gran variedad de formatos a nuestra disposición nos permite elaborar una idea de los formatos más populares y saber cuando aplicarlos para optimizar nuestro flujo de trabajo, y posiblemente los resultados del mismo.\par
+    \vspace{\baselineskip}
+    
+    \newpage
+        \thispagestyle{empty}
+        \printbibliography  
+\end{document}

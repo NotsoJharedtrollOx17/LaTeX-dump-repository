@@ -1,0 +1,83 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{multirow,booktabs,setspace,caption} %formato de figuras APA
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[figure]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=0pt}
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+% Portada
+%\thispagestyle{empty}
+\title{\Large Tarea 1 Unidad 4: Técnicas para relleno, iluminación y sombreado}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{SCC-1010SC5C: Graficación}
+\professor{Dra. Martha Elena Pulido}
+\duedate{19 de septiembre de 2021}
+
+\begin{document}
+    % Índices
+    \pagenumbering{arabic}
+    \maketitle
+
+    % Contenido
+    \renewcommand\contentsname{Contenido}
+    \tableofcontents
+
+    % Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %    
+    \newpage
+    \section{Técnicas}
+    \subsection{De relleno}
+    A \begin{justifying}
+    grandes rasgos, el relleno depende (por razones de dimensión) si éste es para
+    objetos 2D ó 3D. En general el relleno tridimensional se clasifica en métodos geométricos
+    y en volumétricos donde el primero se basa en un meshing de triángulos donde los huecos son parchados
+    al lidiar con los triángulos directamente; y el segundo funciona con el rellenado en un espacio volumétrico \citep{inproceedings}.\par %citar a los egípcios
+  \end{justifying}
+    En lo competente a los objetos 2D se hacen específicamente por polígonos; de ahí se parte a otros estílos.
+    Los de scan-line trazan líneas de color fila por fila; la línea de barrido básicamente es una manera heurística
+    de encontrar puntos en base a quienes están dentro de las líneas; la inundación consiste en un punto inicial
+    y pinta con idcho color del punto el resto de la imágen \citep{unknown-author-no-dateA}.\par %citar a lupita
+    \vspace{\baselineskip}
+    \subsection{De iluminación}
+    Compete \begin{justifying}
+      al cómo calcular la intensidad de la luz al reflejarse aen un punto dado de una superficie. La primer técnica es aquella de
+      la iluminación ambiental es donde su fuente de luz es indirecta; la reflexión difusa ocurre en superficies que son ásperas ó granulares
+      donde dicho brillo depende del ángulo hecho por la fuente de luz y la superficie; y finalmente la reflexión especular que ocurre en superficies
+      brillosas o de vídrio que refleja de vuelta dicha luz \citep{geeksforgeeks-2020}.\par %el geeks for geeks
+    \end{justifying}
+    \vspace{\baselineskip}
+    \subsection{De sombreado}
+    En \begin{justifying}
+      general, exísten tres métodos principales: sombreado plano, sombreado Gouraud y sombreado Phong.
+      El primero consiste en definír un sólo color para un objeto por un filtro bínario; Gouraud consiste en usar
+      la norma de un vector donde su color se calcula en el shader vectorial; finalmente la técnica Phong consiste
+      en calcular los colores por fragmentos, tomando en cuenta la norma del vector interpolado \citep{unknown-author-no-dateB}.\par %citar al de computer graphics
+    \end{justifying}
+    \vspace{\baselineskip}
+    
+    \newpage   
+    % Referencias
+    \renewcommand\refname{\textbf{Referencias}}
+    \bibliography{referencias}
+    
+\end{document}

@@ -1,0 +1,89 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+% Portada
+%\thispagestyle{empty}
+\title{\Large Tarea 3 Unidad 5: Aspectos Matemáticos de las Principales Técnicas de Animación 3D}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{SCC-1010SC5C: Graficación}
+\professor{Dra. Martha Elena Pulido}
+\duedate{11 de noviembre de 2021}
+
+\begin{document}
+    % Índices
+    \pagenumbering{arabic}
+    \maketitle
+
+    % Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %    
+    \newpage
+    \section{Cel-Shaded}
+    Es \begin{justifying}
+      un tipo de renderizaci no fotorealísta diseñada para hacer que los gráficos por computadora parezcan dibujados a mano.
+      Es comúnmente usado para imitar el estilo de los cómics o dibujos animados a mano. \citep{blanchard-2015}\par %citar al blanchard
+    \end{justifying}
+    Comienza \begin{justifying}
+      con un modelo 3D típico y se diferencia de la renderización convencional en su uso de iluminación no fotorrealistica, en la forma de sombrear
+      y dado a que no requiere una gran cantidad de calculos dado a su diseño minimalista.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \section{Morph}
+    Es un \begin{justifying}
+      metodo donde se tiene una posicion neutral, y ciertas deformidades objetivo o \emph{morphs}. Este es muy bueno para animaciones
+      que no requieren una estruc tura esqueletica.\par \citep{h-2018}%citar al HD
+    \end{justifying}
+    El cambio \begin{justifying}
+      de estado puede ocurrir cambiando el color de piel en función al valor del pixel final exclusivamente. O donde el pixel cambia de posición
+      y ocurre una direccionalidad o movimiento de la imagen, donde ahora el valor depende de un recorrido en las imágenes.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \section{Skeletal}
+    Es un \begin{justifying}
+      estilo de animacion donde dos partes individuales estan coordenadas: la primera es la piela y la segunda es un conjunto de huesos o el esqueleto, el cual se
+      usa para conducir los comandos para la animacion.\par \citep{techopedia-2015}%citar a techopedia
+    \end{justifying}
+    Al usar un esqueleto, éste puede moverse mediante el uso de coordenadas. Para movimientos muy pelirosos para acores de movimiento, existen simulaciones computaizadas que
+    automaticamente calculen la física del movimiento y la resistencia de los esqueletos.\par
+    \vspace{\baselineskip}
+    \section{Interpolated Motion Capture}
+    Esta \begin{justifying}
+      tecnica se utiliza para grabar movimiento en personas. Esta informacion de acciones y movimiento, es utilizada para poder aplicarla como animacion a personajes digitales.
+      Los proceso de motion capture mas convencionales sirven para capturar movimientos o expresiones de los usuarios. Los datos almacenados por la captura de sewnsoresa son enviados
+      a un modelo 3D, que se ejecuto el actor o la persona que fue grabada con los sensores. \citep{unknown-author-1963}\par %citear a D.
+    \end{justifying}
+    Los \begin{justifying}
+      sensores de movimiento mandan coordenadas \(x, y\) y \(z\) al computador. Este realiza una serie de cálculos para que el modelo realice los movimientos capturados por el traje.\par
+    \end{justifying}
+    \vspace{\baselineskip}
+    \section{Crowds}
+    Este es \begin{justifying}
+      un sistema diseñado para simular el comportamiento de tumultos reales. Esta anima a delegados; objetos auxiliares que actuan como representantes
+      y a estos se le proveen lineamientos para comportarsde, y la simulacion de la horda calcula el movimiento. \citep{autodesk-2018}\par %citar al autodesk
+    \end{justifying}
+    \vspace{\baselineskip}
+    
+    \newpage   
+    % Referencias
+    \renewcommand\refname{\textbf{Referencias}}
+    \bibliography{referencias}
+    
+\end{document}
