@@ -1,0 +1,100 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{mhchem}
+\usepackage[backend=biber]{biblatex}\addbibresource{referencias.bib}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+\begin{titlepage}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=15cm]{logosITT.png}
+    \end{figure}
+    \centering
+    {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+    \vspace{1cm}
+    {\scshape\Large Química\par}
+    \vspace{1cm}
+    {\scshape\Large Unidad 2\par}
+    \vspace{1.5cm}
+    {\huge\bfseries Efectos a la salúd de los Clorofluorocarbonos (CFC), Arsénico (\ce{As}) y Plomo (\ce{Pb})\par}
+    \vspace{2cm}
+    {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+    \vfill
+    Profesor: \par
+    Dr. Luis Ernesto Solís Delgado
+    
+    \vfill
+
+    {\large 3 de noviembre del 2020}
+\end{titlepage}
+
+    \newpage
+    \thispagestyle{empty}
+    \tableofcontents
+    
+    \newpage
+        \begin{justify}
+    \rhead{\textbf{3 de noviembre del 2020}}
+    \section{Clorofluorocarbonos (CFC)}
+    \subsection{¿Qué son?}
+    Como su nombre técnico implica, son derivados de los hidrocarburos saturados y originados por los intercambios de los átomos de \ce{H} con los átomos de \ce{F} y \ce{Ce}
+    , siendo estos los principales elementos.
+    \\ \newline
+    Estos son una familia de gases que se emplean en diversas aplicaciones, principalmente en la industria dde refrigeración y de propelentes de aerosoles.  Están presentes en aislantes térmicos.
+    Tienen una gran persistencia en la atmósfera, de 50 a más o menos 200 años. Eventualmente alcanzan la estratosfera, donde se disocian por acción de la radiación ultravioleta, liberando el Clorofluorocarbonos
+    y dando comienzo al proceso de la capa de ozono.
+    \subsection{Efectos a la salúd:}
+    \begin{itemize}
+        \item Problemas dermatológicos causados por la debilitación de la capa de ozono.
+        \item Intoxicación y descoordinación motríz.
+        \item Pérdida de la conciencia.
+        \item Lesiones hepáticas y renales.
+    \end{itemize}
+    \section{Arsénico (\ce{As})}
+    \subsection{¿Qué es?}
+    Es un elemento natural que se encuentra en la tierra y entre los minerales en niveles altos. Los componentes del arsénico se usan para preservar madera, como plaguicidas y en ciertas industrias. Este forma parte del aire, el agua y la tierra a través
+    del polvo que se lleva el viento. También puede penetrar en el agua debido a los desbordamientos. 
+    \subsection{Efectos a la salúd:}
+    \begin{itemize}
+        \item Muy tóxico en su forma inorgánica.
+        \item Puede causar cáncer.
+        \item Lesiones cutáneas.
+        \item Problemas de desarrollo.
+        \item Enfermedades cardiovasculares.
+        \item Diabetes.
+    \end{itemize}
+    \section{Plomo (\ce{Pb})}
+    \subsection{¿Qué es?}
+    Es un elemento químico tóxico presente de forma natural en la corteza terrestre. De manera pura no es muy útil o perjudicial. Su riesgo recae en los distintos compuestos químicos utilizados en la industria.
+    Este se usa en baterías, pgmentos de pintura, vidrios y cables eléctricos de revestimiento. Su gran masa le permite ser usado como escudo para materiales radiactivos.\\ \newline
+    El efecto nocivo es causado por la exposición y la acumulación gradual del elemento en el cuerpo.
+    \subsection{Efectos a la salúd:}
+    \begin{itemize}
+        \item Problemas al sistema nervioso, renal, oseo y gastrointestinal.
+        \item Propiciador de la anemia, hipertensión, disfunción renal.
+        \item Inmunotoxicidad y toxicidad reproductiva.
+        \item En mujeres embarazadas, propicia el aborto natural, muerte fetal, parto prematuro y bajo peso, y malformaciones leves en el feto.
+    \end{itemize}
+        \end{justify}
+
+        \newpage
+        \addcontentsline{toc}{section}{Referencias}
+        \printbibliography
+\end{document}
