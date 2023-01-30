@@ -1,0 +1,103 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec} %paquete para usar la fuente Arial 12
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+%\captionsetup[table]{textfont=it,format=plain,justification=justified,
+% singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+
+\rfoot{\thepage}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\fancypagestyle{portada}
+{
+    \fancyhf{}
+    \chead{\includegraphics[width=16cm]{logosITT.png}}
+}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \thispagestyle{portada}
+        \centering
+        \vspace*{0.2cm}
+        {\large\scshape\bfseries Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{0.6cm}
+        {\normalsize\scshape\bfseries Subdirección Académica\\Departamento de Sistemas y Computación\par}
+        \vspace{0.6cm}
+        {{\bfseries SEMESTRE:}\\Enero - Junio 2022\par}
+        \vspace{\baselineskip}
+        {{\bfseries CARRERA:}\\Ing. Sistemas Computacionales\par}
+        \vspace{\baselineskip}
+        {{\bfseries MATERIA:}\\SCB-1001SC6C Administración de Bases de Datos\par}
+        \vspace{\baselineskip}
+        {{\bfseries TITULO ACTIVIDAD:}\\Diagrama de flujo para revisión de actividad\par}
+        \vspace{\baselineskip}
+        {{\bfseries UNIDAD A EVALUAR:}\\Unidad 1 \par}
+        \vspace{\baselineskip}
+        {{\bfseries NOMBRE Y NUMERO DE CONTROL DEL ALUMNO:}\\Abraham Jhared Flores Azcona, 19211640\par}
+        \vspace{\baselineskip}
+        {{\bfseries NOMBRE DEL MAESTRO(A):}\\M.A. Gabriela Lourdes Tapia Gonzales\par}
+        \vspace{\baselineskip}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+\pagebreak
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\section{Introducción}
+    \begin{justifying}
+Como parte de nuestra formación académica, es necesario revisar los requerimientos en cuestiones de
+formato y contenido de nuestras tareas y trabajos. En esta actividad se muestra el diagrama de flujo competente
+a los requerimientos explicados en los documentos adjuntos a esta asignación para comprender el proceso de revisión y
+de calificación de la materia de Administración de Bases de Datos.\par
+    \end{justifying}
+
+\section{Diagrama de flujo}
+\begin{figure}[H]
+    \caption{\emph{Diagrama de flujo para la revisión de la actividad\\}}
+    \centering
+    \smallskip
+    \includegraphics[width=17cm, height=18cm]{flux.png}
+    \bigskip
+    \justifying\small\textit{Nota}. Adaptado de los documentos adjuntos a la asignación. %\cite{tomta-2009}. %citar al tmta. 
+    (Autoría Propia, 2022.)
+\end{figure}
+
+\section{Conclusión}
+    \begin{justifying}
+El revisar estos requerimientos siempre es de mucha utilidad debido a que los mismos terminan siendo un detrimento al no ser
+analizados de manera extensiva. Teniendo este diagrama, nos ilustra las etapas de revisión a tener en cuenta para
+la redacción y acomodo de nuestras asignaciones.\par
+    \end{justifying}
+\end{document}
