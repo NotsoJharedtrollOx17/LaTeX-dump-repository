@@ -1,0 +1,83 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float} % centrado de imagenes
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Nombre: Abraham Jhared Flores Azcona\\\#: 19211640}}
+\rhead{Actividad 17\\Lagrange parte I}
+\subsection*{Elaborar un resumen del video adjunto a la actividad de Classroom}
+\justify
+El polinomio de Lagrange requiere de al menos tres puntos provistos, que en este caso son \(\left(1,10\right)\), 
+\(\left(2,15\right)\) y \(\left(3,30\right)\). El bloque base para esta interpolación es el siguiente:
+{\large\[{(x-1)(x-2)(x-3) \over (\:\:\:-1)(\:\:\:-2)(\:\:\:-3)}\]}
+Con ello, la nueva expresión queda de la siguiente manera:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&\underbrace{{(x-1)(x-2)(x-3)\over(1-1)(1-2)(1-3)}\cdot 10}_{\left(1,10\right)}+
+\underbrace{{(x-1)(x-2)(x-3)\over(2-1)(2-2)(2-3)}\cdot 15}_{\left(2,15\right)}+\\[5pt]
+&\underbrace{{(x-1)(x-2)(x-3)\over(3-1)(3-2)(3-3)}\cdot 30}_{\left(3,30\right)}\\[5pt]
+    \end{aligned}
+\end{equation*}}
+Borramos algunos términos:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&\underbrace{{(x-2)(x-3)\over(1-2)(1-3)}\cdot 10}_{\left(1,10\right)}+
+\underbrace{{(x-1)(x-3)\over(2-1)(2-3)}\cdot 15}_{\left(2,15\right)}+
+\underbrace{{(x-1)(x-2)\over(3-1)(3-2)}\cdot 30}_{\left(3,30\right)}\\[5pt]
+    \end{aligned}
+\end{equation*}}
+Y reducimos las expresiones para tener la interpolación por Langrange:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&\underbrace{{(x-2)(x-3)\over(-1)(-2)}\cdot 10}_{\left(1,10\right)}+
+\underbrace{{(x-1)(x-3)\over(1)(-1)}\cdot 15}_{\left(2,15\right)}+
+\underbrace{{(x-1)(x-2)\over(2)(1)}\cdot 30}_{\left(3,30\right)}\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Con ello, procedemos a comprobar el polinomio de Lagrange con los valores de \(x\) de las coordenadas provistas.
+\\\newline
+\textbf{• \(\left(1,10\right)\):}
+{\large\begin{equation*}
+    \begin{aligned}
+        f(1)=\:&{(1-2)(1-3)\over(-1)(-2)}\cdot 10+
+{(1-1)(1-3)\over(1)(-1)}\cdot 15+
+{(1-1)(1-2)\over(2)(1)}\cdot 30=\\[5pt]
+&{(-1)(-2)\over(-1)(-2)}\cdot 10=10
+    \end{aligned}
+\end{equation*}}
+\textbf{• \(\left(2,15\right)\):}
+{\large\begin{equation*}
+    \begin{aligned}
+        f(2)=\:&{(2-2)(2-3)\over(-1)(-2)}\cdot 10+
+{(2-1)(2-3)\over(1)(-1)}\cdot 15+
+{(2-1)(2-2)\over(2)(1)}\cdot 30=\\[5pt]
+&{(1)(-1)\over(1)(-1)}\cdot 15=15
+    \end{aligned}
+\end{equation*}}
+\textbf{• \(\left(3,30\right)\):}
+{\large\begin{equation*}
+    \begin{aligned}
+        f(3)=\:&{(3-2)(3-3)\over(-1)(-2)}\cdot 10+
+{(3-1)(3-3)\over(1)(-1)}\cdot 15+
+{(3-1)(3-2)\over(2)(1)}\cdot 30=\\[5pt]
+&{(2)(1)\over(2)(1)}\cdot 30=30\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Lo que confirma que nuestra interpolación por Langrange es correcta para los tres puntos provistos.
+\end{document}

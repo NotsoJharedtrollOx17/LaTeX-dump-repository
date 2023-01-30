@@ -1,0 +1,56 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología matematica
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Nombre: Abraham Jhared Flores Azcona\\\#: 19211640}}
+\rhead{\textbf{Actividad 15\\Integración por Simpson 1/3}}
+\subsection*{Elabora un resúmen de lo explicado en los dos videos adjuntos a la actividad de Classroom con procedimientos y fórmulas}
+\justify
+Recordando que:
+{\large \[\int_a^b f(x)\, dx\]}
+\justify
+Si se desea calcular dicha integral con el método de Simpson (al menos por un polinómio de tres términos) se tiene que tener en cuenta lo siguiente:
+\\\newline
+Dado \(\int_{1.2}^{1.6} \sin \left(x^2\right)\, dx\), Simpson sugiere que aproximemos la curva a integrar con un polinómio formado (para el caso de 3 términos)
+por tres valores:
+{\large \[g(x)=-3.8701x^2+9.7311x-5.1129\]}
+Donde dicha triada es relacionada a la evaulación siguiente:
+{\large \[\begin{matrix}
+    x & f(x) \\
+    1.2 & 0.9914\\
+    1.4 & 0.9252\\
+    1.6 & 0.5493
+\end{matrix}\]}
+\justify
+\(g(x)\) se integra dentro del mismo intervalo de la integral original.
+\\\newline
+De manera más general, la evaulación de la tabla anterior es:
+{\large\[\begin{matrix}
+    x & f(x) \\
+    a & f(a) \\
+    {a+b\over 2} & f\left({a+b\over 2}\right)\\
+    b & f(b)
+\end{matrix}\]}
+\justify
+Y su polinómio se calcula con el método de Lagrange, el cual se generaliza como:
+{\large \[f(x)={(x-m)(x-b)\over (a-m)(a-b)}f(a)+{(x-a)(x-b)\over (m-a)(m-b)}f(m)+{(x-a)(x-m)\over (b-a)(b-m)}f(b)\]}
+\justify
+Donde \(m={a+b\over 2}\).
+\\\newline
+Desarrollando, \(\int_a^b f(x)\, dx\) finalmente se calcula por el método del trapecio, lo que nos queda:
+{\large \[\int_a^b f(x)\, dx=\left({b-a\over 6}\right)\left(f(a)+4f\left({a+b\over 2}\right)+f(b)\right)\]}
+\end{document}

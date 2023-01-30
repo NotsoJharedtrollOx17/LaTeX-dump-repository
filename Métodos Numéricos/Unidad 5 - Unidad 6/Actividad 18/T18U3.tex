@@ -1,0 +1,93 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de títulos automáticos a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología matematica
+\usepackage{float} % centrado de imagenes
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Nombre: Abraham Jhared Flores Azcona\\\#: 19211640}}
+\rhead{Actividad 18\\Lagrange parte II}
+\subsection*{Elaborar un resumen del video adjunto a la actividad de Classroom}
+\justify
+El polinomio de Lagrange escrito de manera general requiere de tres puntos cualquiera \(\left(x_1,y_1\right)\), 
+\(\left(x_2,y_2\right)\) y \(\left(x_3,y_3\right)\). El bloque base para esta interpolación es el siguiente:
+{\large\[{(x-x_1)(x-x_2)(x-x_3) \over (\:\:\:-1)(\:\:\:-2)(\:\:\:-3)}\]}
+Su polinomio de Lagrange general quedaría como:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&{(x-1)(x-2)(x-3)\over(x_1-x_1)(x_1-x_2)(x_1-x_3)}\cdot y_1+
+{(x-1)(x-2)(x-3)\over(x_2-x_1)(x_2-x_2)(x_2-x_3)}\cdot y_2\\[5pt]
+&+{(x-1)(x-2)(x-3)\over(x_3-x_1)(x_3-x_2)(x_3-x_3)}\cdot y_3\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Sin ninguna razón aparente, se omite \(\left(x-x_1\right)\) en el primer término de la suma, dejando que la expresión sea la siguiente:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&{(x-2)(x-3)\over(x_1-x_1)(x_1-x_2)(x_1-x_3)}\cdot y_1+
+{(x-1)(x-2)(x-3)\over(x_2-x_1)(x_2-x_2)(x_2-x_3)}\cdot y_2\\[5pt]
+&+{(x-1)(x-2)(x-3)\over(x_3-x_1)(x_3-x_2)(x_3-x_3)}\cdot y_3\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Si evaluamos lo anterior en \(x_1\), el primer término de \(f(x)\) nos genera una división entre cero ya que 
+\(\left(x_1-x_1\right)=0\), por lo que omitimos el término \(\left(x_1-x_1\right)\) de \(f(x)\) que nos queda:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&{(x-2)(x-3)\over(x_1-x_2)(x_1-x_3)}\cdot y_1+
+{(x-1)(x-2)(x-3)\over(x_2-x_1)(x_2-x_2)(x_2-x_3)}\cdot y_2\\[5pt]
+&+{(x-1)(x-2)(x-3)\over(x_3-x_1)(x_3-x_2)(x_3-x_3)}\cdot y_3\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Similarmente omitimos \(\left(x-x_2\right)\) del segundo término de la suma, dejando a \(f(x)\) como:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&{(x-2)(x-3)\over(x_1-x_2)(x_1-x_3)}\cdot y_1+
+{(x-1)(x-3)\over(x_2-x_1)(x_2-x_2)(x_2-x_3)}\cdot y_2\\[5pt]
+&+{(x-1)(x-2)(x-3)\over(x_3-x_1)(x_3-x_2)(x_3-x_3)}\cdot y_3\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Un hecho similar ocurre al evaluar en \(x_2\) como con \(x_1\) ya que el segundo término de \(f(x)\) genera división entre cero por
+el término \(\left(x_2-x_2\right)\), por lo que lo omitimos, dejando a \(f(x)\) como:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&{(x-2)(x-3)\over(x_1-x_2)(x_1-x_3)}\cdot y_1+
+{(x-1)(x-3)\over(x_2-x_1)(x_2-x_3)}\cdot y_2\\[5pt]
+&+{(x-1)(x-2)(x-3)\over(x_3-x_1)(x_3-x_2)(x_3-x_3)}\cdot y_3\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Prosiguiendo, omitimos \(\left(x-x_3\right)\) del último término de la suma, por que:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&{(x-2)(x-3)\over(x_1-x_2)(x_1-x_3)}\cdot y_1+
+{(x-1)(x-3)\over(x_2-x_1)(x_2-x_3)}\cdot y_2\\[5pt]
+&+{(x-1)(x-2)\over(x_3-x_1)(x_3-x_2)(x_3-x_3)}\cdot y_3\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Al evaluar en \(x_3\) nos genera división entre cero, por lo que omitimos \(\left(x_3-x_3\right)\) del tercer término:
+{\large\begin{equation*}
+    \begin{aligned}
+        f(x)=\:&{(x-2)(x-3)\over(x_1-x_2)(x_1-x_3)}\cdot y_1+
+{(x-1)(x-3)\over(x_2-x_1)(x_2-x_3)}\cdot y_2\\[5pt]
+&+{(x-1)(x-2)\over(x_3-x_1)(x_3-x_2)}\cdot y_3\\[5pt]
+    \end{aligned}
+\end{equation*}}
+\justify
+Lo que lo anterior es la expresión general del polinomio de 2do. grado de Lagrange para la interpolación.
+\end{document}
