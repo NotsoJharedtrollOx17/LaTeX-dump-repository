@@ -1,0 +1,72 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[T1]{fontenc} %manejo de otras fuentes de letra
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{float} %mejor centrado
+\usepackage{hyperref}
+
+%parametros del título
+\title{Bosquejo para \textbf{Video de aplicación:} 
+    {\fontfamily{qag}\selectfont
+        \emph{Atractores caóticos para generar arte}
+    }
+}
+\author{Equipo \#10}
+\date{\today}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\section*{Workflow}
+\justify
+Respeta lo más que puedas lo planteado en esta sección para que no batalles. Copia y pega lo escrito por aquí en forma de comentario en el {\fontfamily{cmtt}\selectfont<código>.py} de la animación.
+    \begin{enumerate}
+        \item \textbf{Plantear} las escenas a usar para el video.
+        \item \textbf{Denotar} que expresiones se van a usar para redactarlas de antemano en \LaTeX.
+        \item \textbf{Redactar} el código para el video; este se va a llamar {\fontfamily{cmtt}\selectfont videoEcuaciones.py}.
+        \item \textbf{Probar} cada escena con sus repectivos bloques de código para detectar puntos de mejora o posibles errores visuales.
+        \item \textbf{Grabar e incluir} la narración del video final en el código. Si se puede, agregar música de fondo.
+        \item \textbf{Preguntar} en foros y a tus asesorados sus opiniones respecto al contenido para refinar el producto final.
+        \item \textbf{Publicar.}
+    \end{enumerate}
+
+\section*{Escenas}
+\subsection*{{\fontfamily{qag}\selectfont Portada}} \justify
+Se muestran los datos típicos para un trabajo universitario.
+\subsection*{{\fontfamily{qag}\selectfont 1. Planteamiento}} \justify
+Se hace un repaso muy coloquial de los temas vistos hasta este punto de la materia, incluyendo expresiones matemáticas y reprentaciones gráficas de las mismas.
+De ahí plantear los formalismos para la Ecuación por Diferencias, que es el punto clave para entender de una mejor manera (al menos por la parte rigorosamente matemática) los atractores caóticos
+de la segunda escena.
+\\\newline
+Orden de repaso:
+\begin{enumerate}
+    \item Notaciones de la derivada: \(\frac{dy}{dx}=f^\prime(x)=y^\prime\).
+    \item Ejemplo de una Ecuación Diferencial muy básica: \(\frac{dy}{dx}=y\).
+    \item Representación gráfica de las ecuaciones características.
+    \item Dominio de las ecuaciones Diferencial: \(t\in\mathbb{R}\).
+    \item Ecuaciones por Diferencias, notación y comparación con las Ecuaciones Diferenciales.
+    \item Representación gráfica de las Ecuaciones por Diferencias.
+\end{enumerate}
+\subsection*{{\fontfamily{qag}\selectfont 2. Atractores/Teoría del Caos}} \justify
+Se explica a un nivel coloquial mostrando las expresiones, lo que es un atractor caótico acorde a la escena anterior. Mostrar ejemplos de atractores, y definir cual usar para el resto del video.
+\subsection*{{\fontfamily{qag}\selectfont 3. Arte Generativo}} \justify
+Se define lo que es y se muestran ejemplos de ello. Mas que nada, es explicación, NADA DE EXPRESIONES MATEMATICAS Y/O CODIGO EN ESTA PARTE.
+\subsection*{{\fontfamily{qag}\selectfont 4. Librería de javascript a usar}} \justify
+Se explica brevemente la herramienta de código a usar para el arte generativo.
+\subsection*{{\fontfamily{qag}\selectfont 5. Idea de aplicación}} \justify
+Con lo anterior, se plantea el poder usar un atractor caótico como generador de valores para alimentar
+los distintos parámetros de nuestra idea del código del arte generativo. Incluir una explicación breve del código a usar.
+\subsection*{{\fontfamily{qag}\selectfont 6. Ejemplos}} \justify
+Se muestran los resultados y ejemplos de las distintas obras como ``producto final''.
+\end{document}

@@ -1,0 +1,86 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[T1]{fontenc} %manejo de otras fuentes de letra
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{float} %mejor centrado
+\usepackage{hyperref}
+
+%parametros del título
+\title{Bosquejo para \textbf{Tutorial:} 
+    {\fontfamily{qag}\selectfont
+        \emph{How to use an iRigBlueBoard as a MIDI macro controller}
+    }
+}
+\author{C. Abraham Jhared Flores Azcona a.k.a: \emph{NotsoJharedtroll23}}
+\date{\today}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\section*{Workflow}
+\justify
+Respeta lo más que puedas lo planteado en esta sección para que no batalles. Copia y pega lo escrito por aquí en forma de comentario en el {\fontfamily{cmtt}\selectfont<código>.py} de la animación.
+    \begin{enumerate}
+        \item \textbf{Plantear} las escenas a usar para el video.
+        \item \textbf{Denotar} que expresiones se van a usar para redactarlas de antemano en \LaTeX.
+        \item \textbf{Redactar} el código para el video; este se va a llamar {\fontfamily{cmtt}\selectfont iRigBlueBoard.py}.
+        \item \textbf{Probar} cada escena con sus repectivos bloques de código para detectar puntos de mejora o posibles errores visuales.
+        \item \textbf{Grabar e incluir} la narración del video final en el código. Si se puede, agregar música de fondo.
+        \item \textbf{Preguntar} en foros y a tus asesorados sus opiniones respecto al contenido para refinar el producto final.
+        \item \textbf{Publicar.}
+    \end{enumerate}
+
+\section*{Escenas}
+\subsection*{{\fontfamily{qag}\selectfont 1. Motivation}} \justify
+Here you'll explain why did you create the tutorial. Explain where did you got the idea and elaborate further in to it. BE PRECISE.
+\subsection*{{\fontfamily{qag}\selectfont 2. Pre-requisites}} \justify
+Remark the things you need beforehand for achieving the objective:
+\begin{itemize}
+    \item iRigBlueBoard (70 DLLS New, 30 DLLS Used).
+    \item A computer with W7 for the firmware updater (Less than 100 DLLS).
+    \item A computer with W10 (250 DLLS).
+    \item 4x AAA bateries (10 DLLS).
+    \item A microUSB cable (Less than 5 DLLS).
+    \item A Bluetooth dongle capable of Low Energy for MIDI connetions via Bluetooth.
+    \item loop-MIDI program.
+    \item MIDIberry program found on the Windows Store.
+    \item iRigBlueBoard 1.0 Firmware updater.
+    \item MIDIMacros program.
+\end{itemize}
+\subsection*{{\fontfamily{qag}\selectfont 3. Precautions}} \justify
+Advice about the problems that you had when doing the whole process including:
+\begin{itemize}
+    \item Bluetooth LE pairing protocol and possible dongle.
+    \item Blueboard firmware updater not working on W10 computers.
+    \item The possible bricking of the BlueBoard by not following the instructions during the firmware update.
+    \item The process does not guarantee the proper link between the computer and the pedalboard.
+\end{itemize}
+SHOW THE REASONS WHY.
+\subsection*{{\fontfamily{qag}\selectfont 4. Steps}} \justify
+Here you'll explain to the viewer the process:
+\begin{enumerate}
+    \item iRigBlueBoard firmware update.
+    \item loop-MIDI setup.
+    \item MIDIberry setup.
+    \item Bluetooth pairing on the W10 computer and BlueBoard.
+    \item MIDIMacros setup.
+\end{enumerate}
+\subsection*{{\fontfamily{qag}\selectfont 5. References}} \justify
+Explain where you got the info and the process.
+\begin{itemize}
+    \item \url{https://www.ikmultimedia.com/firmware/blueboard/index_usb.php}
+    \item \url{https://zubersoft.com/mobilesheets/forum/showthread.php?tid=6389} 
+    \item \url{https://cgi.ikmultimedia.com/ikforum/viewtopic.php?f=9&t=24780} 
+\end{itemize}
+\end{document}

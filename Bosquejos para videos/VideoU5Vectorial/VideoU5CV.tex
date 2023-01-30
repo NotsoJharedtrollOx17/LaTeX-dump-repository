@@ -1,0 +1,69 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=1.7cm, bottom=1.7cm, left=1.7cm, right=1.7cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[T1]{fontenc} %manejo de otras fuentes de letra
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{float} %mejor centrado
+
+%parametros del título
+\title{Bosquejo para \textbf{Manim:} 
+    {\fontfamily{qag}\selectfont
+        \emph{Video U5 CV ``Integrales Dobles en Coordenadas Polares''}
+    }
+}
+\author{Equipo \#3}
+\date{\today}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\section*{Workflow}
+\justify
+Respeta lo más que puedas lo planteado en esta sección para que no batalles. Copia y pega lo escrito por aquí en forma de comentario en el {\fontfamily{cmtt}\selectfont<código>.py} de la animación.
+    \begin{enumerate}
+        \item \textbf{Plantear} las escenas a usar para el video.
+        \item \textbf{Denotar} que fórmulas y expresiones matemáticas se van a usar para redactarlas de antemano en \LaTeX.
+        \item \textbf{Redactar} el código para el video; este se va a llamar {\fontfamily{cmtt}\selectfont partsdx.py}.
+        \item \textbf{Probar} cada escena con sus repectivos bloques de código para detectar puntos de mejora o posibles errores visuales.
+        \item \textbf{Grabar e incluir} la narración del video final en el código. Si se puede, agregar música de fondo.
+        \item \textbf{Preguntar} en foros y a tus asesorados sus opiniones respecto al contenido para refinar el producto final.
+        \item \textbf{Publicar.}
+    \end{enumerate}
+
+\section*{Escenas}
+\subsection*{{\fontfamily{qag}\selectfont Portada}} \justify
+Se muestran los datos típicos para un trabajo universitario.
+\subsection*{{\fontfamily{qag}\selectfont 1. Planteamiento}} \justify
+Se muestran las ideas básicas para este tema, incluyendo la reresentación geométrica del area debajo de la curva. Tambien las fórmulas básicas como:
+\[\int_a^b f(x)\, dx=F(b)-F(a)\]
+\subsection*{{\fontfamily{qag}\selectfont 2. Extensión a integrales dobles}} \justify
+Como la integral definida es el análogo del área debajo de la curva en \(\mathbb{R}^2\), extendemos que la integral doble es el \emph{volúmen en} \(\mathbb{R}^3\) y se representa de la siguiente manera:
+\[\int_{y_1}^{y_2}\int_{x_1}^{x^2} f(x,y)\, dx\, dy\]
+Se puede mostrar en un corto grabado en la realidads un rectangulo de papel con foldes de origami, que ese rectangulo sería la integral del planteamiento, y al momento de extenderlo muestre la idea de la integal doble, algo así:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{ejemloescena2.JPG}
+\end{figure}
+\subsection*{{\fontfamily{qag}\selectfont 3. Notación común}} \justify
+Se plantea la notación general para las integrales dobles donde:
+\[\int_{y_1}^{y_2}\int_{x_1}^{x^2} f(x,y)\, dx\, dy=\int\!\!\!\int_{R}f(x,y)\, dA\]
+Se explican las partes y el porqué es más comodo usar dicha notación.
+\subsection*{{\fontfamily{qag}\selectfont 4. Desenrollo a coordenadas polares}} \justify
+Se explica lo siguiente:
+\[\text{Rectangular a Polar: }\int\!\!\!\int_{R}f(x,y)\, dA\rightarrow \int\!\!\!\int_{R_{\text{Polar}}}f(r,\theta)(r\, d\theta)\, dr\]
+Se formula un ejemplo para la noción algebráica y su representación en dos dimensiónes para alargar dicha representación a la siguiente escena.
+\subsection*{{\fontfamily{qag}\selectfont 5. Representación gráfica con coordenadas polares}} \justify
+Se muestra el ejemplo de la escena anterior para su muestra en tres dimensiónes, con todo y coordenadas polares.
+\subsection*{{\fontfamily{qag}\selectfont 6. Consideraciones}} \justify
+Se remarca (literalmente) el final del artículo de \emph{Khan Academy} respecto al tema para resaltar solamente lo que se debe de aprender para las clases en una escuela de ingeniería.
+\end{document}
