@@ -1,0 +1,101 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología variada
+\usepackage[titles]{tocloft} %manejo de elementos para el índice
+\usepackage{float} %manejo de centrado para figuras
+\usepackage{hyperref} %manejo d hipervínculos
+\usepackage[backend=biber]{biblatex}\addbibresource{referencias.bib}%bibliografía
+
+\hypersetup{
+    colorlinks=true,      
+    urlcolor=blue,
+    linkcolor=blue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Investigación de Operaciones\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 5\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Big Data\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona \, 19211640\par}
+        \vfill
+        Profesora: \par
+        Ing. Igreyne Aracely Ruiz Romero
+        
+        \vfill
+
+        {\large 7 de diciembre del 2020}
+    \end{titlepage}
+
+    \newpage
+    \lhead{\textbf{Big Data}}
+    \rhead{\textbf{7 de diciembre del 2020}}
+    \section*{¿Qué es?}
+    \justify
+    El \emph{Big Data}, traducido al español como Dato Grande es un término que engloba un gran volumen de datos -estructurados y no-estructurados- que inundan a los
+    negocios día con día. No importa la cantidad de datos, sino lo que dichas organizaciones realizan con la misma ya que esta puede ser analizado para tener perspectivas que
+    dirijan una mejor toma de desiciones y los movimientos empresariales estratégicos.
+    \section*{¿Cuándo surge?}
+    \justify
+    El arte de accesar y almacenar grandes cantidades de información para los análisis ha estado a lo largo del tiempo. El término coloquial de \emph{Big Data} se le atribuye al 
+    analísta industrial Doug Laney quien definió a la misma en los inicios del año 2000 con las \emph{``Tres V's''}:
+    \begin{itemize}
+        \item \textbf{Volúmen: }Las organizaciones recolectan información de distintas fuentes, incluyendo transacciones, dispositivos inteligentes, equipamiento industrial, videos, redes sociales y demás.
+        En el pasado, almacenar dichos datos sería un problema. Pero plataformas de almacenamiento barato han facilitado dicha tarea.
+        \item \textbf{Velocidad: }Con el crecimiento del Internet de las Cosas, los flujos de datos hacia los negocios con velocidades sin precedentes deben ser manejados en una manera temporalizada. Los sensores,
+        los identificadores RFID y demás están conduciendo la necesidad de lidiar con dichos torrentes de información en un tiempo (casi) real.
+        \item \textbf{Variedad: }Los datos vienen en todos los tipos de formato - desde datos numericos estructurados de una base de datos tradicional hasta documentos de texto no-estructurados, correos electrónicos,
+        videos, audios, etc.
+    \end{itemize}
+    \section*{Importancia}
+    \justify
+    Como ya se mencionó antes, la importancia del \emph{Big Data} no recae en cuanta información tienes, sino que haces con ella. Junto a los análisis respectivos podemos destacar que permite:
+    \begin{itemize}
+        \item Reducir costos.
+        \item Reducir tiempos.
+        \item Desarrollo de nuevos productos y ofertas optimizadas.
+        \item Toma inteligente e informada de desiciones.
+        \item Determinar la raíz de los fallos, problemas y defectos en un tiempo (casi) real.
+        \item Generar cupones en el punto de venta basado en los hábitos de consumo del cliente.
+        \item Recalcular portafolios de riesgo en minutos.
+        \item Detectar actividad fraudulenta antes de que afecte a la organización.
+    \end{itemize}
+    \section*{Pre-requisitos}
+    \justify
+    Como toda disciplina, se requiere de ciertas disciplinas previas para comprender de mejor manera los contenidos del tema. A continuación se lista los conocimientos necesarios para ello:
+    \begin{itemize}
+        \item \emph{Estadística:} Como se sabe, estaremos haciendo bastantes análisis de datos y, por ende, conocer las herramientas estadísticas a nuestra disposición permite un mejor avance en la disciplina. Se puede decir que es el pre-requisito más importante.
+        \item \emph{Programación:} En la era de la automatización, el saber programar permite realizar códigos a la medida para los análisis muy robustos por la cantidad de datos a depurar. Dependiendo del lenguaje de programación que se conozca dependeran las herramientas disponibles.
+        \item \emph{Optimización:} Como manejamos un grán volúmen de datos, es necesario saber como curar tanto los códigos como los datos para que estos puedan ser introducidos, procesados y finalmente manipulados acorde a lo esperado.
+        \item \emph{Algebra Lineal:} Al estar manejando cantidades inmensas de datos, la gran mayoria se pueden almacenar en estructuras similares a las vistas en la materia.
+    \end{itemize}
+
+    \newpage
+    \printbibliography[title={Referencias}]
+\end{document}

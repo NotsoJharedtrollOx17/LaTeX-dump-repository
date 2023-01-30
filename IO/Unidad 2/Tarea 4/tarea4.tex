@@ -1,0 +1,73 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Investigación de Operaciones\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 1\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Tarea 4\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        Ing. Igreyne Aracely Ruiz Romero
+        
+        \vfill
+
+        {\large 12 de octubre del 2020}
+    \end{titlepage}
+
+    \setcounter{page}{1}
+    \thispagestyle{fancy}
+    \lhead{\textbf{Tarea 4, U1}}
+    \rhead{\textbf{12 de octubre del 2020}}
+    Resover los problemos con el Método \emph{Simplex}
+    \section{Problema 1}
+    \subsection{Modelo}
+    \[\begin{matrix}
+        F.O\!:&\text{Max}(z)=&50x_1+80x_2&&\\
+        S.a\!:&&x_1+x_2&\leq&1000\\
+        &&x_1&\geq&250\\
+        &&x_2&\geq&250\\
+        &&x_1-2x_2&\geq&0
+    \end{matrix}\]
+    \subsection{Aplicación del método}
+    \section{Problema 2}
+    \subsection{Modelo}
+    \[\begin{matrix}
+        F.O\!:&\text{Max}(z)=&0.40x_1+1.40x_2&&\\
+        S.a\!:&&0.6x_1+0.15x_2&\leq&8100\\
+        &&0.45x_1+0.3x_2&\leq&3000\\
+        &&x_1,x_2&\geq&0
+    \end{matrix}\]
+    \subsection{Aplicación del método}
+    \[\begin{matrix}
+        z&=&-0.40x_1-1.40x_2&=&0\\
+
+    \end{matrix}\]
+\end{document}

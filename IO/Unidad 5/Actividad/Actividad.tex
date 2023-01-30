@@ -1,0 +1,139 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología variada
+\usepackage[titles]{tocloft} %manejo de elementos para el índice
+\usepackage{float} %manejo de centrado para figuras
+\usepackage{hyperref} %manejo d hipervínculos
+
+\hypersetup{
+    colorlinks=true,      
+    urlcolor=blue,
+    linkcolor=blue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Investigación de Operaciones\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 5\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Resumen:\\Tipos de Lineas de Espera\par}
+        \vspace{2cm}
+        {\Large\itshape Flores Azcona Abraham Jhared \, 19211640\\ Valadez Valdez Bianka Alejandra \, 19210557\par}
+        \vfill
+        Profesora: \par
+        Ing. Igreyne Aracely Ruiz Romero
+        
+        \vfill
+
+        {\large 3 de diciembre del 2020}
+    \end{titlepage}
+
+    \newpage
+    \lhead{\textbf{Resumen}}
+    \rhead{\textbf{Tipos de Lineas de Espera}}
+    \section*{Tipos de Lineas de Espera}
+    \subsection*{Un servidor, cola infinita}
+    \justify
+    Las fórmulas que pueden usarse para determinar las características operativas de estado estable para una línea de espera de un solo canal se citarán más adelante.
+    Lás fórmulas son aplicables si las llegadas siguen una distribución de probabilidad exponencial. Mostramos cómo pueden usarse las fórmulas para determinar las características
+    de operación de un sistema de un servidor, cola infinita y fuente infinita, y por lo tanto, proporcionar a la administración información útil para la toma de decisiones.\\\newline
+    La métodología matemática usada para derivar las fórmulas para las características operativas de las líneas de espera son bastante complejas. Sin embargo, el propósito no es proporcionar
+    el desarrollo teórico de estos modelos, sino mostrar cómo las fórmulas que se han elaborado pueden dar información acerca de las características operativas de la línea de espera.
+    \[P_0=1-\frac{\lambda}{\mu}\]
+    \[L_q=\frac{\lambda^2}{\mu(\mu-\lambda)}\]
+    \[L=L_q\frac{\lambda}{\mu}\]
+    \[W_q=\frac{L_q}{\lambda}\]
+    \[W=W_q+\frac{1}{\mu}\]
+    \[P_W=\frac{\lambda}{\mu}\]
+    Donde:
+    \begin{itemize}
+        \item \(\lambda\): Cantidad promedio de llegadas por periodo (tasa media de llegada).
+        \item \(\mu\): Cantidad promedio de servicios por periodo (tasa media de servicio).
+        \item \(P_0\): Probabilidad de que no haya clientes en el sistema.
+        \item \(L_q\): Número de clientes promedio en una línea de espera.
+        \item \(L\): Número de clientes promedio en el sistema.
+        \item \(W_q\): Tiempo promedio que un cliente pasa en la línea de espera.
+        \item \(W\): Tiempo total promedio que un cliente pasa en el sistema.
+        \item \(P_n\): Probabilidad de que haya \(n\) clientes en el sistema.
+        \item \(P_W\): Probabilidad de que un cliente que llega tenga que esperar por el servicio.
+    \end{itemize}
+    \subsection*{Servidores múltiples, cola infinita}
+    \justify    
+    Una linea de espera con canales múltiples consiste en do o más canales de servicio que se supone son idénticos desde el punto de vista de su capacidad. En el sistema de canales múltiples, las unidades que llegan esperan en una
+    sola línea y lueo pasan al primer canal disponible para ser servidas. En esta sección presentamos fórmulas que pueden usarse para determinar las características operativas de estado estable para una línea de espera de varios canales.
+    Estas fórmulas son aplicables si existen las siguientes condiciones:
+    \begin{itemize}
+        \item Las llegadas siguen una distribución de Poisson.
+        \item Tiempo de servicio para cada canal sigue una distribución de probabilidad exponencial.
+        \item La tasa media de servicio \(\mu\) es la misma para cada canal.
+        \item Las llegadas esperan en una sola línea de espera y luego pasan al primer canal disponible para el servicio.
+    \end{itemize}
+    \[\rho=\frac{\lambda}{\mu}\]
+    \[L_s=\rho s+\frac{\rho(\rho s)^2}{s!}\left(\frac{1}{(1-\rho)^2}P_0\right)\]
+    \[L_s=L_q+\rho\]
+    \[W_s=\frac{Ls}{\lambda}\]
+    \[L_q=\frac{\rho^3}{s!}\left(\frac{1}{(1-\rho)^2}\right)P_0\]
+    \[W_q=\frac{Lq}{\lambda}\]
+    Donde:
+    \begin{itemize}
+        \item \(\lambda\): Cantidad promedio de llegadas por periodo (tasa media de llegada).
+        \item \(\mu\): Cantidad promedio de servicios por periodo (tasa media de servicio).
+        \item \(P_0\): Probabilidad de que no haya clientes en el sistema.
+        \item \(L_q\): Número de clientes promedio en una línea de espera.
+        \item \(L\): Número de clientes promedio en el sistema.
+        \item \(W_q\): Tiempo promedio que un cliente pasa en la línea de espera.
+        \item \(W\): Tiempo total promedio que un cliente pasa en el sistema.
+        \item \(P_n\): Probabilidad de que haya \(n\) clientes en el sistema.
+        \item \(P_W\): Probabilidad de que un cliente que llega tenga que esperar por el servicio.
+    \end{itemize}
+    \subsection*{Un servidor, fuente finita}
+    Para los modelos de línea de espera introducidos hasta ahora, la población de unidades o clientes que llegan para servicio se han considerado ilimitados. En esta situación de fuentes finitas, la tasa media de llegada para el sistema cambia dependiendo
+    de la cantidad de unidades en la línea de espera y se dice que el modelo de línea de espera tiene una población finita. Dicho modelo se basa en las siguientes suposiciones:
+    \begin{itemize}
+        \item Las llegadas para cada unidad que se expone sigue una distribución Poisson, con una tasa media de llegada \(\lambda\).
+        \item Los tiempos de servicio siguen una distribución de probabilidad exponencial, con una tasa media de servicio \(\mu\).
+        \item La población de undades que pueden buscar servicio es finíta.
+    \end{itemize}
+    \[P_0=\left(\sum_{n=0}^N\frac{N!}{(N-n)!}\left(\frac{\lambda}{\mu}\right)^n\right)^{-1}\]
+    \[L_q=N-\frac{\lambda+\mu}{\lambda}(1-P_0)\]
+    \[L=L_q+(1-P_0)\]
+    \[W_q=\frac{L_q}{(N-L)\lambda}\]
+    \[W=W_q+\frac{1}{\mu}\]
+    \[P_W=1-P_0\]
+    \[P_n=\frac{N!}{(N-n)!}\left(\frac{\lambda}{\mu}\right)^nP_0,\,\forall n=0,1,\dots,N\]
+    Donde:
+    \begin{itemize}
+        \item \(N\): Tamaño de la población.
+        \item \(\lambda\): Cantidad promedio de llegadas por periodo (tasa media de llegada).
+        \item \(\mu\): Cantidad promedio de servicios por periodo (tasa media de servicio).
+        \item \(P_0\): Probabilidad de que no haya clientes en el sistema.
+        \item \(L_q\): Número de clientes promedio en una línea de espera.
+        \item \(L\): Número de clientes promedio en el sistema.
+        \item \(W_q\): Tiempo promedio que un cliente pasa en la línea de espera.
+        \item \(W\): Tiempo total promedio que un cliente pasa en el sistema.
+        \item \(P_n\): Probabilidad de que haya \(n\) clientes en el sistema.
+        \item \(P_W\): Probabilidad de que un cliente que llega tenga que esperar por el servicio.
+    \end{itemize}
+\end{document}

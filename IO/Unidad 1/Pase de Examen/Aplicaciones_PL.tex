@@ -1,0 +1,99 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb}
+\usepackage[backend=biber]{biblatex}\addbibresource{bibliografia.bib}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Investigación de Operaciones\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 1\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Aplicaciones Diversas de la Programación Lineal\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        Ing. Igreyne Aracely Ruiz Romero
+        
+        \vfill
+
+        {\large 14 de octubre del 2020}
+    \end{titlepage}
+
+    \newpage
+    \thispagestyle{empty}
+    \tableofcontents
+
+    \newpage
+    \lhead{\textbf{Aplicaciones de la Programación Lineal}}
+    \section{Introducción}
+    Como se ha visto a lo largo de la unidad, la Investigación de Operaciones es una materia bastante util en distintos ambitos donde se requiera la optimización
+    como un objetivo principal. Por ende, se explicarán tres aplicaciones relevantes de los temas de Programación Lineal. 
+    \section{Aplicaciones}
+        \subsection{Optimización de Portafolio}
+        \justify
+        Para el mundo de las finanzas e inversiones, la optimización del portafolio es crucial para obtener la mayor ganancia posible con el menor riesgo. Dependiendo de los
+        instrumentos de inversión disponibles varian las ganancias y los riesgos. \\ \newline
+        En este caso, para el instrumento financiero de las acciones, hay una proporción favorable de ganancia y de riesgo y, por ende, muchos inversionistas y/o analistas financieros
+        se ven beneficiados por la aplicación mas intuitiva de la Programación Lineal ya que consideran los siguientes puntos:
+        \begin{itemize}
+            \item Se conoce el instrumento de inversión y su forma de posible ganancia y pérdida.
+            \item En cada inversión se enfoca su posible ganancia.
+            \item Por ser inversiones en acciones, tambien se considera el riesgo.
+        \end{itemize}
+        Por lo tanto, el razonamiento de la Programación Lineal perimite obtener la \emph{ganancia esperada} del portafolio.
+        \subsection{Optimización de Transporte}
+        \justify
+        Si se puede decir, es uno de los campos donde se requiere la ayuda de la Programación Lineal. Como la logística es uno de los aspectos mas cruciales para una cadena de suministros, el optimizar
+        los costos relacionados a dicha cadena permite darle al area administrativa un mejor panorama para que tomen la mejor desición que consideren pertinente. 
+        \\ \newline
+        Un modelo sencillo de Programación Lineal para esta situación expuesta es la siguiente:
+        \begin{itemize}
+            \item Un conjunto de puntos de suministro donde los productos son enviados.
+            \item Un conjunto de destinos de demanda a los cuales el producto es enviado.
+            \item El costo variable del producto producido en el punto de suministro.
+        \end{itemize} 
+        \subsection{Aprendizaje Supervisado (Aprendizaje de Máquina)}
+        \justify
+        En general, la gran mayoria de las aplicaciones de la Programación Lineal han ganado un reciente interés por la ganancia monetaria y de popularidad de las aplicaciones de las Ciencias Computacionales.
+        \\ \newline
+        En este tipo de Aprendizaje de Máquina:
+        \begin{itemize}
+            \item El sistema a mejorar conoce de antemano los patrones y dichos patrones están bién definidos basandose en datos e información previos.
+            \item Se entrena al sistema para encajar con un modelo matemático de una función de los datos de entrada que predice valores de una prueba de datos desconocida.
+        \end{itemize}
+    \section{Conclusión}
+    \justify
+    Como se apreció, las aplicaciones varian desde las finanzas hasta lo más prometedor como el Aprendizaje de Máquina, mostrando la importancia y el potencial de la Programación Lineal como una herramienta crucial para
+    lograr distintos objetivos.
+
+    \newpage
+    \lhead{}
+    \addcontentsline{toc}{section}{Referencias}
+    \printbibliography
+
+\end{document}
