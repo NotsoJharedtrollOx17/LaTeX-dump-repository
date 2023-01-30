@@ -1,0 +1,76 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología
+\usepackage{float} %centrado de imaene
+\usepackage{hyperref} %manejo de enlaces e hipervínculos 
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Simulación\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 4\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Lenguajes de simulación\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesor: Ing. Diego Saul Vasquez Rios\par
+    
+        \vfill
+
+        {\large 26 de mayo de 2021}
+    \end{titlepage}
+
+    %cuerpo
+    \newpage
+    \begin{justify}
+        \setcounter{page}{1}
+        \thispagestyle{empty}
+        \lhead{\textbf{Lenguajes de simulación}}
+        \subsection*{SOLIDWORKS}
+        \justify
+        Ofrecido por Dassault Systemes. un sistema tipo CAD para la educación y la manufactura para apoyar el diseño 2D y 3D,
+        diseño digital, simulaciones y desarrollo de productos con herramientas colaborativas.
+        \\\newline
+        Una de sus ventajas es que las animaciones de ensamblado nos ayudan a entender nuestro diseño y nos permite conocer las restricciones del diseño y que
+        tiene menús, barras de herramientas y detalles muy intuitivos.
+        \\\newline
+        Una de sus desventajas es que sus tiempos de renderizado consumen mucho tiempo y que construcciones grandes y complejas tardan mucho en cargar.
+        \subsection*{Navisworks}
+        \justify
+        Ofrecido por Autodesk. Es un software de revisión de construcción y de simulación para mejorar la coordinación del BIM (el modelado de información de construcción),
+        permitiendo al usuario la combinación de diseño y los datos de construcción en un solo modelo, e identificar y resolver problemas de choque e interferencia.
+        \subsection*{Autodesk Fusion 360}
+        \justify
+        Herramienta estilo CAD basada en la nube que integra el diseño, modelado y capacidades de simulación. Es gratis.
+        \subsection*{MATLAB}
+        \justify
+        Plataforma de programación y cómputo numérico que permite el analásis iterativo y el diseño de procesos con un lenguaje de programación que expresa matemáticas de matrices y arreglos
+        de manera directa. Incluye un editor para crear scripts que combinan código, salidas y texto formateado en un bloc de notas ejecutable.
+        \subsection*{Arena}
+        \justify
+        Permite realizar simulaciones de eventos discretos que permiten describir con un conjunto de eventos únicos y específicos en el tiempo. Esto es porque implementa modelos flexibles y basados en actividades
+        que pueden ser efectivamente usados para simular casi cualquier proceso.
+    \end{justify}
+\end{document}

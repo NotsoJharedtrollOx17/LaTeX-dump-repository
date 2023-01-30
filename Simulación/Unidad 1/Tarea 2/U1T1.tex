@@ -1,0 +1,107 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[backend=biber]{biblatex}\addbibresource{bibliografia.bib} %manejo de bibliografía (BORRAR SI NO ES NECESARIO)
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología
+\usepackage{float} %centrado de imaene
+\usepackage{hyperref} %manejo de enlaces e hipervínculos
+
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Simulación\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 1\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Importancia de la Simulación\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesor: Ing. Diego Saul Vasquez Rios\par
+    
+        \vfill
+
+        {\large \today}
+    \end{titlepage}
+
+    %cuerpo
+    \newpage
+    \begin{justify}
+        \setcounter{page}{1}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Importancia de la Simulación}}
+        \section*{Simulación}
+        \justify
+        Este concepto abarca muchos temas. Hablando específicamente en terminos de sistemas computacionales, nos referimos
+        a la utilización de herramientas matemáticas, computacionales y deterministicas para imitar el comportamiento de un proceso deseado del mundo real.
+        \\\newline
+        En otras palabras, replicar el comportamiento del objetivo con la computadora.
+        \section*{Sistema}
+        \justify
+        Es una colección de objetos los cuales deseamos estudiar. Generalmente sus parte trabajan entre sí con el proposito de funcionar como un solo ente.
+        \\\newline
+        Simple y sencillamente lo podemos considerar como la cosa en la cual estamos observando la función de todas sus partes.
+        \section*{Modelo}
+        \justify
+        A grandes rasgos, es una representación miniatura de lagun sistema de interés. Es una construcción artificial creada por el humano para permitirle entender 
+        dicho sistema de una manera más amena. Al crear uno se debe de considerar lo siguiente:
+        \begin{itemize}
+            \item se deben hacer presunciones simplificadas.
+            \item se deben identificar las condiciones iniciales o de restricción.
+            \item se debe entender el rango de aplicación del modelo.
+        \end{itemize}
+        En otras palabras, una abstracción de la realidad acomodada a lo que se necesite entender.
+        \subsection*{Tipos de modelos}
+        \justify
+        Aqui encontramos los siguientes tipos:
+        \begin{itemize}
+            \item \textbf{Conceptuales:} permiten resaltar conexiones importantes de los sistemas y procesos del mundo real.
+            \item \textbf{De Demostración:} son modelos físicos que pueden ser facilmente observados y manipulados que incluyen caraterísticas similares a aquellas encontradas en el mundo real.
+            \item \textbf{Matemáticos y Estadísticos:} revuelven en resolver las ecuaciones de un sistema o caracterizarlo basado en su parámetros estadísticos.
+            \item \textbf{De enseñanza con visualizaciones:} cualquier cosa que ayude a visualizar como funciona un sistema en particular.
+        \end{itemize}
+        \section*{Procesos}
+        \justify
+        A grandes rasgos, es una serie de acciones u operaciones que nos conducen a un fín. Dependiendo del ámbito en el cual dicho proceso sea aplicado, este va agenerar un resultado distinto.
+        \\\newline
+        En otras palabras, es una serie de pasos que generan un resultado.
+        \section*{Conclusión}
+        \justify
+        Como se ha expuesto en estra breve recopilación de conceptos, la importancia de la simulación recae simple y sencillamente en conoces su poder en los distintos escenarios donde se requiera aplicar. Por
+        ello es necesario considerar los conceptos expuestos, para tener una mejor compresión y apreciación de las capacidades de la simulación como una disciplina matemática-científica. 
+
+    \end{justify}
+
+    %bibliografía
+    \newpage
+        \thispagestyle{empty}
+        \printbibliography
+\end{document}

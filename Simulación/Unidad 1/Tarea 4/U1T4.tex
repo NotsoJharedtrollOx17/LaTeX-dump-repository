@@ -1,0 +1,128 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[backend=biber]{biblatex}\addbibresource{bibliografia.bib} %manejo de bibliografía (BORRAR SI NO ES NECESARIO)
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología
+\usepackage{float} %centrado de imaene
+\usepackage{hyperref} %manejo de enlaces e hipervínculos
+
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Simulación\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 1\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Ventajas y desventajas de un proceso de simulación\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesor: Ing. Diego Saul Vasquez Rios\par
+    
+        \vfill
+
+        {\large 7 de marzo de 2021}
+    \end{titlepage}
+
+    %cuerpo
+    \newpage
+    \begin{justify}
+        \setcounter{page}{1}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Ventajas y desventajas de un proceso de simulación}}
+        \section*{Ventajas}
+        \justify
+        \begin{itemize}
+            \item Puede evitar el peligro y la pérdida de vida.
+            \item Las condiciones pueden ser variadas y sus resultados pueden ser investigados.
+            \item Situaciones críticas pueden ser investigadas sin riesgos.
+            \item Optimíza costos.
+            \item Se pueden acelerar para que su comportamiento pueda ser estudiado facilmente sobre un largo periodo de tiempo.
+            \item Se pueden alentar para estudiar comportamientos de manera más cercana.
+            \item Se puede estudiar el comportamiento de un sistema sin construirlo.
+            \item Sus resultados son generalmente precisos, comparados al modelo analítico.
+            \item Nos ayuda a encontrar fenómenos y comportamientos inesperados en el sistema.
+            \item Es fácil realizar análisis de tipo "¿Qué tal si (...)?".
+            \item Permite entrenar al usuario de la simulación en la comprensión del sistema y de las variables que interfieren en él.
+            \item Permite operar en sistmas cuyo ensayo real conduciría a su destrucción, reproduciendolo cuantas veces se desee.
+            \item Es seguro, robusto y presenta gran sensibilidad frente a los cambios.
+            \item Es fiable (con validez jurídica en muchos países).
+            \item No es necesario interrumpir las operaciones de la compañia.
+            \item Permite analizar el efecto sobre el rendimiento global de un sistema, de pequeños cambios realizados en una o varias de sus componentes.
+        \end{itemize}
+        \section*{Desventajas}
+        \justify
+        \begin{itemize}
+            \item Puede llegar a ser caro el medir como una cosa afecta a otra, tomar las mediciones iniciales y el crear modelo mismo (como tuneles de viento aerodinámico).
+            \item Para simular algo, se necesita una comprensión extensiva y una conciencia de todos los factores involucrados. Sin esto, una simulación no puede ser creada.
+            \item Puede difícil interpretar los resultados de la simulación.
+            \item La calidad de la simulación es inferior a la calidad del modelo.
+            \item Si un modelo no representa de manera adecuada un sistema, las conclusiones inferidas no sirven.
+            \item Su desarrollo requiere mucho tiempo.
+            \item Si los modelos de simulación sobre todo si son estocásticos, no son lo más recomendables para optimizar un sistema.
+            \item Sus resultados solo son numéricos.
+            \item Se requiere una gran cantidad de iteraciones computacionales para encontrar soluciones lo que aumenta los costos de simulación.
+        \end{itemize}
+        \section*{Procesos de identificación para variables de entrada, variables de salida y servicios}
+        \justify
+        En esta sección se explican a brevedad las maneras en la cuales podemos identificar a los sujetos mencionados.
+        \\\newline
+        Para dichas entradas, se les considera como todos los datos que hay que ingresar para la resolución del problema. 
+        \\\newline
+        El método de diseño de algoritmos en etapas, yendo de los conceptos
+        generales a los de detalle, se conoce como el método descendente (\emph{top-down}).
+        \\\newline
+        En un algoritmo se debe de considerar lo siguiente:
+        \begin{itemize}
+            \item La información dada.
+            \item Las operaciones o cálculos necesarios para encontrar la solución del problema.
+            \item Respuestas dadas por el algoritmo o resultados finales de los procesos realizados.
+        \end{itemize}
+        Para las salidas es preciso analizar:
+        \begin{itemize}
+            \item Los datos o resulados que se esperan.
+            \item La etrada que se suministra.
+            \item El proceso requerido para obener los resultados esperados.
+            \item Areas de trabajo, fórmulas y otros recursos. 
+        \end{itemize}
+        Para los procesos:
+        \begin{itemize}
+            \item Se puede hacer parseado.
+            \item Tablas.
+            \item Arboles de desición.
+            \item Diagramas de flujo de datos por partición de eventos.
+        \end{itemize}
+    \end{justify}
+
+    %bibliografía
+        \thispagestyle{empty}
+        \printbibliography
+\end{document}

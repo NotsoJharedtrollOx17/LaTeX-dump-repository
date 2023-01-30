@@ -1,0 +1,104 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología
+\usepackage{float} %centrado de imaene
+\usepackage{hyperref} %manejo de enlaces e hipervínculos 
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Simulación\par}
+        \vspace{1cm}
+        {\scshape\Large Proyecto de investigación\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Objetivos e Hipótesis\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesor: Ing. Diego Saul Vasquez Rios\par
+    
+        \vfill
+
+        {\large 1ro. de junio de 2021}
+    \end{titlepage}
+
+    %cuerpo
+    \newpage
+    \begin{justify}
+        \setcounter{page}{1}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Objetivos e Hipótesis}}
+        \section*{Introducción}
+        \justify
+        En esta breve redacción, se expanden los objetivos e hipótesis del proyecto de Simulación a presentar a finales del semestre. Estrictamente hablando, se introducen
+        los términos financieros que clarifican la comprensión de los planteamientos, los objetivos financieros a llegar con la simulación y finalmente las hipótesis corolarias
+        a lo descrito antes.
+        \subsection*{Conceptos clave}
+        \justify
+        Se describe brevemente aquellas palabras que se usarán a lo largo de este escrito. Los conceptos son enfocados en finanzas, por lo que una buena base de las disciplinas financieras
+        facilita la comprensión del texto restante.
+        \begin{itemize}
+            \item \textbf{Acciones:} el instrumento de inversión elegido. Para simpleza, se eligen cinco acciones.
+            \item \textbf{Capital:} para los propositos de la redacción, es el dinero el cual se dispone para invertir.
+            \item \textbf{Ganancia:} es la cantidad de dinero que se gana dada la inversión. Generalmente se expresa como porcentaje.
+            \item \textbf{MXN:} es la abreviación técnica del peso mexicano.
+            \item \textbf{Paridad peso-dolar:} se refiere a la tasa de cambio de un peso mexicano covertido a un dólar estadounidense.
+            \item \textbf{Tasa de inflación:} el porcentaje por el cual la cantidad de capital pierde poder adquisitivo (su valor baja a travéz del tiempo).
+            \item \textbf{Ticker:} es la abreviación de la acción en la bolsa de valores de la compañia deseada.
+            \item \textbf{USD:} abreviación técnica del dólar estadounidense.
+            \item \textbf{Volatilidad:} el porcentaje del cambio de precio de una acción. Se interpreta que mientras más alto sea el porcentaje, el cambio es más drástico.
+        \end{itemize}
+        \section*{Planteamiento}        
+        \justify
+        Se va a desarrollar una simulación de inversión en cinco acciones que son populares en el subforo de Reddit llamado \emph{wallstreetbets} para observar si los rendimientos en las acciones
+        populares son realmente una buena tésis de inversión y por ende, una buena opción como una inversión seria.
+        \section*{Objetivos}
+        \justify
+        El primer objetivo es probar si una tésis de inversión en base al consenso y popularidad de ciertas acciones dentro de un foro de discusión es viable para poder ser aplicada como una estrategia de inversión. Esto 
+        es debido a que los distintos proverbios de inversión en acciones específicas requiere de investigaciones completas y documentadas para evitar sentir que una inversión es basada en pura suerte, ó en este caso
+        ``siguiendo a las masas''.
+        \\\newline
+        El segundo objetivo es observar el comportamiento de las acciones y su volatilidad para mediar el rendimiento futuro de la inversión dado el capital invertido y sus posibles ganancias. Esto es relevante ya que
+        a lo largo del tiempo, cambios drásticos del precio pueden beneficiar o maleficiar el prospecto de las ganancias y, por ende, afectar el plazo deseado de inversión y decidir si terminar o continuar la inversión.
+        \\\newline
+        El tercer objetivo que se deriva del segundo es observar las acciones volatiles y definir si es conveniente administrar de manera frecuente las posiciones. Se reduce a si estar checando las posiciones es más conveniente que esperar
+        al plazo de inversión establecido por el inversor ya que, si se administra de manera frecuente, se tiende a tener mayores problemas en el bienestar psicológico del inversionista.
+        \\\newline
+        El cuarto objetivo es determinar si los rendimientos de la inversión en las cinco acciones específicadas supera los rendimientos del índice de mercado S\&P 500. Esto es porque dicho índice es un buen medidor de rendimiento del mercado
+        y un rendimiento estable con una tendencia creciente lo que lo hace en la gran mayoria de los casos de inversión personal la opción más simple, eficiente y congruente en comparación con elegir ciertas acciones y esperar rendimientos más
+        altos que del índice.
+        \\\newline
+        Finalmente, el quinto objetivo es apreciar la ayuda del cómputo como una herramienta útil en la toma de desiciones de carácter financiero. Simple y sencillamente probar si ``el conocimiento es poder''. 
+        \section*{Hipótesis}
+        \justify
+        Se tiene cuatro hipótesis basadas en lo recabado y como corolarios de los objetivos planteados. La primer hipótesis es que teniendo el consenso del foro, se puede mediar la posibilidad del éxito ó fracaso. Corolario del sentimiento del mercado ya que la bolsa de valores es una expresión\
+        especulativa de valor que las personas activas en este consideran que tiene.
+        \\\newline
+        La segunda hipótesis es que mientras mas volatididad tenga una acción, se puede tener más riesgo y mayor ganancia. Recae en la noción intuitiva de la relación riesgo-ganancia que se puede experimentar dentro de esta simulación.
+        \\\newline
+        La tercera hipótesis que se debe dejar al menos por un año la inversión para obtener mayores ganancias ante la inversión. Se infiere de tener paciencia para poder crecer la ganancia y tener un poco más de madurez respecto al tema y evitar hacer acciones por impulso no-racional.
+        \\\newline
+        La cuarta y última hipótesis es si mientras más capital invertido máyor la posibilidad de pérdida ó de ganancia.
+    \end{justify}
+
+\end{document}
