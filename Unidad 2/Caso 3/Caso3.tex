@@ -1,0 +1,99 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+%\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+%\captionsetup[table]{textfont=it,format=plain,justification=justified,
+% singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+%\useunder{\uline}{\ul}{}
+%\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1011SC6C Ingeniería de Software\par}
+        \vspace{1cm}
+        {\Large Unidad 2\par}
+        \vspace{2cm}
+        {\Large\bfseries Caso práctico 3\par}
+        \vspace{2cm}
+        {\large Dra. Martha Elena Pulido\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 16 de marzo de 2022}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Entradas, procesamiento y salidas del sistema de rastreo de paquetes de UPS}
+El \begin{justifying}
+   proceso completo consiste en que el cliente pida lo que requiere, a su paquete se le asigna
+   un código de barras donde se le adjunta la información relevante, se transporta y al momento
+   del envio se puede rastrear para que finalmente el cliente pueda proporcionar una firma digital 
+   que confirme la llegada y recepción de su envio.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Tecnologías empleadas}
+La \begin{justifying}
+    herramientas utilizadas son el \emph{DIAD, Document Exchange e Inventory Express}. El primero es simplemente un dispositivo que
+    captura la información de entrega y mantiene dicha información que se puede monitorear por medio de internet.
+    El segundo se utiliza para intercambiar documentos en la red y la tercer herramienta agiliza el control de los inventarios 
+    asignando fechas específicas y almacenando paquetes en tiempos muy cortos.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Relación de las tecnologías con la estrategia de negocios de UPS}
+Sus \begin{justifying}
+    tecnologías, específicamente las explicadas en el escrito adjunto muestran que UPS quiere posicionarse
+    como una empresa de logística (específicamente de paquetería) que le provee a sus clientes comodidad y servicios baratos.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{¿Qué sucedería si no se contara con esas tecnologías?}
+Para \begin{justifying}
+    ellos, sería un caso catastrófico porque nunca pudiesen haberse posicionado a tiempo,
+    específicamente con las innovaciones relacionadas en la red. Debido a que dichos avances también tuvieron
+    que ver con golpes de suerte de apropiación tecnológica, puede haber una posibilidad de igual manera serían la misma
+    paquetería que conocemos, pero con servicios más cutres.\par
+\end{justifying}
+\end{document}

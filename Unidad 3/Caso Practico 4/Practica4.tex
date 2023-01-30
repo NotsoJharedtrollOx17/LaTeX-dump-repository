@@ -1,0 +1,102 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+% \DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+% \captionsetup[table]{textfont=it,format=plain,justification=justified,
+%   singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1011SC6C Ingeniería de Software\par}
+        \vspace{1cm}
+        {\Large Unidad 3\par}
+        \vspace{2cm}
+        {\Large\bfseries Caso práctico 4\par}
+        \vspace{2cm}
+        {\large Dra. Martha Elena Pulido\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 6 de abril de 2022}
+    \end{titlepage}
+
+% Índices
+%\pagenumbering{arabic}
+    % Contenido
+%\renewcommand\contentsname{Contenido}
+%\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section*{Preguntas del caso}
+\subsection*{Identifique los distintos conceptos de calidad presentes en el caso}
+ \begin{justifying}
+A grandes rasgos, el hotel establecia distintos estandares respecto al servicio que se consideraba optimo para los clientes;
+al pasar el tiempo, se procuró establecer un orden en los procesos asegurandose de mantener
+buenas relaciones con los proveedores que, aunado a lograr su certificación ISO, les permiten concentrarse
+en la satisfacción del cliente de manera más minusciosa.\par
+ \end{justifying}
+\vspace{\baselineskip}
+\subsection*{Identifique los objetivos perseguidos en relación con cada concepto de calidad}
+\begin{justifying}
+El objetivo mas prevalente es el de procurar el servicio de calidad al cliente, y la pulcridad de las instalaciones. Luego
+procuraron extender sus miras ante el cómo se relacionaban con los proveedores para ahorrar costos en sus insumos.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection*{¿Con qué objetivo se ha desarrollado el Sistema de Aseguramiento de la Calidad en el Hotel Aljar? 
+¿Qué implicaciones organizativas ha tenido el desarrollo de dicho sistema?}
+\begin{justifying}
+Es muy claro que el objetivo es de brindar un servicio de calidad y refinar dicho aspecto; esto implica
+que la empresa crease el Departamento de Calidad para supervisar el factor diferenciador del negocio.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection*{¿Qué acciones relacionadas con la gestión de la calidad se han llevado a cabo en el Hotel Aljar desde 1995?
+ ¿Por qué se han desarrollado dichas acciones si las mismas suponen unos costes adicionales para el hotel? Clasifique
+ estas acciones según la tipología de los costes de la calidad.}
+ \begin{justifying}
+Las acciones principales son la certificación ISO respecto a estandares de calidad, mantener aseados las instalaciones
+y enfocarse en la atención al cliente, mejorar las relaciones comerciales con los proveedores para tener mayores insumos a menor precio
+y sobre todo, la creación del Departamento de Calidad para supervisar lo antes realizado.\par
+COnsidero que se han realizado debido a que su atención les permite diferenciarse con el resto de los hoteles, ya que como cliente
+espero que en un hotel se me atienda a lo que se me solicite, por lo que la clientela esta dispuesta a pagar más por ser servido al tope.\par
+ \end{justifying}
+\end{document}

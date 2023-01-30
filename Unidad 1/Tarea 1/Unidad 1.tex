@@ -1,0 +1,111 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1011SC6C Ingeniería de Software\par}
+        \vspace{1cm}
+        {\Large Unidad 1\par}
+        \vspace{2cm}
+        {\Large\bfseries Tarea 1\par}
+        \vspace{2cm}
+        {\large Dra. Martha Elena Pulido\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 10 de febrero de 2021}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Introducción}
+Las \begin{justifying}
+    necesidades que se espera cumplír con un proyecto ingenieríl necesitan poderse plantear por medio de requerimientos. Sin embargo, el saber clasificarlos
+    \end{justifying}
+\vspace{\baselineskip}    
+\section{Requisitos}
+\subsection{Definición}
+A \begin{justifying}
+    grandes rasgos, los requisitos son la definición y la recolección de los servicios provistos por un sistema. Se acostumbra
+    a referirse a los requisitos como un proceso debido a que con esto nos permite delimitar el proyecto. \citep{geeksforgeeks-2020}\par
+  \end{justifying}
+\vspace{\baselineskip}
+\subsection{Tipos}
+Se \begin{justifying}
+    acostumbra a clasificar los tipos de requerimientos en dos tipos: funcionales y no funcionales \citep{altexsoft-2019, bigelow-2020}\par %cital al alexsoft y techtarget 
+\end{justifying}
+\subsubsection{Funcionales}
+Se \begin{justifying}
+    les refiere así a aquellos requisitos que competen a las capacidades/funciones que definen el comportamiento del sistema; específicamente el qué hace y que no hace.
+    Vulgarmente hablando, estos requisitos competen al departamento de ingeniería debido a que dichos requisitos les permiten diseñar el sistema acorde a lo estipulado. \citep{altexsoft-2019, bigelow-2020}\par
+\end{justifying}
+Un \begin{justifying}
+    ejemplo claro es el siguiente requerimiento: \emph{``El sistema necesita una autenticación de los datos del usuario para autorizarle la entrada al serivdor''}.
+\end{justifying}
+\vspace{\baselineskip}
+\subsubsection{No funcionales}
+Son \begin{justifying}
+    aquellos requisitos que engloban la usabilidad del sistema. Esto también se conoce como UX (Experiencia de Usario) debido a que aquí
+    remonta la comodidad y rendimiento para el usuario objetivo, que terminará dando su veredicto respecto al sistema. \citep{altexsoft-2019, bigelow-2020} \par
+\end{justifying}
+Un \begin{justifying}
+    ejemplo es el siguiente requerimiento: \emph{``Las páginas del portar web deben cargar en un lapso promedio de 0.5 segundos''}.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Conclusión}
+Como \begin{justifying}
+    se aprecia, los tipos de requerimientos ofrecen distintos enfoques que se complementan para el objetivo final de cualquier proyecto, un producto de calidad.\par
+\end{justifying}
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias} %el archivo 'referencias.bib' debe estar dentro del mismo folder donde se encuentra el archivo .tex para citar las referencias deseadas
+
+\end{document}

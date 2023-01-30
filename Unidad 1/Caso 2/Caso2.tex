@@ -1,0 +1,97 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1011SC6C Ingeniería de Software\par}
+        \vspace{1cm}
+        {\Large Unidad 1\par}
+        \vspace{2cm}
+        {\Large\bfseries Caso práctico 2\par}
+        \vspace{2cm}
+        {\large Dra. Martha Elena Pulido\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 1 de marzo de 2021}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Segmentos-Objetivo de IKEA}
+El \begin{justifying}
+    grupo de clientes ideal fue primeramente los desplzados de la 2da. Guerra Mundial, por la necesidad de reponer los muebles que posiblemente
+vieron destrozados por la guerra, por lo que serían clientes con una alta necesidad económica. Hoy en día la filosofía del negocio sigue siendo
+similar, solo que se agregaron más detalles para hacer la compra del mueble una experiencia en sí para toda la familia.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Posicionamiento de marca}
+La \begin{justifying}
+    marca aprovechó una deficiencia del mercado de muebles por la finalización de la 2da. Guerra Mundial. Esto resultó
+en hacer una experiencia de lujo para los clientes, aparte de precios bajos, productos contemporaneos y una imágen de lo que
+Suecia ofrece ante el mundo.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Manejo de los precios bajos}
+La \begin{justifying}
+    primera opción muy coherente fue la de contratar mano de obra barata, fabricación de los muebles sin ensamblar
+con maderas asequibles, locales instalados en lugares muy baratos de bienes raíces y la experiencia de que el usuario debe de ensamblar su producto y sobre todo, relaciones estrategias
+con sus proveedores de material para asegurar precios accesibles en éste mercado.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Coherencia de la mezcla de marketing con la estrategia de marketing}
+Para \begin{justifying}
+    los tiempos de la pandemia, el producir un catálogo impreso resulta muy ineficiente debido a que de tods modos sus anucios se puede exparsir
+pr medios digitales y permiten hacer efectos de bola de nieve. Por otro punto, el imprimir catálogos les permite
+acceder con mercados más renuantes de tecnología, que prefieren un experiencia más clásica y más minusciosa.\par
+\end{justifying}
+\end{document}

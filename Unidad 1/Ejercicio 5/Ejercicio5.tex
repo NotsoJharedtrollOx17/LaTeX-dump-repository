@@ -1,0 +1,115 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1011SC6C Ingeniería de Software\par}
+        \vspace{1cm}
+        {\Large Unidad 1\par}
+        \vspace{2cm}
+        {\Large\bfseries Ejercicio 5\par}
+        \vspace{2cm}
+        {\large Dra. Martha Elena Pulido\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 22 de febrero de 2021}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Estudio de factibilidad}
+\subsection{Definición}
+Acorde \begin{justifying}
+    a %citar a los de economipedia
+    es un estudio que hace una empresa para determinar la posibilidad de poder desarrola un negocio o un proyecto que espera implementar \citep{quiroa-2021}. En otras palabras,
+    les permite conoce si un negocio o proyecto se puede hacer o no sep uede hacer, cuáles son las condiciones ideales para realizarlo y cómo podría solucionar las
+    dificultades que se puedan presentar.\par
+\end{justifying}
+Aparte, \begin{justifying}
+    dichos estudios de factiblidad se pueden dividir en los siguientes ámbitos \citep{unknown-author-2019}:
+\begin{itemize}
+    \item \textbf{Factibilidad operativa:} competencias laborales del personal para realizar sus debidas funciones.
+    \item \textbf{Factibilidad técnica:} posible respuesta favorable de la infraestructura para poder realizar el proyecto.
+    \item \textbf{Factibilidad económica:} relación costo benefício del negocio o proyecto.
+    \item \textbf{Factibilidad comercial:} potencial de clientela.
+    \item \textbf{Factibilidad política y legal:} si el proyecto no atenta o inclumple alguna ley o norma de los distintos niveles administrativos.
+    \item \textbf{Factibilidad de tiempo:} si el tiempo planificado coincide con el tiempo real de desarrollo.
+\end{itemize}\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection{Técnicas para realizar el estudio de factibilidad}
+A \begin{justifying}
+    grandes rasgos, las técnicas para realizar dichos estudios se pueden sintetizár en los siguientes puntos:
+    \begin{enumerate}
+        \item Delinear la idea o acción planificada. Tener claro que se quiere hacer.
+        \item Examinar el espacio de mercado y la viavilidad comercial de la acción. Se pued lograr mediante recolección de investigaciones de otras empresas sobre nuestro rubro comercial.
+        \item Detectar fortalezas y debilidades dentro de la idea.
+        \item Determinar riesgos insuperables para la acción. Se recomienda recibir asesorías al respecto para considerar otras vulnerabilidades.
+    \end{enumerate}\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Conclusión}
+Conocer \begin{justifying}
+    sobre las técnicas y cnsideraciones pertinentes a los estudios de factibilidad permiten al interesado obtener una vista más definida de sus pros y contras
+    para tomar cartas en el asunto y así empezar con la ejecución de sus planes y/ó la correción de los mismos.\par
+\end{justifying}
+\vspace{\baselineskip}
+%debe estar dentro del mismo folder donde se encuentra el archivo .tex para citar las referencias deseadas
+
+\newpage
+% Referencias
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias}
+
+\end{document}

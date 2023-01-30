@@ -1,0 +1,125 @@
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+%\usepackage{fontspec} %paquete para usar la fuente Arial 12
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+
+%comando para ajustar la fuente Arial en todo el documento
+%\setmainfont{Arial} %COMPILAR DOC CON XeLateX DOS VECES
+
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+%\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\Large Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\Large SCD-1011SC6C Ingeniería de Software\par}
+        \vspace{1cm}
+        {\Large Unidad 2\par}
+        \vspace{2cm}
+        {\Large\bfseries Actividad 1\par}
+        \vspace{2cm}
+        {\large Dra. Martha Elena Pulido\par}
+        \vfill
+            {\large Abraham Jhared Flores Azcona, 19211640\par}
+        \vfill
+        {\large 3 de marzo de 2021}
+    \end{titlepage}
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Introducción}
+Como parte importante de la ingeniería de software, se deben plantear de manera consisa y precisa las partes que van
+a conformar un sistema de software. En esta breve redacción, resumimos los puntos importantes del modelo de diseño para futura referencia.
+\vspace{\baselineskip}
+\section{Modelos de diseño}
+Según \cite{unknown-author-no-date} %citar IBM 
+    \begin{justifying}
+        este se basa sobre el modelo de análisis que describe, en mayor detalle,
+            la estructura del sistema y cómoo será implementado el sistema. Las clases
+            identificadas en el análisis son refinadas para incluir construcciones de implementación.\par
+            Sus principios son:
+            \begin{itemize}
+                \item El diseño debe ser trazado hacia el modelo de análisis.
+                \item Siempre se debe considerar la arquitectura del sistema a construir.
+                \item Enfocarse en el diseño de los datos: su diseño debe recabar la manera en cómo los objetos de datos están reaizados dentro del diseño.
+                \item Las interfaces de usuario deben considerar primeramente al usuario.
+                \item Los componentes deben estár ligeramente acoplados.
+                \item Las interfaces internas como de usuario deben ser diseñadas.
+            \end{itemize}\par
+    \end{justifying}    
+    \vspace{\baselineskip}
+\subsection{Tipos}
+A \begin{justifying}
+    grandes rasgos se divide en cuatro tipos: \citep{tawde-2021} \emph{diseño de datos, diseño de la arquitectura, diseño de las interfaces de usuario y el diseño de los niveles
+    de componentes}.\par  
+\end{justifying}
+\subsubsection{Diseño de datos}
+Representa \begin{justifying}
+    los objetos de datos y sus relaciones en un diagrama entidad relación que muestra la información requeridad por cada entidad así como
+    la relación entre ellos mismos.\par
+\end{justifying}
+\subsubsection{Diseño de la arquitectura}
+Define \begin{justifying}
+    la relación entre los elementos estructurales mayores del software. Se trata de descomponer el sistema
+    en sus componentes que interactuan entre sí.\par
+\end{justifying}
+\subsubsection{Diseño las interfaces de usuario}
+Representa \begin{justifying}
+    cómo el software se va a comunicar con el usuario; interacciones con controles o despliegues del producto.\par
+\end{justifying}
+\subsubsection{Diseño de los niveles de componentes}
+Transforma \begin{justifying}
+    los elementos estructurales de la arquitectura de software en una descripción procedual de los componentes de software. Es una manera perfecta
+    para compartir una gran cantidad de datos.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Conclusión}
+En \begin{justifying}
+    este diseño nos damos cuenta que se debe de tomar con seriedad para evitar tener una mala interpretación del sistema a desarrollar y, por ende, hacerlo mucho más tedioso
+    de lo que és realmente. Siempre se recomienda revisar dichos puntos para mantener éstandares de calidad.\par
+\end{justifying}
+
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias}
+\end{document}
