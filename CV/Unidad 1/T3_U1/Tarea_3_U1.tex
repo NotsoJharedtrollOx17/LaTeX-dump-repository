@@ -1,0 +1,88 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+
+\setcounter{page}{1}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 3, U1}}
+\rhead{\textbf{21/09/2020}}
+\section{Vectores en el espacio}
+\subsection*{Encuentra los 6 vertices restantes del paraplepido}
+\subsubsection*{-Bosquejo representativo:}
+\centering
+\includegraphics[width=10cm]{representación.png}
+\justify
+\subsection*{Cálculos:}
+\justify
+\(A=(-1,6,7),\,B=(3,3,4)\). Debido a ser un paraplepido, podemos interpretar que 
+\[P=\{A,B,V_1,V_2,...,V_6|A,B,V_{1,...,6}=(x,y,z)\}\]
+Ya que conocemos al menos dos puntos de la figura, podemos denominar a \(A=(x_A,y_A,z_A)\) y \(B=(x_B,y_B,z_B)\). Debido a que los vertices están en relación
+a estos dos puntos conocidos, podemos inferir que con \(A\) y \(B\) hay una cierta manera de acomodar sus valores para que nos den los demás vertices, esto se debe a que la figura descrita
+es una con aristas regulares, y por ende existe una cierta simetría entre sus vertices. 
+\\ \newline
+Tomando \(V_1\) como referencia, de manera geométrica se puede notar que:
+\begin{itemize}
+    \item Está a la misma altura de \(A\).
+    \item Está arriba de \(B\).
+\end{itemize}
+Lo que expresado de manera mas formal es:
+\begin{itemize}
+    \item \(z_{V_1}=z_A\).
+    \item \(x_{V_1},y_{V_1}=x_B,y_B\).
+\end{itemize}
+Lo que confirma nuestra suposición de relación. Notese tambien que para los vertices restantes, sus coordenadas pueden ser una combinación de las coordenadas de \(A\) y \(B\) por lo que podemos
+decir que existe un patrón de estructura binomial en todas las coordenadas de la figura, dados dos puntos del mismo. Por simplicidad, se procede a considerar que:
+\(A\rightarrow 0\) y \(B\rightarrow 1\), así que:
+\begin{center}
+    \begin{tabular}{ c c c }
+    \(A\) & \((x_A,y_A,z_A)\) & 000\\
+          &                   & 001\\
+          &                   & 010\\
+          &                   & 011\\
+          &                   & 100\\
+          &                   & 101\\
+          &                   & 110\\
+    \(B\) & \((x_B,y_B,z_B)\) & 111
+    \end{tabular}
+\end{center}
+Como se puede apreciar, la dicha relación se puede expresar en binario desde el valor decimal de cero hasta siete donde el valor inicial (\(000\)) corresponde a \(A\), el valor final (\(111\)) a \(B\)
+y los demas puntos correponden a lo que está en medio de \(A\) y \(B\) por lo que:
+\begin{center}
+    \begin{tabular}{ c c c }
+        \(V_1\)& \((x_A,y_A,z_B)\) & 001\\
+        \(V_2\)& \((x_A,y_B,z_A)\) & 010\\
+        \(V_3\)& \((x_A,y_B,z_B)\) & 011\\
+        \(V_4\)& \((x_B,y_A,z_A)\) & 100\\
+        \(V_5\)& \((x_B,y_A,z_B)\) & 101\\
+        \(V_6\)&  \((x_B,y_B,z_A)\) & 110\\
+    \end{tabular}
+\end{center}
+Realizamos las sustituciones correspondientes:
+\begin{center}
+    \begin{tabular}{ c c c }
+        \(V_1\)& \(=(x_A,y_A,z_B)=\) & \((-1,6,4)\)\\
+        \(V_2\)& \(=(x_A,y_B,z_A)=\) & \((-1,3,7)\)\\
+        \(V_3\)& \(=(x_A,y_B,z_B)=\) & \((-1,3,4)\)\\
+        \(V_4\)& \(=(x_B,y_A,z_A)=\) & \((3,6,7)\)\\
+        \(V_5\)& \(=(x_B,y_A,z_B)=\) & \((3,6,4)\)\\
+        \(V_6\)&  \(=(x_B,y_B,z_A)=\) & \((3,3,7)\)\\
+    \end{tabular}
+\end{center}
+Dando por concluido la tarea.
+\end{document}

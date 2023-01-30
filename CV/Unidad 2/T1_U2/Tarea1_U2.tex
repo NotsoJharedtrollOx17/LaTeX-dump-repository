@@ -1,0 +1,65 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+\setcounter{page}{1}
+\thispagestyle{fancy}
+\lhead{\textbf{Tarea 1, U2}}
+\rhead{\textbf{13/10/2020}}
+\section*{Curvas planas, ecuaciones paramétricas y coordenadas polares}
+\subsection*{Obtener la \emph{derivada}, \emph{tangente vertical y tangente horizontal de las sig. curvas paramétricas:}}
+\[1.\, x(t)=t^3-t, \, y(t)=t^2\]
+\[2.\, x(t)=t-1, \, y(t)=t^3-3t^2\]
+\subsection*{Procedimiento}
+\subsubsection*{Curva 1}
+\justify
+Derivada: 
+\[\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\therefore \frac{dx}{dt}=3t^2-1,\, \frac{dy}{dt}=2t\]
+Tangente vertical: 
+\[\tan_{\text{vertical}}\rightarrow\frac{dx}{dt}=0 \therefore \begin{matrix}
+    \frac{dx}{dt}&=&3t^2-1\\
+    0&=&3t^2-1\\
+    1&=&3t^2\\
+    \frac{1}{3}&=&t^2\\
+    \pm\frac{1}{\sqrt{3}}&=&t
+\end{matrix}\]
+Tangente horizontal:
+\[\tan_{\text{horizontal}}\rightarrow\frac{dy}{dt}=0 \therefore \begin{matrix}
+    \frac{dy}{dt}&=&2t\\
+    0&=&2t\\
+    0&=&t
+\end{matrix}\]
+\subsubsection*{Curva 2}
+\justify
+Derivada:
+\[\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\therefore \frac{dx}{dt}=1,\, \frac{dy}{dt}=3t^2-6t\]
+Tangente vertical:
+\[\tan_{\text{vertical}}\rightarrow\frac{dx}{dt}=0 \therefore \begin{matrix}
+    \frac{dx}{dt}&=&1\\
+    0&=&1\\
+    \therefore &\tan_{\text{vertical}} \text{ no existe}
+\end{matrix}\]
+Tangente horizontal:
+\[\tan_{\text{horizontal}}\rightarrow\frac{dy}{dt}=0 \therefore \begin{matrix}
+    \frac{dy}{dt}&=&3t^2-6t\\
+    0&=&3t^2-6t\\
+    0&=&t^2-2t\\
+    2t&=&t^2\\
+    2&=&t
+\end{matrix}\]
+\end{document}
