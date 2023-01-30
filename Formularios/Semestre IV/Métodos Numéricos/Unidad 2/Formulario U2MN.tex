@@ -1,0 +1,162 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{hyperref} %manejo de enlaces
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Métodos Numéricos\par}
+        \vspace{1cm}
+        {\scshape\Large IV Semestre\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Formulario (U2)\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesor: Ing. Tonallí Cuauhtemoc Galícia Lopez\par
+        
+        \vfill
+
+        {\large 6 de mayo de 2021}
+    \end{titlepage}
+
+    \newpage
+    \begin{justify}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Unidad 2}}
+        \section{Soluciones a sistemas de ecuaciones lineales}
+        \justify
+        En todos se muestra la fórmula matemática o algorítmo y su vaga representación en Excel.
+        \subsection{Teoría}
+        \justify
+        Es algebra lineal (la parte de resolver sistemas de ecuaciones lineales).\\\newline
+        A grandes rasgos, primero ocupamos saber si los valores de la diagonal de coeficientes 
+        del sistema son los valores mayores de sus filas correspondientes y que las iteraciones converjan a un valor determinado. 
+        Por el afán de la simplicidad, se desarrolla una solución para un sistema de ecuaciones de tres variables.
+        {\large\[\begin{matrix}
+            ax_1+bx_2+cx_3&=&d\\
+            ex_1+fx_2+gx_3&=&h\\
+            ix_1+jx_2+kx_3&=&l
+        \end{matrix}\rightarrow
+        \begin{matrix}
+            x_1&=&\frac{d}{a}-\frac{b}{a}x_2-\frac{c}{a}x_3\\
+            x_2&=&\frac{h}{f}-\frac{e}{f}x_1-\frac{g}{f}x_3\\
+            x_3&=&\frac{l}{k}-\frac{i}{k}x_1-\frac{j}{k}x_2
+        \end{matrix}\]}
+        Donde los coeficientes \(a,b,c,e,f,g,h,i,j,k,l\in\mathbb{R}\).
+        \subsection{Jacobi}
+        \justify
+        Para fines de brevedad y simplicidad \(\alpha=\text{anterior}\) y \(\sigma=\text{siguiente}\). Checar videos para no confundir con Gauss-Seidel.
+        \justify
+        \textbf{• Fórmula para \(x_1\):}
+        {\large \[x_{1\,\sigma}=\frac{d}{a}-\frac{b}{a}x_{2\,\alpha}-\frac{c}{a}x_{3\, \alpha}\]}
+        \justify
+        \textbf{• Fórmula para \(x_2\):}
+        \justify
+        {\large \[x_{2\, \sigma}=\frac{h}{f}-\frac{e}{f}x_{1\, \alpha}-\frac{g}{f}x_{3\, \alpha}\]}
+        \textbf{• Fórmula para \(x_3\):}
+        \justify
+        {\large \[x_{3\, \sigma}=\frac{l}{k}-\frac{i}{k}x_{1\, \alpha}-\frac{j}{k}x_{3\, \alpha}\]}
+        \textbf{• En Excel:}
+\begin{verbatim}
+    -Para x_1:
+=(<d>/<a>)-(<b>/<a>)*<celda_x2_anterior>-(<c>/<a>)*<celda_x3_anterior>
+
+    -Para x_2:
+=(<h>/<f>)-(<e>/<f>)*<celda_x1_anterior>-(<g>/<f>)*<celda_x3_anterior>
+
+    -Para x_3:
+=(<l>/<k>)-(<i>/<k>)*<celda_x1_anterior>-(<j>/<k>)*<celda_x3_anterior>
+\end{verbatim}
+        \subsection{Gauss-Seidel}
+        \justify
+        Para fines de brevedad y simplicidad \(\rho=\text{reciente}\) y \(\sigma=\text{siguiente}\). Checar videos para no confundir con Jacobi.
+        \justify
+        \textbf{• Fórmula para \(x_1\):}
+        {\large \[x_{1\,\sigma}=\frac{d}{a}-\frac{b}{a}x_{2\,\rho}-\frac{c}{a}x_{3\,\rho}\]}
+        \justify
+        \textbf{• Fórmula para \(x_2\):}
+        \justify
+        {\large \[x_{2\, \sigma}=\frac{h}{f}-\frac{e}{f}x_{1\,\rho}-\frac{g}{f}x_{3\,\rho}\]}
+        \textbf{• Fórmula para \(x_3\):}
+        \justify
+        {\large \[x_{3\, \sigma}=\frac{l}{k}-\frac{i}{k}x_{1\,\rho}-\frac{j}{k}x_{3\,\rho}\]}
+        \textbf{• En Excel:}
+\begin{verbatim}
+    -Para x_1:
+=(<d>/<a>)-(<b>/<a>)*<celda_x2_reciente>-(<c>/<a>)*<celda_x3_reciente>
+
+    -Para x_2:
+=(<h>/<f>)-(<e>/<f>)*<celda_x1_reciente>-(<g>/<f>)*<celda_x3_reciente>
+
+    -Para x_3:
+=(<l>/<k>)-(<i>/<k>)*<celda_x1_reciente>-(<j>/<k>)*<celda_x3_reciente>
+\end{verbatim}
+        \section{Derivada numérica}
+        \justify
+        En todos se muestra la fórmula matemática o algorítmo y su vaga representación en Excel.
+        \subsection{Teoría}
+        \justify
+        La tres formulas vistas de este tema son tomadas de la derivada por definición:
+        {\large \[f^{\prime}(x)=\lim_{h\rightarrow}{f(x+h)-f(x)\over h}\]}
+        \justify
+        Como la interpretación del límite incluye valores intangibles (infinitesimales) se necesita computar a la misma sin el límite. Generalmente,
+        el valor de \(h\) es muy cercano a cero. 
+        \subsection{Hacia al frente}
+        \justify
+        Si se puede describir vulgarmente, es la formula de la derivada sin el límite, tal cual. \(x_i\) es un valor cualquiera para \(x\).
+        \justify
+        \textbf{• Fórmula para \(f^{\prime}(x_i)\):}
+        {\large \[f^{\prime}(x_i)\approx{f(x_i+h)-f(x_i)\over h}\]}
+        \justify
+        \textbf{• Fórmula para Excel:}
+\begin{verbatim}
+=(<celda_f(xi+<h>)>-<celda_f(x_i)>)/<h>
+\end{verbatim}
+        \subsection{Central}
+        \justify
+        Se calcula con el supuesto de que \(x_i\) está ``en medio'' de la derivada. \(x_i\) es un valor cualquiera para \(x\).
+        \justify
+        \textbf{• Fórmula para \(f^{\prime}(x_i)\):}
+        {\large \[f^{\prime}(x_i)\approx{f(x_i+h)-f(x_i-h)\over 2h}\]}
+        \justify
+        \textbf{• Fórmula para Excel:}
+\begin{verbatim}
+=(<celda_f(xi+<h>)>-<celda_f(x_i-<h>)>)/(2*<h>)
+\end{verbatim}   
+        \subsection{Hacia atrás}
+        \justify
+        Se calcula con el supuesto de que el valor de \(x_i\) es después de \(h\). \(x_i\) es un valor cualquiera para \(x\).
+        \justify
+        \textbf{• Fórmula para \(f^{\prime}(x_i)\):}
+        {\large \[f^{\prime}(x_i)\approx{f(x_i)-f(x_i-h)\over h}\]}
+        \justify
+        \textbf{• Fórmula para Excel:}
+\begin{verbatim}
+=(<celda_f(xi)>-<celda_f(xi-<h>)>)/<h>
+\end{verbatim}
+    \end{justify}
+\end{document}

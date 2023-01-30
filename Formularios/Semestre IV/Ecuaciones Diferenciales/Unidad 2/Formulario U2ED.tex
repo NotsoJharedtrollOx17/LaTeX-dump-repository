@@ -1,0 +1,145 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{hyperref} %manejo de enlaces
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Ecuaciones Diferenciales\par}
+        \vspace{1cm}
+        {\scshape\Large IV Semestre\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Formulario (U2)\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: Ing. Mariana Huizar Tejada\par
+        
+        \vfill
+
+        {\large 7 de marzo de 2021}
+    \end{titlepage}
+
+    \newpage
+    \begin{justify}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Unidad 2}}
+        \section{Ecuaciones Diferenciales Lineales de orden superior}
+        \justify
+        En esta unidad es repasar otras habilidades matemáticas mas allá que derivar o diferenciar.
+        \subsection{Problema del valor inicial}
+        \justify
+        Es cuando se nos da \(n\) condiciones de la forma:
+        {\large \[y(x_0)=y_0,\, y^{\prime}(x_0)=y_1,\, y^{\prime\prime}(x_0)=y_2,\, \dots, \, y^{(n-1)}(x_0)=y_{n-1}\]}
+        \subsection{Problema del valor en la frontera}
+        \justify
+        Es cuando se nos da \(n\) condiciones de la forma:
+        {\large \[y(x_0)=y_0,\, y(x_1)=y_1,\, y(x_2)=y_2,\, \dots,\, y(x_{n-1})=y_{n-1}\]}
+        \justify
+        Tanto para el valor inicial como en la frontera, se resuelven para encontrar los valores de las constantes de la solución
+        general para obtener la solución particular a la ecuación diferencial.
+        \subsection{Dependencia e independencia lineal}
+        \justify
+        Dado \(\theta=\{f_1,f_2,\dots, f_n\}\), si se quiere saber la independencia lineal de \(\theta\) se 
+        calcula el Wronskiano correspondiente, tal que: 
+        {\large\begin{equation*}
+            \begin{aligned}
+                W(\theta)=\begin{array}{@{\mkern3mu}|cccc|@{\mkern3mu}}
+                    f_1 & f_2 & \dots & f_n\\
+                    f^{\prime}_1 & f^{\prime}_2 & \dots & f^{\prime}_n\\
+                    f^{\prime\prime}_1 & f^{\prime\prime}_2 & \dots & f^{\prime\prime}_n\\
+                    \vdots & \vdots & \vdots & \vdots\\
+                    f^{(n-1)}_1 & f^{(n-1)}_2 & \dots & f^{(n-1)}_n
+                \end{array}\neq 0
+            \end{aligned}
+        \end{equation*}}
+        De lo contrario, \(\theta\) es linealmente dependiente.
+        \subsection{Reducción de orden}
+        \justify
+        Para obtener la solución general \(y=c_1y_1+c_2y_2\) de la ecuación diferencial \(y^{\prime\prime}+p(x)y^{\prime}+q(x)y=0\) dado \(y_1\) entonces ocupamos calcular \(y_2\):
+        {\large\[y_2=u(x)\, y_1,\, u(x)=\int \frac{\text{exp}\left(-\int p(x)\, dx\right)}{y^2_1}\, dx\]}
+        \subsection{Con coeficientes constantes}
+        \justify
+        Son aquellas ecuaciones las cuales tienen la forma:
+        {\large\[a_ny^{(n)}+a_{n-1}y^{(n-1)}+\dots+a_2y^{\prime\prime}+a_1y^{\prime}+a_0y=0\]}
+        \justify
+        Por fines de la explicación, se continua con una ecuación diferencial de segundo orden y que \(y_1=e^{mx}\):
+        {\large\[a_2y^{\prime\prime}+a_1y^{\prime}+a_0y=0\rightarrow a_2m^2+a_1m+a_0=0\]}
+        \justify
+        Resolvemos la ecuación en términos de \(m\) para obtener sus raices y determinamos la solución general:
+        \newline\\
+        {\large\textbf{• Caso 1: \(m\) con reales diferentes}\[\{e^{m_1x},\, e^{m_2x}\}\rightarrow y=c_1e^{m_1x}+c_2e^{m_2x}\]}
+        {\large\textbf{• Caso 2: \(m\) con reales repetidos}\[\{e^{mx},\, xe^{mx}\}\rightarrow y=c_1e^{mx}+c_2xe^{mx}\]}
+        {\large\textbf{• Caso 3: \(m\) complejos donde \(m=a\pm bi\)}\[\{e^{ax}\cos(bx),\, e^{ax}\sin(bx)\}\rightarrow y=c_1e^{ax}\cos(bx)+c_2e^{ax}\sin(bx)\]}
+        \subsubsection{De orden superior}
+        \justify
+        Si la ecuación es de un orden mayor al de 2do. grado, se puede reducir usando la división sintética hasta reducirla al segundo ordén.
+        Los casos anteriores aplican, pero las constantes y cantidades de términos en la solución general puede variar (puede haber 3, 4, etc.)
+        \subsection{Ecuaciones diferenciales lineales no homogéneas}
+        \justify
+        Son aquellas las cuales tienen la forma:
+        {\large\[a_ny^{(n)}+a_{n-1}y^{(n-1)}+\dots+a_2y^{\prime\prime}+a_1y^{\prime}+a_0y=g(x)\]}
+        Donde \(g(x)\neq 0\). La solución para dicha ecuación es:
+        {\large\[y=y_c+y_p\]}
+        Donde \(y_c\) es la solución complementaria y \(y_p\) es la solución particular de \(g(x)\).
+        \\\newline
+        Notese lo siguiente:
+        {\large\[\arraycolsep=10pt\def\arraystretch{1.8}\begin{array}{ccc}
+            g(x) & m & y_p\\
+            1 & 0 & A\\
+            2x+4 & 0,0 & Ax+B\\
+            3e^x & 1 & Ae^x\\
+            5xe^{4x} & 4,4 & Ae^{4x} + Bxe^{4x}\\
+            4x^2e^{3x} & 3,3,3 & Ae^{3x} + Bxe^{3x} + Cx^2e^{3x}\\
+            -8\cos(2x) & \pm 2i & A\cos(2x) + B\sin(2x)
+        \end{array}\]}
+        \justify
+        Lo que se desea mostrar es que \(y_p\) varia según las raices (\(m\)) de \(g(x)\), y los coeficientes de dicha solución se calculan de la siguiente manera:
+        \begin{enumerate}
+            \item Calcular \(y_c\) por los métodos anteriores.
+            \item Revisar \(g(x)\) y determinar las raices correspondientes y la ``plantilla'' de \(y_p\).
+            \item Derivar \(y_p\) hasta el mayor órden de la Ecuación Diferencial dada y sustituar las derivadas en dicha ecuación.
+            \item Reducir la expresión e igualar términos semejantes para obtener los coeficientes de \(y_p\).
+            \item Sustituir los coeficientes obtenidos en \(y_p\).
+            \item \(y=y_c+y_p\).
+        \end{enumerate}
+        \subsubsection{Caso especial: raices de \(g(x)\) ya encontradas para \(y_c\)}
+        \justify
+        Si \(g(x)\) contiene una de las raices para \(y_c\), se escala su solución por factor de \(x\).
+        \\\newline
+        Ejemplo:
+        \\
+        Se sabe que para una ecuación diferencial lineal no homogénea \(g(x)=-4e^{4x}\) y que \(y_c=c_1e^{4x}+c_2e^{6x}\). Determina su posible \(y_p\):
+        {\large\[g(x)=-4e^{4x}\rightarrow y_p=A\left(x\cdot e^{4x}\right)\]}
+        Y se resuelve como se indica anteriormente.
+        \subsection{Variación de parámetros}
+        \justify
+        Para resolver una Ecuación Diferencial Lineal No Homogenea de 2do. orden por este método, se tiene en cuenta lo siguiente:
+        {\large\[y=y_c+\underbrace{v_1y_1+v_2y_2}_{y_p}\]}
+        Donde \(y_c=c_1y_1+c_2y_2\) (que se calcula como se ha visto antes) y
+        {\large\[v_1=-\int {g(x)y_2 \over W(y_1,y_2)}\, dx,\: v_2=\int {g(x)y_1 \over W(y_1,y_2)}\, dx\]}
+    \end{justify}
+\end{document}

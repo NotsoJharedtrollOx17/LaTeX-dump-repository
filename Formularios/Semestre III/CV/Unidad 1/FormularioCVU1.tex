@@ -1,0 +1,154 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{algorithm2e} %manejo de algoritmos
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Cálculo Vectorial\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Formulario (U1)\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        Ing. Mariana Huizar Tejada
+        
+        \vfill
+
+        {\large 07/oct/2020}
+    \end{titlepage}
+
+    \newpage
+    \thispagestyle{empty}
+    \tableofcontents
+
+    \newpage
+    \setcounter{page}{1}
+    \thispagestyle{fancy}
+    \lhead{\textbf{Unidad 1}}
+    \rhead{\textbf{07/09/2020}}
+    \section{Vectores}
+    \begin{itemize}
+        \item En \(\mathbb{R}^2\):\[\vec{v}=\,<\!v_x,v_y\!> \text{ ó } <\!v_1,v_2\!> \text{ ó } v_1\hat{\imath}+v_2\hat{\jmath}\]
+        \item En \(\mathbb{R}^3\): \[\vec{v}=\,<\!v_x,v_y,v_z\!> \text{ ó } <\!v_1,v_2,v_3\!> \text{ ó } v_1\hat{\imath}+v_2\hat{\jmath}+v_3\hat{k}\]
+    \end{itemize}
+    Si:\[-\vec{v}\therefore-\vec{v}=(-1)\vec{v}\]
+    \subsection{Escalares}
+    Son constantes numericas representadas por minusculas (\(a=12,b=5\),etc.) Alargan o encogen a un vector:
+    \[k\vec{v}=\,<\!kv_1,kv_2,kv_3\!>\]
+    \subsection{Magnitudes}
+    Vulgarmente conocidos como la longitud de un vector. Se representa de la sig. manera:
+    \[\lVert\vec{v}\rVert=\sqrt{v_1^2+v_2^2+v_3^2}\]
+    \subsection{Vectores unitarios}
+    Son vectores de referencia, usados generalmente para indicar la dirección de los ejes
+    \[\hat{\imath}=\,<\!1,0,0\!>\,\hat{\jmath}=\,<\!0,1,0\!>\,\hat{k}=\,<\!0,0,1\!>\,\]
+    Para obtener el vector unitario de un vector cualquiera, se realiza lo siguiente:
+    \[\lambda\vec{v}=\frac{\vec{v}}{\lVert\vec{v}\rVert}\]
+    \subsection{Suma}
+    \[\vec{u}+\vec{v}=\,<\!u_1+v_1,u_2+v_2,u_3+v_3\!>\]
+    \subsection{Resta}
+    \[\vec{u}-\vec{v}=\,<\!u_1-v_1,u_2-v_2,u_3-v_3\!>\]
+    \subsection{Producto punto}
+    Genera un escalar:
+    \[\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3\]
+    Algunas propiedades son las siguientes:
+    \[\vec{u}\cdot\vec{v}=\lVert\vec{u}\rVert^2\]
+    \[\vec{u}\cdot\vec{v}=\lVert\vec{u}\rVert\lVert\vec{v}\rVert\cos\theta\]
+    Donde:
+    \[\vec{u}\cdot\vec{v}>0\leftrightarrow\theta \text{ es agudo}\]
+    \[\vec{u}\cdot\vec{v}<0\leftrightarrow\theta \text{ es obtuso}\]
+    \[\vec{u}\perp\vec{v}\leftrightarrow\vec{u}\cdot\vec{v}=0\]
+    \subsection{Producto cruz}
+    Genera un vector perpendicular a los vectores que se usaron en la operación:
+    \[\vec{u}\times\vec{v}=\begin{pmatrix}
+    \hat{\imath} &\hat{\jmath}& \hat{k}\\
+    u_x&u_y&u_z\\
+    v_x&v_y&v_z
+    \end{pmatrix}=\hat{\imath}\begin{pmatrix}
+    u_y&u_z\\
+    v_y&v_z
+    \end{pmatrix}-\hat{\jmath}\begin{pmatrix}
+    u_x&u_z\\
+    v_x&v_z
+    \end{pmatrix}+\hat{k}\begin{pmatrix}
+    u_x&u_y\\
+    v_x&v_y
+    \end{pmatrix}\]
+    Donde:
+    \[\vec{u}\times\vec{v}=0\rightarrow\vec{u}\parallel\vec{v}\]
+    \subsection{Proyección}
+    Dados \(\vec{u},\,\vec{v}\) donde \(\lVert\vec{v}\rVert>\lVert\vec{u}\rVert\), si se desea saber la Proyección de \(\vec{u}\) sobre \(\vec{v}\) se debe de hacer lo siguiente:
+        \[\text{comp}_{\vec{v}}\vec{u}=\lVert\vec{u}\rVert\cos\theta\left(\lambda\vec{v}\right)=\frac{\vec{u}\cdot\vec{v}}{\lVert\vec{v}\rVert}\leftarrow\text{escalar}\]
+        \[\text{proy}_{\vec{v}}\vec{u}=\text{comp}_{\vec{v}}\vec{u}\left(\lambda\vec{v}\right)=\frac{\vec{u}\cdot\vec{v}}{\lVert\vec{v}\rVert^2}\left(\vec{v}\right)\leftarrow\text{vector}\]
+    \subsection{Cosenos directores}
+    Dado \(\vec{u}\), para obtener \(\cos\alpha,\,\cos\beta,\,\cos\gamma\):
+    \[\cos\alpha\,\text{(ángulo respecto al eje }x)=\frac{\vec{u}\cdot \hat{\imath}}{\lVert\vec{u}\rVert\lVert\hat{i}\rVert}\]
+    \[\cos\beta\,\text{(ángulo respecto al eje }y)=\frac{\vec{u}\cdot \hat{\jmath}}{\lVert\vec{u}\rVert\lVert\hat{j}\rVert}\]
+    \[\cos\gamma\,\text{(ángulo respecto al eje }z)=\frac{\vec{u}\cdot \hat{k}}{\lVert\vec{u}\rVert\lVert\hat{k}\rVert}\]
+    Notese que la referencia respecto a cada eje es debido al uso de los vectores unitarios (\(\hat{\imath},\,\hat{\jmath},\,\hat{k}\)). 
+    \section{Rectas en \(\mathbb{R}^3\)}
+    Se necesitan al menos dos puntos y el vector direccional que pasa por los dos puntos. Otra opción puede ser un punto (\(\vec{r_0}\)) y el vector direccional (\(\vec{v}\)).
+    \[<\!x,y,z\!>\,=\,<\!x_0+at,y_0+bt,z_0+ct\!>,\, \vec{v}=\,<\!a,b,c\!>,\, \vec{r_0}=\,<\!x_0,y_0,z_0\!>\]
+    \subsection{Ecuaciones simetricas}
+    Dados:
+    \[R_1=\,<\!x_0+at,y_0+bt,z_0+ct\!>\]
+    \[R_2=\,<\!x_1+ds,y_1+es,z_1+fs\!>\]
+    Donde:
+    \[\vec{v}_1=\,<\!a,b,c\!>\]
+    \[\vec{v}_2=\,<\!d,e,f\!>\]
+    Pasos:\\\newline
+    \begin{algorithm}[H]
+        \SetAlgoLined
+        \KwData{Dos ecuaciones de rectas}
+        \KwResult{Los valores de intersección de ambas rectas}
+        INICIO\;
+        Obtener \(\vec{v}_1\cdot\vec{v}_2\)\;
+        \eIf{\(\vec{v}_1\cdot\vec{v}_2=0\)}{
+        \(\vec{v}_2=k\vec{v}_1\)\;
+        }{
+            Realizar un sistema de ecuaciones de la forma:\\
+            \(\begin{matrix}
+                x_{R_1}&=&x_{R_2}\\
+                y_{R_1}&=&y_{R_2}\\
+                z_{R_1}&=&z_{R_2}
+            \end{matrix}\rightarrow\begin{matrix}
+                x_0+at&=&x_1+ds\\
+                y_0+bt&=&y_1+es\\
+                z_0+ct&=&z_1+fs\
+            \end{matrix}\)
+            \\Resolver el sistema para \(t\) y \(s\)\;
+            Comprobar los valores anteriores\;
+            Evaluar dichos valores en cualquiera de las ecuaciones de recta\;
+            Escribir el punto de intersección\;
+        }
+        FIN\;
+    \end{algorithm}
+    \subsection{Planos}
+    \[\vec{n}=a\hat{\imath}+b\hat{\jmath}+c\hat{k},\,\vec{u}=\,<\!x-x_0,y-y_0,z-z_0\!> \text{donde }\vec{u}\cdot\vec{n}=0\]
+    \[\therefore \text{Ec}_{\text{plano}}=a(x-x_0)+b(y-y_0)+c(z-z_0)=0\]
+    \[ax+by+cz+d=0\]
+\end{document}

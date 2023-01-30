@@ -1,0 +1,89 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{hyperref} %manejo de enlaces
+\usepackage[scr]{rsfso} %simbolo de la "l" de la transformada de laplace
+\newcommand{\Laplace}{\mathscr{L}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Ecuaciones Diferenciales\par}
+        \vspace{1cm}
+        {\scshape\Large IV Semestre\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Formulario (U3)\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: Ing. Mariana Huizar Tejada\par
+        
+        \vfill
+
+        {\large 7 de junio de 2021}
+    \end{titlepage}
+
+    \newpage
+    \begin{justify}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Unidad 3}}
+        \section{Transformada de Laplace}
+        \justify
+        El formulario de las Transformadas está hasta el final del documento.
+        \subsection{1er. Teorema de Traslación}
+        \justify
+        \textbf{Para la transformada normal:}
+        {\large\[\Laplace\{e^{at}f(t)\}=F(s)|_{s-a}=F(s-a)\]}
+        \justify
+        \textbf{Para la transformada inversa:}
+        {\large\[\Laplace^{-1}\{F(s-a)\}=\Laplace^{-1}\{F(s)|_{s-a}\}=\Laplace^{-1}\{F(s)\}\, e^{at}=f(t)\, e^{at}\]}
+        \subsection{2do. Teorema de Traslación}
+        \justify
+        \textbf{Para la transformada normal:}
+        {\large\[\Laplace\{f(t-a)\mathscr{U}(t-a)\}=e^{-as}\Laplace\{f(t)\}=e^{-as}F(s)\]}
+        \justify
+        \textbf{Para la transformada inversa:}
+        {\large\[\Laplace^{-1}\{e^{-as}F(s)\}=\Laplace^{-1}\{F(s)\}|_{t-a}\mathscr{U}(t-2)=f(t-a)\mathscr{U}(t-2)\]}
+        \section{Fracciones parciales}
+        \justify
+        La gran mayoria de las veces para resolver ED por Laplace y/o para obtener la transformada inversa de alguna expresión es necesario la descomposición
+        por fracciones parciales. Para abreviar, en todos los casos se asume que \(P(x)\) y \(Q(x)\) son polinomios, que \(P(x)\) es de menor grado que \(Q(x)\) y
+        que \(P(x),Q(x)\neq 0\).
+        \\\newline
+        \textbf{SE DEBE DE TENER EN CUENTA QUE \(Q(x)\) PUEDE TENER DISTINTAS COMBINACIONES DE LOS CASOS EXPUESTOS POR LO QUE SE DEBE DE PRESTAR ATENCION A LOS MISMOS.}
+        \subsection{Caso 1}
+        \justify
+        Se interpreta que \(Q(x)\) no tiene factores cuadráticos que se repiten. Se determinan los coeficientes \(A\) y \(B\).
+        {\large \[\frac{P(x)}{Q(x)}=\frac{P(x)}{(a_1x+b_1)(a_2x+b_2)}=\frac{A}{(a_1x+b_1)}+\frac{B}{(a_2x+b_2)}, a_1\neq a_2, b_1\neq b_2\]}
+        \subsection{Caso 2}
+        \justify
+        Se entiende que \(c_1,c_2,\dots,c_n\) son constantes a determinar.
+        {\large \[\frac{P(x)}{Q(x)}=\frac{P(x)}{(ax+b)^n}=\frac{c_1}{ax+b}+\frac{c_2}{(ax+b)^2}+\dots+\frac{c_n}{(ax+b)^n}\]}
+        \subsection{Caso 3}        
+        \justify
+        Se interpreta que \(Q(x)\) no tiene factores cuadráticos irreducibles que no se repiten. Se determinan los coeficientes \(A\) y \(B\).
+        {\large \[\frac{P(x)}{Q(x)}=\frac{P(x)}{ax^2+bx+c}=\frac{Ax+B}{ax^2+bx+c}\]}
+
+    \end{justify}
+\end{document}

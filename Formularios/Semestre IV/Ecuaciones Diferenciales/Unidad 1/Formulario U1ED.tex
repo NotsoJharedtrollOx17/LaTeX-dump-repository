@@ -1,0 +1,198 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{hyperref} %manejo de enlaces
+
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Ecuaciones Diferenciales\par}
+        \vspace{1cm}
+        {\scshape\Large IV Semestre\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Formulario (U1)\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: Ing. Mariana Huizar Tejada\par
+        
+        \vfill
+
+        {\large 24 de marzo de 2021}
+    \end{titlepage}
+
+    \newpage
+    \begin{justify}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Unidad 1}}
+        \rhead{\textbf{Ecuaciones Diferenciales}}
+        \section*{Ecuaciones Diferenciales ordinarias de primer orden}
+        \justify
+        Para aprenderse los tipos, se recomienda el acrónimo en inglés llamado \textbf{S H I E L D} (o \emph{escúdo} en español):
+        \begin{itemize}
+            \item \textbf{S:} Separables (\emph{separable}).
+            \item \textbf{H:} Homogéneas (\emph{homogeneous}).
+            \item \textbf{I:} Factor Integrante (\emph{integrating factor}).
+            \item \textbf{E:} Exactas (\emph{exact}).
+            \item \textbf{L:} Lineales (\emph{linear}).
+            \item \textbf{D:} Integración directa (\emph{direct integration}).
+        \end{itemize}
+        \subsection*{Separables}
+        {\large\begin{equation*}
+            \begin{aligned}
+                \frac{dy}{dy}&=f(x)g(y)\\[5pt]
+                \int \frac{dy}{g(y)}&=\int f(x)\, dx\\[5pt]
+                G(y)&=F(x)+c\\[5pt]
+                c&=F(x)-G(y)
+            \end{aligned}
+        \end{equation*}}
+        \subsection*{Homogéneas}
+        \justify
+        Son de la forma: \(M(x,y)\, dx+N(x,y)\, dy=0\) y que \(M(x,y)\) y \(N(x,y)\) sean homogéneas.
+        \\\newline
+        \textbf{• Para \(u=\frac{y}{x}\):}
+        {\large\begin{equation*}
+            \begin{aligned}
+                \frac{dy}{dx}&=-\frac{M(x,y)}{N(x,y)}\\[5pt]
+                \frac{dy}{dx}&=-\frac{x^nM(u)}{x^nN(u)}\\[5pt]
+                \frac{dy}{dx}&=G(u)\\[5pt]
+                \int \frac{dx}{x}&=\int \frac{du}{G(u)-u}
+            \end{aligned}
+        \end{equation*}}
+        \justify
+        \textbf{• Para \(v=\frac{x}{y}\):}
+        {\large\begin{equation*}
+            \begin{aligned}
+                \frac{dx}{dy}&=-\frac{N(x,y)}{M(x,y)}\\[5pt]
+                \frac{dx}{dy}&=-\frac{y^nN(x,y)}{y^nM(x,y)}\\[5pt]
+                \frac{dx}{dy}&=H(v)\\[5pt]
+                \int \frac{dy}{y}&=\int \frac{dv}{H(v)-v}
+            \end{aligned}
+        \end{equation*}}
+        \subsection*{Exactas}
+        \justify
+        Dada \(M(x,y)\, dx+N(x,y)\, dy=0\), esta expresión es exacta si 
+        \[\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}\]
+        \textbf{• Para \(M(x,y)\):}
+        {\large\begin{equation*}
+            \begin{aligned}
+                \frac{\partial f}{\partial x}&=M(x,y)\\[5pt]
+                f&=\int M(x,y)\, \partial x+c(y)\\[5pt]
+                \frac{\partial}{\partial y}\int M(x,y)\, \partial x+c^{\prime}(y)&=N(x,y)\\[5pt]
+                \int c^{\prime}(y)&=\int N(x,y)-\frac{\partial}{\partial y}\int M(x,y)\, \partial x\\[5pt]
+                f&=\int M(x,y)\, \partial x+\int c^{\prime}(y)
+            \end{aligned}
+        \end{equation*}}
+        \justify
+        \textbf{• Para \(N(x,y)\):}
+        {\large\begin{equation*}
+            \begin{aligned}
+                \frac{\partial f}{\partial y}&=N(x,y)\\[5pt]
+                f&=\int N(x,y)\, \partial y+c(x)\\[5pt]
+                \frac{\partial}{\partial x}\int N(x,y)\, \partial y+c^{\prime}(x)&=M(x,y)\\[5pt]
+                \int c^{\prime}(x)&=\int N(x,y) -\frac{\partial}{\partial x}\int N(x,y)\, \partial y\\[5pt]
+                f&=\int N(x,y)\, \partial y+\int c^{\prime}(x) 
+            \end{aligned}
+        \end{equation*}}
+        \subsection*{Factor Integrante}
+        \justify
+        Si una ED de la forma \(M(x,y)\, dx+N(x,y)\, dy=0\) no es exacta, se puede hacer exacta usando el factor integrante:
+        \\\newline
+        \textbf{• En términos de \(x\):}
+        {\large\begin{equation*}
+            \begin{aligned}
+                \mu(x)&=e^{\,\int \frac{M_y-N_x}{N}\, dx}\\[5pt] 
+                \text{ para que }&\mu(x)\left(M(x,y)\, dx+N(x,y)\, dy\right)=0 \textbf{ sea exacta.}\\[5pt]
+            \end{aligned}
+        \end{equation*}}
+        Donde \(M_y=\frac{\partial}{\partial y}M(x,y)\), \(N_x=\frac{\partial}{\partial x}N(x,y)\) y \(N=N(x,y)\).
+        \\\newline
+        \textbf{• En términos de \(y\):}
+        {\large\begin{equation*}
+            \begin{aligned}
+                \mu(y)&=e^{\,\int \frac{N_x-M_y}{M}\, dy}\\[5pt]
+                \text{ para que }&\mu(y)\left(M(x,y)\, dx+N(x,y)\, dy\right)=0 \textbf{ sea exacta.}\\[5pt]
+            \end{aligned}
+        \end{equation*}}
+        Donde \(N_x=\frac{\partial}{\partial x}N(x,y)\), \(M_y=\frac{\partial}{\partial x}M(x,y)\) y \(M=M(x,y)\).
+        \\\newline
+        Al balancear la ED con el factor integrante, dicha ecuación se resuelve como una ED Exacta.    
+        \subsection*{Lineales}
+        \justify
+        Se acostumbra a trabajar con las lineales de 1er. orden.
+        {\large\begin{equation*}
+            \begin{aligned}
+                a_1(x)y^{\prime}+a_0(x)y&=g(x)\\[5pt]
+                \frac{a_1(x)}{a_1(x)}y^{\prime}+\frac{a_0(x)}{a_1(x)}y&=\frac{g(x)}{a_1(x)}\\[5pt]
+                y^{\prime}+p(x)y = f(x)
+            \end{aligned}
+        \end{equation*}}
+        Si \(f(x)=0\):
+        {\large\begin{equation*}
+            \begin{aligned}
+                y^{\prime}+p(x)\, y=0\:\textbf{es separable}
+            \end{aligned}
+        \end{equation*}}
+        De lo contrario:
+        {\large\begin{equation*}
+            \begin{aligned}
+                y^{\prime}+p(x)\, y&=f(x)\\[5pt]
+                \frac{dy}{dx}+p(x)\, y&=f(x)\\[5pt]
+                \mu(x)&=\text{exp}\left(\int p(x)\, dx\right)\\[5pt]
+                \mu(x)\frac{dy}{dx}+\mu(x)\, p(x)\, y&=\mu(x)f(x)\\[5pt]
+                D_x\,\mu(x)\, y&=\mu(x)f(x)\\[5pt]
+                \int D\, \mu(x)\, y&=\int \mu(x)f(x)\, dx\\[5pt]
+                \mu(x)\, y&=\int \mu(x)f(x)\, dx
+            \end{aligned}
+        \end{equation*}}
+        \subsection*{De Bernoulli}
+        \justify
+        Son una variante de las Lineales. Son de la forma:
+        {\large\[\frac{dy}{dx}+p(x)\, y=f(x)\, y^n,\: \{\forall n\,|\, n\neq 0 \land n\neq 1\}\]}
+        Se resuelven de la siguiente manera:
+        {\large \begin{equation*}
+            \begin{aligned}
+                \frac{dy}{dx}+p(x)\, y&=f(x)\, y^n\\[5pt]
+                \frac{dy}{dx}&=f(x)\, y^n-p(x)\, y\\[5pt]
+                \frac{du}{dx}&=\frac{d}{dx}\, u\\[5pt]
+                &=\frac{d}{dx}\, y^{1-n}\\[5pt]
+                &=(1-n)\, y^{-n}\frac{dy}{dx}\\[5pt]
+                &=(1-n)\, y^{-n}\left(f(x)\, y^n-p(x)\, y\right)\\[5pt]
+                &=(1-n)f(x)-(1-n)\, p(x)\, y^{1-n}\\[5pt]
+                \frac{du}{dx}&=(1-n)f(x)-(1-n)\, p(x)\, u\\[5pt]
+                \frac{du}{dx}+(1-n)\, p(x)\, u&=(1-n)f(x)\\[5pt]
+            \end{aligned}
+        \end{equation*}}
+        \justify
+        Donde \(\frac{du}{dx}+(1-n)\, p(x)\, u=(1-n)f(x)\) es una ecuación diferencial lineal y se resuelve como tal.
+    \end{justify}
+\end{document}

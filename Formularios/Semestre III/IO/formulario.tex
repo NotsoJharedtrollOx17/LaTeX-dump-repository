@@ -1,0 +1,192 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+\begin{justify}
+    \thispagestyle{empty}
+    \section*{Terminología}
+    \justify
+    \begin{itemize}
+        \item \textbf{\(L= \)} Estado del sistema o el número de clientes en el sistema en un momento dado.
+        \item \textbf{\(L_q= \)} Núm. clientes en le sistema esperando por el servicio.
+        \item \textbf{\(W= \)} Tiempo total del cliente en el sistema desde que entra hasta que sale.
+        \item \textbf{\(W_q= \)} Tiempo total de espera por servicio del cliente en el sistema.
+        \item \textbf{\(\rho= \)} Razón de utilización del sistema.
+        \item \textbf{\(M= \)} Máximo núm. clientes potenciales en el sistema en un momento dado.
+        \item \textbf{\(S= \)} Núm. servidores en el sistema.
+        \item \textbf{\(n= \)} Núm. clientes en el sistema en un tiempo \(t: n(t)\).
+        \item \textbf{\(P_n(t)= \)} Probabilidad de que haya exactamente \(n(t)\). 
+        \item \textbf{\(\lambda= \)} Frecuencia de llegadas Poisson \(=\) núm. clientes que llegan por unidad \(t\).
+        \item \textbf{\(\mu= \)} Frecuencia de servicio exponencial \(=\) núm. clientes que son atendidos por unidad \(t\).
+        \item \textbf{\(\frac{1}{\lambda}= \)} Tiempo entre llegadas que transcurre entre una llegada y la siguiente.
+        \item \textbf{\(\frac{1}{\mu}= \)} Tiempo de servicio a la media de la distribución esperada de los tiempos de servicio.
+        \item \textbf{\(P\{W>t\}= \)} Probabilidad de que un cliente  esté más de \(t\) en el sistema.
+        \item \textbf{\(P\{W_q>t\}= \)} Probabilidad de que un cliente esté más de \(t\) esperando por un servicio en el sistema.
+    \end{itemize}
+\end{justify}    
+
+%FORMULAS
+\newpage
+\begin{justify}
+    \section*{Fórmulas}
+    \subsection*{1er. Modelo: (Tasa de llegadas y de servicio constante), (Población y linea de espera infinita)}
+    \subsubsection*{Para \(S=1\):}
+    \large{
+    \begin{align*}
+C_n&=\rho ^n &\rho =&\frac{\lambda}{S\mu}&P_n(t)&= \rho ^nP_0&P_0&=1-\rho\\
+L&=\frac{\lambda}{\mu -\lambda}&L_q&=\frac{\lambda ^2}{\mu (\mu -\lambda)}&W&=\frac{1}{\mu -\lambda}&W_q&=\frac{\lambda}{\mu (\mu -\lambda)}
+    \end{align*}
+    \begin{align*}
+P\{W>T\}&=e^{-\mu t(P_0)},\, \forall t\geq 0;&P\{W_q>t\}&=\rho e^{-\mu t(P_0)},\, \forall t\geq 0;
+    \end{align*}
+    }
+    \subsubsection*{Para \(S>1, n>1\):}
+    \large{        
+    \begin{align*}
+C_{n_1}&=\frac{(\lambda/\mu)^n}{n!},\, \forall n=1,2,...,S;&C_{n_2}&=\frac{(\lambda/\mu)^n}{S!\, S^{n-S}},\, \forall n=S,S+1,...;
+    \end{align*}
+    \begin{align*}
+P_0&=\left(\left(1+\sum_{n=1}^{S-1} C_{n_1}\right)\cdot \frac{(\lambda/\mu)^S}{S!}\cdot \frac{1}{1-(\lambda/(S\mu))}\right)^{-1}&L&=L_q+\frac{\lambda}{\mu}
+    \end{align*}
+    }
+    \large{
+    \begin{align*}
+L_q&=\frac{P_o\,\rho\,(\lambda/\mu)^S}{S!\,(1-\rho)^2}&W_q&=\frac{L_q}{\lambda}&W&=W_q+\frac{1}{\mu}
+    \end{align*}
+    }
+    \large{
+    \begin{align*}
+P_n&=C_{n_1} P_0,\, \text{Si } 0<n>S;&P_n=C_{n_2}P_0,\, \text{Si } n\geq S;
+    \end{align*}
+    }
+    \large{
+    \begin{align*}
+P\{W>t\}&=e^{\mu t}\left[1+\frac{P_0(\lambda/\mu)^S}{S!\,(1-\rho)}\cdot \frac{1-e^{-\mu t(S-1-(\lambda/\mu))}}{S-1-(\lambda/\mu)}\right]\\
+P\{W_q>t\}&=\left(1-P\{W_q=0\}\right)e^{-\mu tS(1-\rho)}\\
+P\{W_q=0\}&=\sum_{n=0}^{S-1} P_n
+    \end{align*}
+    }
+    \newpage
+    \subsection*{2do. Modelo: (Lineas de espera finita), (Población infinita), (Tasa de llegadas y servicio constantes)}
+    \subsubsection*{Para \(S=1\):}
+    \large{
+    \begin{align*}
+\lambda n&=\lambda,\,\forall n=0,1,2,...,M-1;&\lambda&=0,\,\forall n\geq M;&\mu_n&=\mu
+    \end{align*}
+    }
+    \large{
+    \begin{align*}
+C_n&=\frac{\lambda}{\mu}^n=\rho^m,\,\forall n=1,2,3,...,M;&C_n&=0,\,\forall n>M;
+    \end{align*}
+    }
+    \large{
+    \begin{align*}
+P_0&=\frac{1-\rho}{1-\rho^{M+1}}&P_n&=\frac{1-\rho}{1-\rho^{M+1}}\cdot \rho^n,\,\forall n=0,1,...,M;
+    \end{align*}
+    }
+    \large{
+    \begin{align*}
+L&=\frac{\rho}{1-\rho}-\frac{(M+1)\rho^{M+1}}{1-\rho^{M+1}}&L_q&=L-(1-P_0)&W&=\frac{L}{\lambda}
+    \end{align*}
+    }
+    \large{
+    \begin{align*}
+W_q&=\frac{l_q}{\overline{\lambda}}&\overline{\lambda}&=\lambda(1-P_M)
+    \end{align*}
+    }
+    \subsubsection*{Para \(1<S>M\):}
+    \large{
+    \begin{align*}
+C_{n_1}&=\frac{(\lambda/\mu)^n}{n!},\,\forall n=1,2,...,S;\\
+C_{n_2}&=\frac{(\lambda/\mu)^n}{S!\,S^{n-S}},\,\forall n=S,S+1,...,M;&C_{n_2}&=0,\,\forall n>M;\\
+P_n&=C_{n_1}P_0&P_n&=C_{n_2}P_0\\
+P_0&=\left(1+\sum_{n=1}^{S} C_{n_1}+\frac{(\lambda/\mu)^S}{S!}\cdot\sum_{n=S+1}^{M} \left(\frac{\lambda}{S\mu}\right)^{n-S}\right)^{-1}\\
+L_q&=\frac{P_0(\lambda/\mu)^S}{S!\,(1-\rho)^2}\left(1-\rho^{M-S}-(1-\rho)(M-S)\rho^{M-S}\right)\\
+L&=\sum_{n=0}^{S-1} nP_n+L_q+S\left(1-\sum_{n=0}^{S-1} P_n\right)&W&=\frac{L}{\overline{\lambda}}\\
+W_q&=\frac{L_q}{\overline{\lambda}}&\overline{\lambda}&=\lambda(1-P_M)
+    \end{align*}
+    }
+    \subsection*{3er. Modelo: (Tasa de llegada y frecuencia de servicio constante), (Fuente de Entrada limitada), (Población Finita y po lo tanto Linea de Espera Finita)}
+    \subsubsection*{Para \(S=1\):}
+    \large{
+    \begin{align*}
+\lambda n&=(M-n)\lambda,\,\forall n=1,2,...,M;&\lambda n&=0,\,\forall n\geq M;\\
+\mu n&=\mu,\,\forall n=1,2,...;\\
+C_n&=\frac{M!}{(M-n)}(\lambda/\mu)^n,\,\forall n=1,2,...,M;&C_n&=0,\,n>M;\\
+P_0&=\left(\sum_{n=0}^{M} \frac{M!}{(M-n)!}(\lambda/\mu)^n\right)^{-1}\\
+P_n&=\frac{M!}{(M-m)!}(\lambda/\mu)^n\cdot P_0,\forall n=1,2,...,M;&P_n&=0, \forall n>M;\\
+L_q&=M-\frac{\lambda+\mu}{\lambda}(1-P_0)\\
+L&=\sum_{n=0}^{M} nP_n=L+q+(1-P_0)=M-\frac{\mu}{\lambda}(1-P_0)\\
+W&=\frac{L}{\overline{\lambda}}&W_q&=\frac{L_q}{\overline{\lambda}}\\
+\overline{\lambda}&=\lambda(M-L)
+    \end{align*}
+    }
+    \subsubsection*{Para \(S>1\):}
+    \large{
+    \begin{align*}
+C_{n_1}&=\frac{M!}{(M-n)!\,n!}(\lambda/\mu)^n,\,\forall n=1,2,...,S;&C_{n_2}&=\frac{M!}{(M-n)!\,S!\,S^{n-S}},\\
+\forall n&=S,S+1,...;&C_{n_{1,2}}&=0,\,\forall n>M;&\\
+P_n&=P_0C_{n_1},\,\text{Si } 0\geq n\geq S;&P_n&=P_0C_{n_2},\,\text{Si } S\geq n\geq M\\
+P_n&=0,\,\text{Si } n\geq M;& &\\
+P_0&=\left(1+\sum_{n=0}^{S-1} C_{n_1}+\sum_{n=S}^{M} C_{n_2}\right)^{-1}&L_q&=\sum_{n=S+1}^{M} (n-S)P_n\\
+L&=\sum_{n=0}^{S-1} nP_n+L_q+S(1-\sum_{n=0}^{S-1} P_n)&W&=\frac{L}{\overline{\lambda_0}}\\
+W_q&=\frac{L_q}{\overline{\lambda}}&\overline{\lambda}&=\lambda(M-L)
+    \end{align*}
+    }
+    \newpage
+    \subsection*{4to. Modelo: Lineas de Espera con Tasa de Llegada y/o Servicio Dependiendo del Estado del Sistema (Varían), (Población y Linea de Espera Infinita)}
+    \subsubsection*{\(S=1\):}
+    \large{
+    \begin{align*}
+W&=\frac{L}{\overline{\lambda}}&W_q&=\frac{L_q}{\overline{\lambda}}&L_q&=L-(1-P_0)\\
+P_0 \text{ y } L,&\, \text{tablas en función de }c\text{ y }\rho&P_1&=C_1P_0\\
+    \end{align*}
+    }
+    \textbf{Caso 1.-Varía la Tasa de Servicio}
+    \large{
+    \begin{align*}
+\mu_n&=n^c\mu_1&\lambda_n&=\lambda\\
+C_n&=\frac{(\lambda/\mu_1)^n}{(n!)^c},\,\forall n=1,2,...;& &\\
+\mu_1&=\text{Tasa de servicio normal}& &\\
+c&=\text{Factor de presión}& &\\
+\mu_n&=\text{Razón media de servicio cuando hay } n\text{ clientes en el sistema}
+    \end{align*}
+    }
+    \textbf{Caso 2.-Varía la Tasa de Llegada}
+    \large{
+    \begin{align*}
+\lambda n&=(n+1)^{-b}\lambda o,\,\forall n=0,1,2,...;&\mu_n&=n\\
+-b&=\text{Factor de presión sobre el cliente}
+    \end{align*}
+    }
+    \textbf{Caso 3.-Cuando la frecuencia de llegada y/o servicio dependen del estado de sistema}
+    \large{
+    \begin{align*}
+\mu_n&=n^a\mu_1,\,\forall n=1,2,...;&\lambda n&=(n+1)^{-b}\lambda o,\,\forall n=0,1,2,...;&C&=a+b
+    \end{align*}
+    }
+    \subsubsection*{Para \(S>1\):}
+    \large{
+    \begin{align*}
+\mu_n&=n\mu_1,\,\text{Si } n\leq S;&\lambda n&=(n\S)^aS\mu_1,\,\text{Si }n\geq S\\
+\lambda n&=\lambda o,\,\text{Si }n\leq S-1;&\lambda n&=(S/(n+1))^b\lambda o,\,\text{Si }n\geq S-1\\
+C_{n_1}&=\frac{\lambda o/\mu_1^n}{n!},\,\forall n=1,2,...,S;&C_{n_2}&=\frac{(\lambda o/\mu_1)^n}{S!(n!/S!)^cS^{(1-c)(n-S)}},\\
+\forall n&=S,S+1,...;&L_q&=(L-P_1)-2(1-P_o-P_1),\,\text{Si} S=2;\\
+L_q&=\frac{P_0(\lambda/\mu)^S\rho}{S!\,(1-\rho)^2}&W&=W_q+1/\mu;\\
+P_0\text{ y }L,&\,\text{tablas en función de }c\text{ y }\rho&P_1&=C_1P_0
+    \end{align*}
+    }
+\end{justify}
+\end{document}

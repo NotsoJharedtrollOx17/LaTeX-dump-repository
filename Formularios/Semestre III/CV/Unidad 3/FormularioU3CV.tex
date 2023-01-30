@@ -1,0 +1,97 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage[titles]{tocloft} %manejo de elementos para el índice
+\usepackage{float} %manejo de centrado para figuras
+\usepackage{hyperref} %manejo d hipervínculos
+\hypersetup{%formato de colors de hipervínculos, permite crear pdfs con enlaces a los temas
+    colorlinks=true,      
+    urlcolor=blue,
+    linkcolor=blue
+}
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Cálculo Diferencial\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 3\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Funciones vectoriales de variable real\par}
+        \vfill
+        Profesora: \par
+        Ing. Mariana Huizar Tejada
+        
+        \vfill
+
+        {\large \emph{``If it's close enough, it's good enough.''}}
+
+
+    \end{titlepage}
+
+    \newpage
+        \pagestyle{empty}
+        \tableofcontents
+
+    \newpage
+        \pagestyle{fancy}
+        \lhead{\textbf{Formulario Unidad 3 CV}}
+        \section{Funciones vectoriales}
+        Una curva \(C\) en \(\mathbb{R}^3\) se parametríza mediante tres ecuaciones:
+        \[x=f(t),\, y=g(t),\, z=h(t); \, a\leq t\leq b\]
+        \[\vec{r}(t)=\,<\!f(t), g(t), h(t)\!>\,=f(t)\vec{\imath}+g(t)\vec{\jmath}+h(t)\vec{k}\]
+        \section{Limite de una función vectorial}
+        \[\text{Si }\lim_{t\rightarrow a}f(t),\,\lim_{t\rightarrow a}g(t),\,\lim_{t\rightarrow a}h(t) \text{ existe }\therefore\]
+        \[\therefore\lim_{t\rightarrow a}\vec{r}(t)=\,<\!\lim_{t\rightarrow a}f(t),\,\lim_{t\rightarrow a}g(t),\,\lim_{t\rightarrow a}h(t)\!>\]
+        \section{Continuidad}
+        \[\vec{r}(a) \text{ está definida}\leftrightarrow\lim_{t\rightarrow a}\vec{r}(t)\text{ existe y }\vec{r}(a)=\lim_{t\rightarrow a}\vec{r}(t)\]
+        \section{Derivada}
+        La primera es la derivada por definición, la segunda es la referencia simbólica.
+        \[\vec{r}\,'(t)=\lim_{h\rightarrow 0}\frac{\vec{r}\, (t+h)-\vec{r}\, (t)}{h}\]
+        \[\vec{r}\,'(t)=\,<\!f\,'(t),\, g\,'(t),\, h\,'(t)\!>\]
+        \section{Integral}
+        \[\int \vec{r}(t)\, dt=\left(\int f(t)\, dt\right)\vec{\imath}+\left(\int g(t)\, dt\right)\vec{\jmath} + \left(\int h(t)\, dt\right)\vec{k}\]
+        \section{Movimiento sobre una curva}
+        Este es el orden desde movimiento hasta la aceleración:
+        \[r(t)=f(t)\vec{\imath}+g(t)\vec{\jmath}+h(t)\vec{k}\rightarrow\text{ movimiento del objeto}\]
+        \[V(t)=r\,'\!(t)\rightarrow\text{ velocidad}\]
+        \[a(t)=r\,''\!(t)\rightarrow\text{ aceleración}\]
+        \[\lvert |V(t)|\rvert=\lvert |r\,'\!(t)|\rvert\]
+        Este es el orden desde aceleración hasta el movimiento:
+        \[a(t)=-g\vec{\jmath}\, V_0=V_0\cos \theta \vec{\imath}+V_0\sin \theta \vec{\jmath}\]
+        \[V(t)=\int a(t)\, dt=\int -g\vec{\jmath}=-gt\vec{\jmath}+C\]
+        \[V(0)=C=V_0\cos \theta \vec{\imath}+V_0\sin \theta \vec{\jmath}\]
+        \[V(t)=V_0\cos \theta \vec{\imath}+\left(-gt+V_0\sin \theta \vec{\jmath}\right)\]
+        \[r(t)=\int V(t)\, dt=\int V_0\cos \theta \vec{\imath}+\left(-gt+V_0\sin \theta \vec{\jmath}\right)\, dt=\]
+        \[=V_0\cos \theta \vec{\imath}+\left(-g\frac{t^2}{2}+V_0\sin \theta t+S_0\right)\vec{\jmath}\]
+        En estos ejercicios, si se miden en pies por segundo \(g=32 ft/s\).
+        \section{Vectores T N B}
+        Las abreviaciones T, N y B corresponden a Tangente, Normal y Binormal.
+        \[\text{Vector tangente unitario: }\, T(t)=\frac{r'(t)}{\lVert r'(t)\rVert}\]
+        \[\text{Vector normal unitario: }\, N(t)=\frac{T'(t)}{\lVert T'(t)\rVert}\]
+        \[\text{Vector binormal unitario: }\, B(t)=T(t)\times N(t)\]
+        \[\text{Componente tangencial: }\, a_T=\frac{v\cdot a}{\lVert v\rVert}=\frac{r'(t)\cdot r''(t)}{\lVert r'(t)\rVert}\]
+        \[\text{Componente normal: }\, a_N=\frac{\lVert v\times a\rVert}{\lVert v\rVert}=\frac{r'(t)\times r''(t)}{\lVert r'(t)\rVert}\]
+        \[\text{Curvatura: }\, k=\frac{\lVert T'(t)\rVert}{\lVert r'(t)\rVert}\]
+\end{document}

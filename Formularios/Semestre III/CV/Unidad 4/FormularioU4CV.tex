@@ -1,0 +1,139 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage[titles]{tocloft} %manejo de elementos para el índice
+\usepackage{float} %manejo de centrado para figuras
+\usepackage{hyperref} %manejo d hipervínculos
+\hypersetup{%formato de colors de hipervínculos, permite crear pdfs con enlaces a los temas
+    colorlinks=true,      
+    urlcolor=blue,
+    linkcolor=blue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Cálculo Vectorial\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 4\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Funciones reales \\de varias variables\par}
+        \vfill
+        Profesora: \par
+        Ing. Mariana Huizar Tejada
+        
+        \vfill
+
+        {\large \emph{``If it's close enough, it's good enough.''}}
+
+
+    \end{titlepage}
+
+    \newpage
+        \pagestyle{empty}
+        \tableofcontents
+
+    \newpage
+        \pagestyle{fancy}
+        \setcounter{page}{1}
+        \lhead{\textbf{Formulario Unidad 4 CV}}
+        \section{Definición de una función de varias variables}
+        \justify
+        Es una regla de correspondencia que asigna a cada par ordenado \((x,y)\) en el subconjunto del plano \(xy\) uno y sólo un número \(z\) en el conjunto \(\mathbb{R}\)
+        \[z=f(x,y)\]
+        \section{Gráfica de una función de varias variables, curvas y superficies de nivel}
+        \justify
+        Es simplemente tener una función de varias variables y graficarla, generalmente se nos pide obtener el dominio de \(x\) y de \(y\), y graficarlo. Para las curvas de nivel simplemente igualamos
+        la función dada a un valor que nos permita observar su comportamiento.
+        \section{Derivadas parciales}
+        \justify
+        Si \(z=f(x,y)\) entonces la derivada parcial con respecto a \(x\) en un punto \((x,y)\) es:
+        \[\frac{\partial z}{\partial x}=\lim_{h\rightarrow 0}\frac{f(x+h,y)-f(x,y)}{h}\]
+        y la derivada parcial con respecto a \(y\) es:
+        \[\frac{\partial z}{\partial y}=\lim_{h\rightarrow 0}\frac{f(x,y+h)-f(x,y)}{h}\]
+        Una notación común para las derivadas parciales es la siguiente:
+        \[\frac{\partial z}{\partial x}=z_x;\,\frac{\partial z}{\partial y}=z_y\]
+        Si se nos pide la pendiente de la recta tangente en un punto \((a,b,c)\), se evalua primero en el plano \(x=2\):
+        \[\frac{\partial z}{\partial y}\rightarrow z_y\rvert_{(a,b)}=m_1\]
+        y si se evalua en el plano \(y=b\):
+        \[\frac{\partial z}{\partial x}\rightarrow z_x\rvert_{(a,b)}=m_2\]
+        \section{Regla de la cadena y derivada implícita}
+        \subsection*{Regla de la cadena}
+        \justify
+        Suponga que \(z=f(x,y)\) es diferenciable en \((x,y)\) y \(x=g(t)\) y \(y=h(t)\) son diferenciables en \(t\) entonces \(z=f(g(t),h(t))\) y su derivada es:
+        \[\frac{dz}{dx}=\frac{\partial z}{\partial x}\cdot\frac{dx}{dt}+\frac{\partial z}{\partial y}\cdot\frac{dy}{dt}\]
+        si \(z=f(x,y)\) es diferenciable y \(x=g(u,v)\) y \(y=h(u,v)\) entonces la derivada parcial de \(z\) con respecto de \(u\) es
+        \[\frac{\partial z}{\partial u}=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial u}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial u}\]
+        la derivada parcial de \(z\) con respecto de \(v\) es
+        \[\frac{\partial z}{\partial v}=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial v}\]
+        el mismo principio aplica para las funciones de tres variables.
+        \subsection*{Derivada implícita}
+        \justify
+        Si \(w=f(x,y)\) y \(y=f(x)\) es la derivada implicita por \(F(x,y)=0\) entonces
+        \[\frac{dy}{dx}=-\frac{F_x(x,y)}{F_y(x,y)}\]
+        y si \(w=f(x,y,z)\) y \(z=f(x,y)\) es la derivada implícita por \(F(x,y,z)=0\) entonces
+        \[\frac{\partial z}{\partial x}=-\frac{F_x(x,y,z)}{F_y(x,y,z)}\]
+        \[\frac{\partial z}{\partial y}=-\frac{F_y(x,y,z)}{F_y(x,y,z)}\]
+        \section{Derivadas parciales de orden superior}
+        \justify
+        Es obtener la derivada parcial con respecto a la variable indicada cierta cantidad de veces. Dado que \(x=f(x,y)\), la derivada parcial de segundo orden es:
+        \[\frac{\partial^2 z}{\partial x^2}=\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right)=f_{xx};\,\frac{\partial^2 z}{\partial y^2}=\frac{\partial }{\partial y}\left(\frac{\partial z}{\partial y}\right)=f_{yy}\]
+        para las de tercer orden:
+        \[\frac{\partial^3 z}{\partial x^3}=\frac{\partial}{\partial x}\left(f_{xx}\right)=f_{xxx};\,\, \frac{\partial^3 z}{\partial y^3}=\frac{\partial}{\partial y}\left(f_{yy}\right)=f_{yyy}\]
+        y para las parciales de segundo orden mixtas:
+        \[\frac{\partial^2z}{\partial x\,\partial y}=\frac{\partial}{\partial x}\left(f_y\right)=f_{yx};\,\, \frac{\partial^2 z}{\partial y\,\partial x}=\frac{\partial}{\partial y}\left(f_x\right)=f_{xy}\]
+        \section{Derivada direccional y gradiente}
+        \subsection*{Gradiente}
+        \justify
+        Dada \(f(x,y)\) cuyas derivadas parciales \(f_x\) y \(f_y\) existen, entonces el gradiente de \(f\) es
+        \[\nabla f(x,y)=\frac{\partial f}{\partial x}\hat{\imath}+\frac{\partial f}{\partial y}\hat{\jmath}\]
+        si \(f(x,y,z)\) cuyas derivadas parciales \(f_x\), \(f_y\) y \(f_z\) existen, entonces la gradiente de \(f\) es
+        \[\nabla f(x,y,y)=\frac{\partial f}{\partial x}\hat{\imath}+\frac{\partial f}{\partial y}\hat{\jmath}+\frac{\partial f}{\partial z}\hat{k}\]
+        \subsection*{Derivada direccional}
+        \justify
+        Si \(f(x,y)\) es una función diferenciable en \(x\) y \(y\), y \(\vec{u}=\cos \theta \hat{\imath}+\sin \theta \hat{\jmath}\) es un vector unitario, entonces
+        \[D_uf(x,y)=\nabla f(x,y)\cdot \vec{u}\]
+        si en vez del vector unitario solo se conoce un vector \(\vec{v}=\,<\!x,y,z\!>\) entonces ocupamos calcular el vector unitario
+        \[\vec{u}=\frac{\vec{v}}{\lVert\vec{v}\rVert}\]
+        donde \(\lVert\vec{v}\lVert=\sqrt{x^2+y^2+z^2}\).
+        \section{Valores extremos de funciones de varias variables}
+        \justify
+        \subsection*{Extremos relativos}
+        \justify
+        Decimos que \(z=f(x,y)\) tiene un extremo relativo en el punto \((a,b)\) y si las primeras derivadas parciales existen en ese punto entonces
+        \[f_x(a,b)=0;\, f_y(a,b)=0\]
+        \subsection*{Punto crítico}
+        \justify
+        Decimos que un punto crítico es el punto \((a,b)\) para el cual \(f_x(a,b)=0\) y \(f_y(a,b)=0\) ó sus derivadas no existen.
+        \subsection*{Prueba de la segundas derivadas parciales}
+        \[D(x,y)=f_{xx}(x,y)f_{yy}(x,y)-[f_{xy}(x,y)]^2\]
+        \subsubsection*{Posibles casos}
+        \begin{itemize}
+            \item Si \(D(a,b)>0\) y \(f_{xx}(a,b)>0\) entonces \(f(a,b)\) es un \emph{\textbf{Mínimo relativo}}.
+            \item Si \(D(a,b)>0\) y \(f_{xx}(a,b)<0\) entonces \(f(a,b)\) es un \emph{\textbf{Máximo relativo}}.
+            \item Si \(D(a,b)<0\) entonces no es un extremo (\emph{\textbf{Punto silla}}).
+            \item Si \(D(a,b)=0\) la prueba es inconclusa.
+        \end{itemize}
+\end{document}

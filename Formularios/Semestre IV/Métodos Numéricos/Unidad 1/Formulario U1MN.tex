@@ -1,0 +1,133 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{cancel} %permite la simbolización de cancelación de terminos
+\usepackage{enumitem}[shortlabels] %listas con letras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+\usepackage{hyperref} %manejo de enlaces
+
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Métodos Numéricos\par}
+        \vspace{1cm}
+        {\scshape\Large IV Semestre\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Formulario (U1)\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesor: Ing. Tonallí Cuauhtemoc Galícia Lopez\par
+        
+        \vfill
+
+        {\large 18 de marzo de 2021}
+    \end{titlepage}
+
+    \newpage
+    \begin{justify}
+        \setcounter{page}{1}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Unidad 1}}
+        \section{Raíces de ecuaciones}
+        \justify
+        En todos se muestra la fórmula matemática o algorítmo y su vaga representación en Excel.
+        \subsection*{Teoría}
+        \justify
+        LA MISMA TEORIA DE CALCULO DIFERENCIAL E INTEGRAL, SOLO APROXIMAMOS NUMERICAMENTE!!!
+        \subsection*{Bisección}
+        \justify
+        \textbf{• Fórmula para \(x_r\):}
+        {\large \[x_r=\frac{x_i+x_u}{2}\]}
+        \justify
+        \textbf{• Algorítmo:}
+{\large\begin{verbatim}
+xr=(xi+xu)/2;
+
+if f(xi)*f(xr)>0 then
+    xi=xr;
+else
+    xu=xr;
+\end{verbatim}}
+        \justify
+        \textbf{• En Excel:}
+{\large\begin{verbatim}
+Para la nueva celda xi: 
+=SI(<celda_f(xi)>*<celda_f(xr)>0,<celda_xr_anterior>,
+<celda_xi_anterior>)
+
+Para la nueva celda xu:
+=SI(<celda_f(xi)>*<celda_f(xr)>0,<celda_xu_anterior>,
+<celda_xr_anterior>)
+
+Para obtener xr:
+=(<celda_xi>+<celda_xu>)/2
+\end{verbatim}}
+        \subsection*{Falsa posición}
+        \justify
+        \textbf{• Fórmula para \(x_r\):}
+        {\large \[x_r=x_i-f(x_i)\left(\frac{x_u-x_i}{f(x_u)-f(x_i)}\right)\]}
+        \justify
+        \textbf{• Algorítmo:}
+{\large \begin{verbatim}
+xr = xi - f(xi)((xu-xi)/(f(xu)-f(xi)));
+
+if f(xi)*f(xr)>0 then
+    xi=xr;
+else
+    xu=xr;
+\end{verbatim}}
+        \justify
+        \textbf{• En Excel:}
+{\large\begin{verbatim}
+Para la nueva celda xi: 
+=SI(<celda_f(xi)>*<celda_f(xr)>0,<celda_xr_anterior>,
+<celda_xi_anterior>)
+    
+Para la nueva celda xu:
+=SI(<celda_f(xi)>*<celda_f(xrs)>0,<celda_xu_anterior>,
+<celda_xr_anterior>)
+
+Para obtener xr:
+=<celda_xi>-<celda_f(xi)>*((<celda_xu>-<celda_xi>)
+/(<celda_f(xu)>-<celda_f(xi)>))
+\end{verbatim}}
+        \subsection*{Newton-Raphson}
+        \justify
+        \textbf{• Fórmula para \(x_{i+1}\):}
+        {\large \[x_{i+1}=x_i-\frac{f(x_i)}{f^{\prime}(x_i)}\]}
+        \justify
+        \textbf{• Fórmula para Excel:}
+{\large\begin{verbatim}
+Para la nueva celda xi:
+=<celda_xi_anterior>-(<celda_f(xi)_anterior>/
+<celda_f'(xi)_anterior>)
+\end{verbatim}}
+        \end{justify}
+\end{document}
