@@ -1,0 +1,83 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage[titles]{tocloft} %manejo de elementos para el índice
+\usepackage{float} %manejo de centrado para figuras
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Estructura de Datos\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 4\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Ensayo acerca de los conceptos de los ordenamientos\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        M.C. Claudia Negrete Sanchez
+        
+        \vfill
+
+        {\large 20 de noviembre del 2020}
+    \end{titlepage}
+
+    \newpage
+    \thispagestyle{fancy}
+    \lhead{\textbf{Ensayo acerca de los conceptos acerca de los ordenamientos}}
+    \setcounter{page}{1}
+    \section{Conceptos básicos}
+    Principalmente, ordenarmientos son formas de acomodar cosas, basado en un criterio. Su razón de ser es para facilitar la busqueda de elementos ordenados al criterio especificado. En computación, los ordenamientos se clasifican en dos tipos:
+    \begin{itemize}
+        \item \emph{Interno: }aquellos donde los valores se encuentran en la memoria RAM.
+        \item \emph{Externo: }aquellos donde los valores se encuentran en memorias externas.
+    \end{itemize}
+    En esta primer parte se habla solamente de los ordenamientos internos
+    \section{Ordenamientos internos}
+    Estos se clasifican en 4 tipos:
+    \begin{itemize}
+        \item \emph{Bubble Sort} (Burbuja).
+        \item \emph{Shell Sort} (Caparazon).
+        \item \emph{Quick Sort} (Velóz).
+        \item \emph{Radix Sort}.
+    \end{itemize}
+    \subsection{Bubble Sort}
+    Traducido al español como \emph{ordenamiento por Burbuja}. A este se le puede llamar como ``intercambio directo''. \\\newline
+    A grandes rasgos, el \emph{Bubble Sort} compara cada elemento de un arreglo con el subsecuente; si dicho elemento es mayor que el siguiente, se intercambian; este deberá repetirse recorriendo el arreglo hasta que no ocurra ningún intercambio de lugares.
+    Estos se clasifican en tres tipos:
+    \begin{itemize}
+        \item Burbuja simple.
+        \item Burbuja mejorada.
+        \item Burbuja optimizada.
+    \end{itemize}
+    En estos siempre se recomienda crearlos en procedimientos para mantener el orden e integridad de los programas.
+    \subsubsection{Burbuja simple}
+    A lo visto, la redacción de un ordenamiento de esta clasificación hace honor a su nombre, el codigo es bastante sencillo de interpretar, a pesar que se redactó con ciclos \emph{for}. Por ser simple, este es el ordenamiento menos velóz de este tipo.
+    \subsubsection{Burbuja mejorada}
+    Este requiere el usa de banderas como recursos indispensables para mejorar (valga la redundancia) el \emph{Bubble Sort}. Por eso mismo es un código un poco más complejo de interpretar a primera vista. A mi experiencia, el uso de banderas si demmuestra de primera mano dicha mejora.
+    \subsubsection{Burbuja optimizada}
+    Solamente se menciona en el video, no se profundiza ni se muestra un ejemplo en código.
+    \section{Conclusión}
+    El empezar a conocer los distintos tipos de ordenamientos (empezando por \emph{Bubble Sort}) me permite mejorar mis herramientas adquiridas para mejorar la redacción y la eficiencia de mis programas. Debido a que tiene una estrecha relación con los tiempos de ejecución, lo considero
+    muy relevante para mantener un enfoque optimizado a los mismos.
+\end{document}

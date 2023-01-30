@@ -1,0 +1,79 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage[titles]{tocloft} %manejo de elementos para el índice
+\usepackage{float} %manejo de centrado para figuras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Estructura de Datos\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 4\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Ejercicios de Burbuja\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        M.C. Claudia Negrete Sanchez
+        
+        \vfill
+
+        {\large 23 de noviembre del 2020}
+    \end{titlepage}
+
+    \newpage
+    \thispagestyle{fancy}
+    \setcounter{page}{1}
+    \lhead{\textbf{Ejercicios de Shell}}
+    \section{Problema}
+    Con el video adjunto, realiza el ordenamiento, y plasmalo en un documento o en tu cuarderno, y entregalo en tiempo y forma. Los datos serán ordenados de manera ascendente y los datos son:
+    \[\text{E}[8]=\{78,\,34,\,6,\,12,\,87,\,45,\,7,\,3\}\]
+    \section{Resolución}
+    Para abreviar escritura, los valores 0 y 1 se usan para indicar verdad o falsedad de las desigualdades.
+    \\\newline• Longitud de intervalos: \(\frac{8}{2}=4\): \newline
+    * \(78>87:0 \therefore\)
+    \[\therefore \text{E}[8]=\{87,\,34,\,6,\,12,\,78,\,45,\,7,\,3\}\]
+    * \(34>45:0 \therefore\)
+    \[\therefore \text{E}[8]=\{87,\,45,\,6,\,12,\,78,\,34,\,7,\,3\}\]
+    * \(6>7:0\therefore\)
+    \[\therefore \text{E}[8]=\{87,\,45,\,7,\,12,\,78,\,34,\,6,\,3\}\]
+    * \(12>3:1;\,87>78:1;\,45>34:1;\,7>6:1;\)
+    \\\newline
+    • Longitud de intervalos: \(\frac{4}{2}=2\): \newline
+    * \(87>7:1;\, 45>12:1;\, 7>78:0\therefore\)
+    \[\therefore \text{E}[8]=\{87,\,45,\,78,\,12,\,7,\,34,\,6,\,3\}\]
+    * \(12>34:0\therefore\)
+    \[\therefore \text{E}[8]=\{87,\,45,\,78,\,34,\,7,\,12,\,6,\,3\}\]
+    * \(87>78:1;\,45>34:1;\,78>7:1;\,34>12:1;\,7>6:1;\,12>3:1;\)
+    \\\newline
+    • Longitud de intervalos: \(\frac{2}{2}=1\): \newline
+    * \(84>45:1;\, 45>78:0 \therefore\)
+    \[\therefore \text{E}[8]=\{84,\,78,\,45,\,34,\,7,\,12,\,6,\,3\}\]
+    * \(45>34:1;\, 7>12:0 \therefore\)
+    \[\therefore \text{E}[8]=\{84,\,78,\,45,\,34,\,12,\,7,\,6,\,3\}\]
+    * \(7>6:1;\, 6>3:1;\, 87>78:2;\, 78>45:1;\, 45>34:1;\, 34>12:1\, 12>7:1;\)
+    \\\newline
+    Dando por concluido el ejercicio.
+\end{document}

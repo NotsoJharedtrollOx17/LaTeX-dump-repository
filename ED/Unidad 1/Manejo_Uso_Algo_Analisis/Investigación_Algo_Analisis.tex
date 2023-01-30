@@ -1,0 +1,128 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[backend=biber]{biblatex}\addbibresource{bibliografia.bib} %manejo de bibliografía (BORRAR SI NO ES NECESARIO)
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\nocite{*}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Estructura de Datos\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Análisis de Algoritmos\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        M.C. Claudia Negrete Sanchez
+    
+        \vfill
+
+        {\large 25/09/06}
+    \end{titlepage}
+
+    %indice
+    \newpage
+        \thispagestyle{empty}
+        \tableofcontents
+
+    %cuerpo
+    \newpage
+    \begin{justify}
+        \setcounter{page}{1}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Análisis de Algoritmos}}
+        \section{Introducción}
+        En esta breve investigación se indagarán los aspectos mas relevantes sobre el análisis de algoritmos, complejidades y eficiencia; caracteristicas importantes para determinar un algoritmo acorde a nuestras necesidades.
+        \section{Análisis de Algoritmos}
+        La cuestión de dichos analisis recae en descubrir sus caracteristicas en orden de evaluar que tan sujeto es para varias aplicaciones
+        o para compararlo con otros algoritmos para la misma aplicación. Su analisis es una parte importantes de la \emph{Teoría de la Complejidad Computacional}, la que porvee las estimaciones
+        teóricas de los recurso requeridos por un algoritmo para resolver un problema computacional especifico, por lo tanto el analisis de algoritmos es la \emph{determinación de recursos en el tiempo y espacio total para ejecutar un algoritmo.} 
+        \\ \newline Mas allá, el analisis de un algorítmo nos puede ayudar a entenderlo de mejor manera y puede sugerir mejoras mas documentadas. Con ello, estos tienden a ser mas cortos, simples y elegantes durante el proceso de analisis. 
+        \\ Dichos analisis son los siguientes:
+        \begin{itemize}
+            \item \textbf{Peor caso:} El número máximo de pasos tomados en cualquier instancia de tamaño \(a\).
+            \item \textbf{Mejor caso:} El número mínimo de pasos tomados en cualquier instancia de tamaño \(a\).
+            \item \textbf{Caso regular:} El número promedio de pasos tomados en cualquier instancia de tamaño \(a\).
+            \item \textbf{Amortizado:} Una secuencia de operaciones aplicadas en la entrada de tamaño \(a\) promediados sobre el tiempo.
+        \end{itemize}
+        \subsection{Complejidad en el Tiempo}
+        Denominado de manera coloquial como \emph{el número de pasos en relación a la longitud de la entrada}. En este caso ``tiempo" puede significar el numero de accesos de memoria realizados, el numero de comparaciones entre enteros, el numero de veces
+        en que un buclé interno es ejecutado, o algúna otra unidad natural relacionada al tiempo real total que el algoritmo va a tomar.
+        \subsection{Complejidad en el Espacio}
+        Denominado de manera coloquial como \emph{el número de espacios de almacenamiento en relación a la longitud de la entrada}. Se acostumbra a mencionar memoria ``extra" necesaria, sin contar la memoria necesitada para almacenar a la entrada misma. Otra véz, usamos
+        unidades de medida (de longitud fija) naturales para medirlo. Esta complejidad es en veces ignorada porque el espacio usado es mínimo y/o obvio, sin embargo se convierte en un inconveniente importante como el tiempo.  
+        \subsection{Eficiencia de Algoritmos}
+        El tiempo de ejecución de un algoritmo depende en el conjunto de instrucciones, la velocidad del procesador, la velocidad I/O del disco, etc. Por lo tanto se estima la eficiencia de un algorítmo de manera asintótica.
+        \\ \newline Por lo general se acostumbra a estimar la eficiencia en cuestión de tiempo
+        donde dicha función de tiempo es representada como \(T(n)\) donde \(n\) es el tamaño de la entrada. Existen distintas notaciones asintoticas usadas para calcular la complejidad de tiempo de un algoritmo dado.
+        \begin{itemize}
+            \item \(O(<\!\text{argumento}\!>)\): \emph{Big Oh}. Representa el \emph{límite superior asintótico}. 
+            \item \(\Omega(<\!\text{argumento}>\!)\): \emph{Big Omega}. Representa el \emph{límite inferior asintótico}.
+            \item \(\Theta(<\!\text{argumento}>\!)\): \emph{Big Theta}. Representa el \emph{límite fijo asintótico}.
+            \item \(o(<\!\text{argumento}\!>)\): \emph{Little Oh}. Representa el \emph{límite superior asisntoticamente no-fijo}.
+            \item \(\omega(<\!\text{argumento}\!>)\): \emph{Little Omega}. Representa el \emph{límite inferior asintoticamente no-fijo}.
+        \end{itemize}
+        \subsubsection{Analisis Asintótico}
+        De manera muy coloquial, el término de \emph{asistotico} hace refencia a que es un acercamiento similar o un valor vagamente cercano a la función real de tiempo. Ej. \(7\sim10\).
+        \\ \newline
+        El comportamiento asistótico de una función \(f(n)\) se refiere al crecimiento de \(n\) cuando \(n\) se hace grande. Se ignoran los valores pequeños, porque el sujeto de interés es la estimación de la lentitud de un programa dado entradas grandes.
+        Una regla de oro es \emph{mientras mas lenta es la razón de crecimiento asintótico, mejor el algoritmo} aunque a veces no es cierto.\\ \newline
+        Por ejemplo, un algoritmo lineal \(f(n)=d*n+k\) siempre es asintóticamente mejor que un algoritmo cuadrático, \(g(n)=c*n^2+q\) debido a que el orden polinomial de \(f(n)\) es menor que el de \(g(n)\). Con ello podemos desarrollar las clasificaciones mencionadas en el subtema anterior:
+        \\ \newline
+        \textbf{\emph{Límite superior asintótico:}}\\
+        El mas usado. Una función \(f(n)\) puede ser representada en el orden de \(g(n)\), eso es \(f(n)\in O(g(n))\), si existe un valor entero positivo \(n\), \(n_0\) y una constante positiva \(c\) tal que
+        \[f(n)\leq c*g(n),\, \forall n>n_0\]
+        Ej: Dadas \(f(n)=4n^3+10n^2+5n+1\) y \(g(n)=n^3\),
+        \[f(n)\leq 5*g(n),\, \forall n>2 \therefore f(n)\in O(n^3)\]
+        \textbf{\emph{Límite inferior asintótico:}}\\
+        Una función \(f(n)\in\Omega (g(n))\) cuando existe una constante \(c\) tal que \(f(n)\geq c*g(n)\) para toda \(n\) suficientemente grande.\\
+        Ej: Usando las funciones anteriores \(f(n)\) y \(g(n)\),
+        \[f(n)\geq 4*g(n),\, \forall n>0\therefore f(n)\in \Omega (g(n))\]
+        \textbf{\emph{Límite fijo asintótico:}}\\
+        Una función \(f(n)\in \Theta (g(n))\) cuando existen las constantes \(c_1\) y \(c_2\) tal que \(c_1*g(n)\leq f(n)\leq c_2*g(n)\) para todo valor de \(n\) suficientemente grande.\\
+        Ej: Usando las funciones anteriores \(f(n)\) y \(g(n)\),
+        \[4*g(n)\leq f(n)\leq 5*g(n),\,\forall n \text{ suficientemente grande} \therefore f(n)\in \Theta (g(n))\]
+        \textbf{\emph{Límite superior asintóticamente no-fijo:}}\\
+        Decimos que \(f(n)\in o(g(n))\) para todo constante \(c>0\) y existe un valor \(n_0>0\), tal que \(0\leq f(n)\leq c*g(n)\) y
+        \[\lim_{n\to\infty} \frac{f(n)}{g(n)}=0\]
+        Ej: Dado \(f(n)=4n^3+10n^2+5n+1\) y \(g(n)=n^4\),
+        \[\lim_{n\to\infty}\frac{f(n)}{g(n)}=0\,\therefore f(n)\in o(g(n))\]
+        \textbf{\emph{Límite inferior asintóticamente no-fijo:}}\\  
+        Decimos que \(f(n)\in \omega(g(n))\) si
+        \[\lim_{n\to\infty} \frac{f(n)}{g(n)}=\infty\]
+        Ej: Dado \(f(n)=4n^3+10n^2+5n+1\) y \(g(n)=n^2\),
+        \[\lim_{n\to\infty} \frac{f(n)}{g(n)}=\infty\,\therefore f(n)\in \omega(g(n))\]
+        \section{Conclusión}
+        Como se expuso, estas características expanden mas allá la compresión de un conjunto de pasos ordenados los cuales (en la vida cotidiana) no acostumbramos a razonar mas allá de que se necesita y que resultado nos deja. Esta información es crucial para empezar
+        a razonar de una manera más objetiva y eficiente la redacción de código para crear estándares de industria así como una mayor eficiencia de ejecución y un mejor aprecio a la planeación de los mismos. En mi opinión personal, finalmente he comprendido la notación asintótica
+        lo cual espero de manera muy entusiasmada me ayude como una de muchas herramientas que he estado desarrollando a lo largo de mi carrera estudiantil.
+    \end{justify}
+
+    %bibliografía
+    \newpage
+        \lhead{}
+        \addcontentsline{toc}{section}{Referencias}
+        \printbibliography
+\end{document}

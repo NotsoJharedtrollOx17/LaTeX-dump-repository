@@ -1,0 +1,106 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage[titles]{tocloft} %manejo de elementos para el índice
+\usepackage{float} %manejo de centrado para figuras
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Estructura de Datos\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 4\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Ensayo acerca de Arboles\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        M.C. Claudia Negrete Sanchez
+        
+        \vfill
+
+        {\large 6 de noviembre del 2020}
+    \end{titlepage}
+
+        \newpage
+        \begin{justify}
+            \setcounter{page}{1}
+            \thispagestyle{fancy}
+            \lhead{\textbf{Ensayo acerca de Arboles}}
+            \section{Introducción}
+            En este breve ensayo se resalta lo más relevante respecto a los videos de introducción al tema de la Unidad 4; así como detalles considerados importantes para el estudio de la misma. 
+            \section{Conceptos básicos}
+            A grandes rasgos, un árbol es una estructura no lineal dinámica porque no necesariamente tiene un solo sucesor y un solo predecesor; este puede cambiar durante la ejecución del programa, también es una estructura jerárquica aplicada sobre nodos donde el primero es
+            la raíz y los que se desparraman de él tienen parentésco, como un árbol genealógico. Explicado de manera recursiva, dicho árbol puede ser vacio, o un nodo raíz con un subárbol izquierdo y derecho.
+            \\\newline Se pueden establecer las relaciones de un arbol en:
+            \begin{itemize}
+                \item En relación con otros nodos: \emph{Padre \(\rightarrow \begin{matrix}
+                    \text{Hijo.}\\
+                    \text{Hermano.}
+                \end{matrix}\)}
+                \item En relación a la posición: \emph{Raíz \(\rightarrow\) Ramas \(\rightarrow\) Hojas.}
+                \item En relación a su tamaño: \emph{Grado de un nodo (subárboles de un nodo), longitud del camino (Cuantos enlaces desde la raíz a un nodo dado), profundidad (número máximo de nodos) y por peso (cantidad de nodos terminales).}
+            \end{itemize}
+            Por último, las operaciones que podemos realizar son las siguientes:
+            \begin{itemize}
+                \item \emph{Insertar}.
+                \item \emph{Buscar}.
+                \item \emph{Eliminar}.
+                \item \emph{Recorrer}.
+            \end{itemize}
+            Cabe destacar que el árbol empleado para estructuras de datos es el \emph{árbol binario}, el cuál su caracteristica principal es que \emph{sus nodos solo pueden contener un máximo de dos elementos}. 
+            \section{Inserción y Búsqueda en árboles binarios}
+            \subsection{Inserción}
+            El acomodo resultante de la Inserción en un árbol binario depende del tipo de dato el cual se maneje.
+            \subsubsection{Para datos numéricos}
+            De primera instancia, el primer dato de dicha lista va a ser nuestro nodo raíz. Los subsecuentes se insertar en base a la izquierda o la derecha dependiendo de si dichos valores son menores o mayores entre ellos mismos y así de manera recursiva hasta agotar.
+            \subsubsection{Para datos string}
+            De manera similar para datos numericos, nuestra jeraquía va a ser el orden alfabético y la cantidad de caractéres de las cadenas dadas. El primer dato dado será nuestra raíz. Los subsecuentes se van a insertar a la izquierda o derecha dependiendo de lo mencionado anteriormente; así de manera recursiva hasta agotar. 
+            \section{Recorrido y Eliminación en árboles binarios}
+            \subsection{Recorrido}
+            A grandes rasgos ``como consultar los datos''. Los dos tipos de recorrido son los siguientes: \emph{por profundidad y por amplitud.} Los recorridos (y su orden de recorrido) son los siguientes:
+            \subsubsection{Por longitud}
+            \begin{itemize}
+                \item \emph{RID (Preorden):} Visitar Raíz \(\rightarrow\) Recorrer subárbol izquierdo en RID \(\rightarrow\) Recorrer subárbol derecho en RID.
+                \item \emph{IRD (Enorden):} Recorrer subárbol izquierdo en IRD \(\rightarrow\) Visitar Raíz \(\rightarrow\) Recorrer subárbol derecho en IRD.
+                \item \emph{IDR (Postorden):} Recorrer subárbol izquierdo en IDR \(\rightarrow\) Recorrer subárbol derecho en IRD\(\rightarrow\) Visitar Raíz.
+            \end{itemize}
+            \subsubsection{Por amplitud}
+            \begin{itemize}
+                \item Visitar raíz \(\rightarrow\) Recorrer el árbol por niveles \(\rightarrow\) Terminar recorrido en el último nivel.
+            \end{itemize}
+            \subsection{Eliminación}
+            Existen 4 casos al respecto:
+            \begin{itemize}
+                \item \emph{Una hoja:} Se elimina un nodo que no tiene hijo. El árbol no cambia drásticamente de forma.
+                \item \emph{Un nodo padre con hijo único:} Se elimina solamente el nodo deseado. Su hijo toma la posición del padre en la estructura.
+                \item \emph{Un nodo con dos híjos:} Se elimina el nodo deseado y una hoja cuyo valor sea el más proximo al del nodo elimidado toma su lugar.
+                \item \emph{Un nodo no existente:} El programa busca mas allá del padre que (en teoría) contiene al nodo inexistente.
+            \end{itemize}
+
+            \section{Conclusión}
+            En lo general y en lo particular, me parece una de las estructuras (hasta la fecha) mas interesantes de manejar debido a mi previa exposición de los temas en la asignatura de Matemáticas Discretas y que los temas relacionados a la Teoría de Grafos muestran relaciones a primera vista inexistentes dentro de un conjunto de datos.
+            Esto me sirve como una buena remenbranza para la unidad.
+        \end{justify}
+
+\end{document}

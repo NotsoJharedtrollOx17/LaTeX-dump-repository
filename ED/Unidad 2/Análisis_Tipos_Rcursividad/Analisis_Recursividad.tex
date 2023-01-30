@@ -1,0 +1,252 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Estructura de Datos\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 2\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Análisis de los Tipos de Recursividad\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        M.C. Claudia Negrete Sanchez
+    
+        \vfill
+
+        {\large 10/10/2020}
+    \end{titlepage}
+
+    %indice
+    \newpage
+        \thispagestyle{empty}
+        \tableofcontents
+
+    %cuerpo
+    \newpage
+    \begin{justify}
+        \setcounter{page}{1}
+        \thispagestyle{fancy}
+        \lhead{\textbf{Análisis de los Tipos de Recursividad}}
+        \section{Introducción}
+        En esta redacción se habla de la clasificación de los tipos de recursividad aplicados en cada uno de los programas realizados en la Unidad 2 de la materia.
+        Esto es con la finalidad de complementar la base teórica de la recursión con la parte práctica
+        \section{Análisis de los Programas}
+        \subsection{Recursividad directa}
+            \subsubsection{Problema}
+            Se tiene el problema de obtener la serie Fibonacci de los primeros 15 números, usando la recursividad directa.
+            no olvides agregar Console.Title y que en la captura y despliegue (pantallas se aprecie a partir del titulo), y además tus datos como comentario
+            si no lo haces no se tomara en cuenta.
+            \subsubsection{Código recursívo}
+\begin{verbatim}
+//calculo de fibonacci
+public int GenFib(int cant)
+{
+    //primeros dos casos
+    if (cant == 0 || cant == 1)
+    {
+        return 1;
+    }
+    else
+    //aplicación de la recursividad
+    {
+        return GenFib(cant - 1) + GenFib(cant - 2); 
+        //la recursividad llama al metodo mismo
+        //dependiendo si se cumple el condicional indicado
+    }
+}
+\end{verbatim}
+            \subsubsection{Clasificación}
+            Este recae en la \emph{recursión múltiple} debido a que hay muchas llamadas del método en cuestion en si mismo.
+        \subsection{Suma de Números (Recursivo directo)}
+            \subsubsection{Problema}
+            Diseñe un método que calcule la suma de N números naturales, al usuario se le solicitara el valor y en el método recursivo se realizara la suma.
+            \subsubsection{Código recursívo}
+\begin{verbatim}
+//calculo de las sumas
+public int Sumasn(int cant)
+{
+    if (cant == 1)
+        return  cant;
+    else
+        return  cant + Sumasn(cant - 1);        
+}
+
+//función recursiva que permite el despliegue de sumandos
+public int Sumandosn(int cant)
+{
+    if (cant != 1)
+        return cant;
+    else
+        return cant - Sumandosn(cant - 1);
+}    
+\end{verbatim}
+            \subsubsection{Clasificación}
+            La clasificación de la recursión aplicada es la \emph{recursión lineal final} debido a que la última ejecución del misma devuelve el valor esperado.
+        \subsection{Manejo de Arreglos con Método Recursivo}
+            \subsubsection{Problema}
+            Crea un programa donde en el principal muestres tu arreglo con las edades, en un metodo recursivo vas a ingresar edades, siempre y cuando estas sean mayores o 
+            iguales a 18, la recursividad termina cuando el arreglo se llene, el tamaño total del arreglo es de 20.
+            \subsubsection{Código recursívo}
+\begin{verbatim}
+//calculo de las sumas
+public int CapturaAge()
+{
+    if (i < edad.Length)
+    {
+        //captura
+        Console.Write("Edad: ");
+        quant = int.Parse(Console.ReadLine());
+        if (quant < 18)
+        {   //verificación de edad
+            //si son menores, manda este mensaje y despues 
+            //de picar cualquier tecla
+            //cierra la consola
+            Console.WriteLine("\nSOLO ACEPTA MAYORES DE EDAD! 
+            (18 ó más)\n");
+            Console.ReadKey();
+            return 0;
+        }
+        else
+        {
+            //de lo contrario, guarda el valor capturado 
+            //en el arreglo y aplica recursividad
+            edad[i] = quant;
+            i++;
+            return CapturaAge();
+        }
+    }
+    else
+    {
+        i = 0;
+        Desedades();
+        return 0;
+    }
+}
+\end{verbatim}
+            \subsubsection{Clasificación}
+            En este caso, es la \emph{recursión lineal no final} ya que la condición se cumple según un tope definido.
+        \subsection{Usando Recursividad Indirecta}
+            \subsubsection{Problema}
+            Realiza un programa donde se solicite desde el Main una tabla de dividir  y usando metodos recursivos indirectos muestre en pantalla dicha tabla de dividir, 
+            Toma en cuenta que la tabla llega hasta 12.
+            \subsubsection{Código recursívo}
+\begin{verbatim}
+    //operaciones recursivas indirectas
+    //calculo
+public void Division(double result,double counter, double number)
+{
+    if(counter<=12)
+    {
+        result = Math.Round(counter / number,5);
+        Tabladiv(result, counter, number); //tabla
+    }
+}
+    //tabla
+public void Tabladiv(double result, double counter, double number)
+{
+    Console.WriteLine("{0}\t÷\t{1}\t=\t{2}",counter,number,result);
+    Console.ReadKey();
+    counter++;
+    Division(result, counter, number); //calculo
+}
+\end{verbatim}
+            \subsubsection{Clasificación}
+            Su clasificación es de \emph{recursividad mutua} debido a que hay una dependencia de ambas funciones para resolver lo indicado (se llaman entre sí).
+        \subsection{Recursividad indirecta de par, impar}
+            \subsubsection{Problema}
+            Crea un programa usando la recursividad indirecta donde captures en el main un numero, y en el principal nos vaya diciendo si este es par o impar usando 
+            la recursividad indirecta, la recursividad debe terminar cuando el humero llegue a cero.
+            \subsubsection{Código recursívo}
+\begin{verbatim}
+    //operaciones recursivas indirectas
+    //calculo
+public void Prueba(string answer, double number)
+{
+    if (number == 0)
+        Console.ReadKey();
+    else
+    {
+        if (number % 2 == 0)
+            answer = "par";
+        else
+            answer = "impar";
+        Desevenodd(answer,number); //despliegue
+    }
+}
+
+//despliegue
+public void Desevenodd(string answer, double number)
+{
+    Console.WriteLine("{0} es {1}",number,answer);
+    Console.ReadKey();
+    number--;
+    Prueba(answer,number); //calculo
+} 
+\end{verbatim}
+            \subsubsection{Clasificación}
+            En este caso aplica la \emph{recursividad mutua} debido a que ambas funciones dependen de si al momento de ejecutar dichas recursividades.
+        \subsection{Recursividad indrecta de serie de números}
+            \subsubsection{Problema}
+            Programa que ingresa dos valores en el principal, y usando la recursividad indirecta, en un metodo realiza la suma de esos valores ue se encuentren
+            comprendidos entre los 2 números enteros y en otro metodo ve mostrando la suma de esos valores. La recursividad termina cuando llegan al tope de esos números.
+            \subsubsection{Código recursívo}
+\begin{verbatim}
+//suma de la serie entre esos dos numeros
+public void Sumas(int cant1, int cant2)
+{
+    if (i<=cant2)
+    {
+        i = i+1;
+        result = cant1 + i;
+        Sumandos(cant1, cant2); //despliegue
+    }
+}
+    
+//sumandos de la serie entre esos dos numeros
+public void Sumandos(int cant1, int cant2)
+{
+    if (i < cant2)
+    {
+        Console.WriteLine("{0}\t+\t{1}\t=\t{2}", cant1, i, result);
+        Sumas(result, cant2); //calculo
+    }
+    else
+    {
+        Console.WriteLine("{0}\t+\t{1}\t=\t{2}", cant1, cant2, result);
+        Console.ReadKey();
+    }
+}   
+\end{verbatim}
+            \subsubsection{Clasificación}
+            De manera similar al código anterior, se aplica \emph{recursión mutua} debido a que las funciones se llaman entre sí para cumplir lo indicado.
+        \section{Conclusión}
+        Clasificar los códigos en un análisis separado de la redacción del programa permite apreciar de una manera mas dosificada los temas de la segunda unidad como un gran repaso de la teoría
+        y una mejor comprensión de la práctica.
+    \end{justify}
+\end{document}

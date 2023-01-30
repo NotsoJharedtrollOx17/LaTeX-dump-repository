@@ -1,0 +1,53 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\textbf{Repaso para el exámen U1}}
+\rhead{09/10/2020}
+    \subsection*{Instrucciones}
+    Escriba un program donde ingreses en el método principal (Main) el nombre y la edad de tres personas, usando un método deberas obtener la edad mayor,
+    en el principal mostraras la persona cuya edad es mayor
+    \subsection*{Codigo}
+    \begin{verbatim}
+static void Main(string[] args)
+{
+    //variables auxiliares
+    int []age = new int[3]; int i;
+    string []name = new string[3];
+    Console.Title="Edad mayor de tres personas";
+    for(i=0;i<name.Length;i++)
+    {
+        Console.Write("Ingrese el nombre {0}:",i+1);
+        name[i]=Console.ReadLine();
+        Console.Write("Ingrese la edad {0}:",i+1);
+        age[i]=int.Parse(Console.ReadLine());
+    }
+    new Program().Despliegue(age,name);
+} 
+        
+public void Despliegue(int[] edades,string[] nombres)
+{
+    Console.Clear();
+    int valormax = edades.Max();
+    int indexedad = Array.IndexOf(edades, valormax); //busca el
+    // indice del valor mayor correspondiente al arreglo edades
+    Console.WriteLine("{0} tiene la edad mayor ({1})",
+    nombres[indexedad],valormax);
+    Console.ReadKey();
+}
+    \end{verbatim}
+\end{document}

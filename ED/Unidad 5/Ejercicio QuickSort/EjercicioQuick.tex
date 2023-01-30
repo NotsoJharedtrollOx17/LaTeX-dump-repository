@@ -1,0 +1,87 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage[spanish]{babel} %manejo de encabezados de inglés a español
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage[titles]{tocloft} %manejo de elementos para el índice
+\usepackage{float} %manejo de centrado para figuras
+\usepackage{amssymb} %manejo de simbolog►1a matematica
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+\begin{document}
+    
+    %PORTADA
+    \begin{titlepage}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{logosITT.png}
+        \end{figure}
+        \centering
+        {\scshape\LARGE Tecnológico Nacional de México\\Instituto Tecnológico de Tijuana\par}
+        \vspace{1cm}
+        {\scshape\Large Estructura de Datos\par}
+        \vspace{1cm}
+        {\scshape\Large Unidad 5\par}
+        \vspace{1.5cm}
+        {\huge\bfseries Ejercicios QuickSort\par}
+        \vspace{2cm}
+        {\Large\itshape C. Abraham Jhared Flores Azcona\\19211640\par}
+        \vfill
+        Profesora: \par
+        M.C. Claudia Negrete Sanchez
+        
+        \vfill
+
+        {\large 26 de noviembre del 2020}
+    \end{titlepage}
+
+    \newpage
+    \thispagestyle{fancy}
+    \setcounter{page}{1}
+    \lhead{\textbf{Ejercicios de Sorteo Rapido}}
+    \section{Problema}
+    Resuelve en ejercicio como se muestra en el video adjunto y plasmalo en tu cuaderno o en un documento, entregalo en tiempo y forma para que sea evaluado. Los datos del arreglo son:
+    \[\text{A}[7]=\{23,\,6,\,45,\,12,\,7,\,34,\,9\}\]
+    No olvides poner cual es tu pivote. 
+    \section{Resolución}
+    Para el Quick Sort, ocupamos conocer los valores de izquierda (\(I\)), derecha (\(D\)) y pivote \(P\). \(I\) y \(D\) se van a poner en los extremos del arreglo, y el pivote se considera el valor del extremo izquierdo. Los valores de falsedad y verdad
+    se representan con 0 y 1 respectivamente.
+    \\• \(I=\_,\, D=9,\, P=23\)
+    \[\{\_,6,45,12,7,34,9\}\, D<P:1\therefore\]
+    • \(I=6,\, D=\_,\, P=23\)
+    \[\therefore \{9,6,45,12,7,34,\_\},\, I>P:0 \therefore\]
+    • \(I=45,\, D=\_,\,P=23\)
+    \[\therefore \{9,6,45,12,7,34,\_\},\, I>P:1 \therefore\]
+    • \(I=\_,\, D=34,\, P=23\)
+    \[\therefore \{9,6,\_,12,7,34,45\},\, D<P:0 \therefore\]
+    • \(I=\_,\, D=7,\, P=23\)
+    \[\therefore \{9,6,\_,12,7,34,45\},\, D<P:1 \therefore\]
+    • \(I=12,\, D=\_, P=23\)
+    \[\therefore \{9,6,7,12,\_,34,45\},\, I>P:0 \therefore\]
+    • \(I=_,\, D=\_, P=23\)
+    \[\therefore \{9,6,7,12,\_,34,45\},\, I>P:\text{inconcluso} \therefore\]
+    \[\therefore \text{A}[7]=\{9,6,7,12,23,34,45\}\] 
+    Como el arreglo aún no se se ha terminado de ordenar, ahora se partirá en dos el arreglo realizar el sorteo. Como el resultado \(\frac{7}{2}\) es 3.5, se procedera a tomar los primeros tres números del arreglo para hacer la comparación de la primer partición.
+    \\• \(I=\_,\, D=7,\, P=9\)
+    \[\{\_,6,7,12,23,34,45\},\, D<P:1 \therefore\]
+    • \(I=6,\, D=\_,\, P=9\)
+    \[\therefore \{7,6,\_,12,23,34,45\} I>P:0 \therefore\]
+    • \(I=_,\, D=\_,\, P=9\)
+    \[\therefore \{7,6,\_,12,23,34,45\} I>P:0 \therefore\]
+    \[\therefore \text{A}[7]=\{7,6,9,12,23,34,45\}\]
+    Como la otra mitad del arreglo esta acomodada, procedemos a reducir más el rango de evaluación, como el resultado de \(\frac{3}{2}\) es 1.5, procederemos a redondear a dos para tener un márgen mayor para evaluar los datos.
+    \\• \(I=\_,\, D=6,\, P=7\)
+    \[\{\_,6,9,12,23,34,45\},\, D<P:1 \therefore\]
+    • \(I=\_,\, D=\_,\, P=7\)
+    \[\therefore\{6,\_,9,12,23,34,45\},\, I>P:\text{incloncluso} \therefore\]
+    \[\therefore \text{A}[7]=\{6,7,9,12,23,34,45\}\]
+    Dando por concluido el ordenamiento.
+\end{document}
