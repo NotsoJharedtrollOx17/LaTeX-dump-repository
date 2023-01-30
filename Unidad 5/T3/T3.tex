@@ -1,0 +1,98 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+% Portada
+\thispagestyle{empty}
+\title{\Large La Lucha de Camboya por el Mekong}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{ACD-0908SC5C Desarrollo Sustentable}
+\professor{M.C. Trinidad Castro Villa}
+\duedate{30 de noviembre de 2021}
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+\maketitle
+
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{La Lucha de Camboya por el Mekong}
+\subsection{Resumen}
+A \begin{justifying}
+  grandes rasgos, el documental \citep{dw-documentary-2021} explica la situación socioeconómica de los habitantes aledaños
+del rio Mekong de Camboya, donde actualmente han llenado dicho río con arena para poder generar 
+más suelo para el desarrollo urbano del Mekong. Para los pescadores y agricultores, las acciones de desarrollo
+urbano los han perjudicado por años debido a que la pesca termina siendo futíl y los
+suelos terminan siendo infértiles para la siembra; aunado a lo anterior tenemos el desplazo de dichas
+personas de sus hogares donde ciertos individuos aceptaron la relocalización de las viviendas por parte del gobierno mientras que otros
+la negaron por principios morales.\par
+\end{justifying}
+Para \begin{justifying}
+  los desarrolladores urbanos, el interés principal recae en la antes mencionada urbanización que atrae
+la inversión extranjera al país, generando un ciclo de retroalimentación financiero y economicante benéfico al país, sin embargo
+termina desplazando a las personas de escasos recursos. Un detalle relevante es que uno de los principales inversionistas financieros
+es China con proyectos de infraestructura como el de la presa mostrada en el video, que les permite ser uno de los principales distribuidores
+de energía en Asia.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection{Tangentes}
+\subsubsection{Financimiento Chino para Proyectos de Infraestructura Internacionales}
+Una \begin{justifying}
+  de las maneras en la cual el gobierno chino ha procurado mostrar su poderio económico
+  por medio del financiamiento de proyectos de infraestructura alrededor del mundo, principalmente en Africa. Con dicha
+  opción más proactiva, los gobiernos del mundo prefieren mantener alianzas estratégicas con China por su apertura de inversión, comparado a
+  las instituciones financieras establecidas como el Banco Mundial a pesar de que muchos analístas económicos financieros advierten de que
+  el trato incluye la creación de bases militares en los países donde estén desarrollando los proyectos, así como el endeudamiento de los entes \cite{simmons-2021}.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsubsection{Desarrollo de la Infraestructura Hidrológica en el Mekong}
+Como \begin{justifying}
+  se menciona brevemente en el video, los planes de infraestructura hidrológica consideran el tratamiento del río respecto a las aguas negras
+  de la ciudad, que claman que dicha infrestructura puede gestionar de mejor manera los desechos. Sin embargo, acorde a \cite{nhess-2021-65} %citar al de 
+   el desarrollo debe ser muy resistente a los cambios naturales de la región, y por ende el desarrollo del proyecto debe tomar en cuenta que
+  el márgen de alteraciones que provocaría dicho proyecto debe considerarse hasta el año 2040, donde proyectan que las
+  inundaciones van a ser muy severas comparado a lo actual.\par
+\end{justifying}
+\newpage
+% Referencias
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias} %el archivo 'referencias.bib' debe estar dentro del mismo folder donde se encuentra el archivo .tex para citar las referencias deseadas
+
+\end{document}

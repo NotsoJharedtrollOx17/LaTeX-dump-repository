@@ -1,0 +1,83 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+% Portada
+\thispagestyle{empty}
+\title{\Large Un Paraíso Destruido por la Acción Humana}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{ACD-0908SC5C Desarrollo Sustentable}
+\professor{M.C. Trinidad Castro Villa}
+\duedate{6 de septiembre de 2021}
+
+\begin{document}
+\maketitle
+
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Introducción}
+En \begin{justifying}
+    esta breve redacción, se resume el contenido del video documental de la cadena DW titulado: ``Brazil - Un paraíso destruido por la acción humana'' que incluye la afectación
+    del cambio climatico a las playas y a sus habitantes, principalmente las tortugas, manatíes y a los mismos pescadores.\par
+\vspace{\baselineskip}
+\end{justifying}
+\section{Resúmen}
+La \begin{justifying}
+    idea central del documental es en las costas de Brazil, donde existe una interacción muy llamativa de la fauna marina. Los conservacionistas/biólogos marinos son los que a grandes rasgos se llevan la
+    conversación explicando los procedimientos para la curación, cuidado y atención de gaviotas, tortugas y manatíes (los cuales aparecen el video). Para los manaties, sus curaciones recaen en tratar quemaduras
+    y alimentarlos en cautiverio con simuladores de lechuga acomodados en tubos; para darles seguimiento, se les cuelga un GPS para recolección de datos. Para las gaviotas, el procedimiento es similar ya que no se le fuerza al animal su integración a la intemperie.\par
+    \vspace{\baselineskip}
+    Una de las razones del desplazamiento de los manaties al calor abrazador de la playa es por la creación de fosas de sal artificiales que estan en el lugar donde dichos animales procreaban, los cuales fueron puestos por el 
+    arduo desarrollo turístico de los conglomerados hoteleros para generar tierra para sus construcciones. Curiosamente los pescadores locales son los que terminaron siendo los principales embajadores para el turismo con enfoque
+    conservacional porque terminó siendo una principal fuente de ingreso para ellos, mientras que sus colegas de pesca industrial terminan siendo mucho mejor pagados pero sin enfoque de conciencia.\par
+    \vspace{\baselineskip}
+    Para los pescadores, su principal afectación para su pesca comercial fue el derrame de uno de los pozos petroleros del mar que aún no se sabe de quién fue. Junto a los biólogos marinos, los pescadores siguen explorando las
+    afectaciones de contaminación en las arenas y en los animales de dicho ecosistema. En general, la conservación ambiental en Brazil ha ganado popularidad por el auge del tema aparte del turismo con enfoque conservacional que los mismos
+    pescadores han dado para poder sobrevivir \citep{dw-2021}.\par
+    \vspace{\baselineskip}
+\end{justifying}
+  
+
+\section{Conclusión}
+A \begin{justifying}
+    pesar de que Brazil (como el resto de Sudamérica) es bendecido por el toque de la naturaleza, la acción del ser humano termina afectando a los vestigios más serenos del planeta por lo que es sumamente importante mostrarle al ciudadano promedio lo que la comunidad cientifica hace para 
+    minimizar y (en el mejor de los casos) detener las afectaciones del cambio climatico en las playas.
+\end{justifying}
+
+\newpage
+% Referencias
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias}
+
+\end{document}

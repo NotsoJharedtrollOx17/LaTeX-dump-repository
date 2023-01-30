@@ -1,0 +1,96 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+% Portada
+\thispagestyle{empty}
+\title{\Large Huella Ecológica}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{ACD-0908SC5C Desarrollo Sustentable}
+\professor{M.C. Trinidad Castro Villa}
+\duedate{22 de noviembre de 2021}
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+\maketitle
+
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+\renewcommand{\listtablename}{Tablas}
+\listoftables
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Huella Ecológica}
+\subsection{Concepto}
+Acorde a \cite{secretaria-de-medio-ambiente-y-recursos-naturales-2017} %citar al gobmx
+\begin{justifying}
+  es un indicador para conocer el grado de impacto de la sociedad sobre el ambiente. También agrega que
+  es una herramienta para determinar cuánto espacio terrestre y marino se necesita para producir todos los recursos
+  y bienes que se consumen, así como la superficcie para absorber los desechos que se generan, usando la tecnología
+  actual.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection{Mi Huella Ecológica}
+\begin{table}[H]
+  \centering
+\caption{Desglose de huella ecológica personal}
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{c}{\textbf{17-nov}}                            & \multicolumn{1}{c}{\textbf{18-nov}}                            & \multicolumn{1}{c}{\textbf{19-nov}}                            & \multicolumn{1}{c}{\textbf{20-nov}}                            & \multicolumn{1}{c}{\textbf{21-nov}}                            \\ \hline
+\begin{tabular}[c]{@{}l@{}}Papel \\ higienico\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Papel\\ higienico\end{tabular}      & \begin{tabular}[c]{@{}l@{}}Papel\\ higienico\end{tabular}      & \begin{tabular}[c]{@{}l@{}}Papel \\ higienico\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Papel\\ desechable\end{tabular}     \\
+\begin{tabular}[c]{@{}l@{}}Platos\\ desechables\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Platos \\ desechables\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Platos \\ desechables\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Platos \\ desechables\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Botella \\ de plástico\end{tabular} \\
+\begin{tabular}[c]{@{}l@{}}Vasos \\ desechables\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Vasos \\ desechables\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Vasos \\ desechables\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Vasos \\ desechables\end{tabular}   &                                                                \\
+\begin{tabular}[c]{@{}l@{}}Botella \\ de plástico\end{tabular} & \begin{tabular}[c]{@{}l@{}}Botella\\ de plástico\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Botella \\ de plástico\end{tabular} & \begin{tabular}[c]{@{}l@{}}Botella \\ de plástico\end{tabular} &                                                                \\
+\begin{tabular}[c]{@{}l@{}}Papel \\ higiénico\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Papel\\ higiénico\end{tabular}      & \begin{tabular}[c]{@{}l@{}}Papel \\ higiénico\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Botella \\ de plástico\end{tabular} &                                                                \\
+\begin{tabular}[c]{@{}l@{}}Botella \\ de plástico\end{tabular} & \begin{tabular}[c]{@{}l@{}}Botella \\ de plástico\end{tabular} & \begin{tabular}[c]{@{}l@{}}Botella \\ de plástico\end{tabular} &                                                                &                                                                \\ \hline
+\end{tabular}
+\bigskip
+  \\\small\textit{Nota}. Autoría propia. %citar al tmta.
+\end{table}
+Debido \begin{justifying}
+  a que las rutinas de mi hogar son frecuentes, se puede concluír que hacemos mucho desperdício debido al uso de 
+desechables. Por una parte, la cuestión de la higiéne en el papel higiénico ons da una grán excepción por los posibles riesgos de salubridad mietras
+que el resto de los artículos se pueden reducir en grán manera e inclusíve utilizasr dichos desechos en otras aplicaciones tales como obras de arte visual.\par
+\end{justifying} 
+
+\newpage
+% Referencias
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias} %el archivo 'referencias.bib' debe estar dentro del mismo folder donde se encuentra el archivo .tex para citar las referencias deseadas
+
+\end{document}

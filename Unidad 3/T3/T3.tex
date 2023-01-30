@@ -1,0 +1,107 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+% Portada
+\thispagestyle{empty}
+\title{\Large Estudio de Poblaciones}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{ACD-0908SC5C Desarrollo Sustentable}
+\professor{M.C. Trinidad Castro Villa}
+\duedate{11 de octubre de 2021}
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+\maketitle
+
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section*{Introducción}
+\addcontentsline{toc}{section}{Introducción}
+Es \begin{justifying}
+    un hecho que el estudio del Desarrollo Sustentable abarca distintos temas tanto del aspecto natural como del aspecto cientifico; los temas
+    antropológicos no son la excepción. Uno de estos temas de antropología es aquel de los estudios y dinámicas poblacionales. En esta breve redacción se
+    explican tanto la demografía como la dinámica poblacional para comprenderlos de mejor manera para nuestros estudios competentes a la materia.\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Estudio de Poblaciones}
+Para \begin{justifying}
+    la \cite{unknown-author-no-dateA} %citar a la comecso
+    el estudio de las poblaciones se conoce como la \emph{Demografía}, la cual la define como una ciencia
+    que tiene como finalidad el estudio de la población humana y que se ocupa de su dimensión, estructura, evolución
+    y caracteres generales considerados fundamentalmente desde un punto de vista cuantitativo.\par
+\end{justifying}
+Para \begin{justifying}
+    la \cite{unknown-author-no-dateB} %citar a la Stockholm
+    es el estudio de las poblaciones; su tamaño, composición y distribución atravez del espacio y el proceso por el cual
+    las poblaciones cambian.\par
+\end{justifying}
+En \begin{justifying}
+    ámbas tenemos presentes cuatro puntos característicos:
+    \begin{itemize}
+        \item \emph{Dimensión:} hace referencia al tamaño de la población.
+        \item \emph{Estructura:} la población se estudia según distintos caracteres que la dividen en subpoblaciones de interés.
+        \item \emph{Evolución:} en tamaño, evolución temporal, etc.
+        \item \emph{Caracteres generales:} estado de salud, coeficiente intelectual, código genético, etc.
+    \end{itemize}\par
+\end{justifying}
+\vspace{\baselineskip}
+\section{Dinámica Poblacional}
+Para \begin{justifying}
+    la \cite{unknown-author-no-dateC} %semarnat
+    explica con el contexto de México, los cambios expresados en la población. Un claro ejemplo de ello es la reducción de la tasa de crecimiento
+    poblacional a 1.2\% hasta el 2000. Específicamente, se proyectan que las dinámicas poblacionales se encuentren en la estructura de la pirámide
+    de edades, los estados del norte contienen menor cantidad de población en contraste con el sur. Una tendencia destacable es que la población tiende 
+    a las urbes.\par
+\end{justifying}
+El \begin{justifying}
+    reporte de \cite{conapo-2013} refuerza estas hipótesis. La explosión demográfica creció un 1.13 porciento. La fecundidad va en descenso, mientras que la
+    esperanza de vida va en aumento así como la bonanza de juventud en comparación con la vejéz.\par 
+\end{justifying}
+\section*{Conclusión}
+\addcontentsline{toc}{section}{Conclusión}
+El \begin{justifying}
+    estudio de la demografía y la dinámica de las poblaciones permite ilustrar las expectativas de crecimiento de distintos
+    rubros humanos que nos permiten considerar la parte demográfica como factor igual de primordial a considerar en las integraciones del
+    Desarrollo Sustentable.\par
+\end{justifying}
+\newpage
+% Referencias
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias} %el archivo 'referencias.bib' debe estar dentro del mismo folder donde se encuentra el archivo .tex para citar las referencias deseadas
+
+\end{document}

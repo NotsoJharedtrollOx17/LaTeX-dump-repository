@@ -1,0 +1,87 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+% Portada
+\thispagestyle{empty}
+\title{\Large Producto Interno }
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{ACD-0908SC5C Desarrollo Sustentable}
+\professor{M.C. Trinidad Castro Villa}
+\duedate{8 de noviembre de 2021}
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+\maketitle
+
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+\renewcommand{\listfigurename}{Ecuaciones}
+\listoffigures
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Producto Interno Bruto}
+\subsection{Concepto}
+Acorde \begin{justifying}
+    a \cite{arias-2021A}%citar al de economipedia
+    es un indicador económico que refleja el valor monetario de todos los bienes y servicios finales producidos por
+    un territorio en un determinado periodo de tiempo; específicamente se usa para medir la riqueza generada de un país.\par
+\end{justifying}
+Para \begin{justifying}
+  \cite{banco-de-mexico-no-date}%citar al banco de méxico
+  es simplemente una forma de medir el crecimiento económico de un país. Agrega que el PIB solo contabiliza los bienes y servicios y se 
+  considera como ``interno'' ya que solo se consideran los biene y servicios producidos dentro de un país.\par
+\end{justifying}
+Para \begin{justifying}
+  \cite{lorente-2020}%citar a la de bbva
+  es el valor de mercado de todos los bienes y servicios finales producidos en el interior de un país durante un periodo de tiempo determinado. Agrega
+  que dicho indicador refleja la evolución económica de país.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection{Distribución en México}
+Acorde a \begin{justifying}
+  lo recabado por \cite{rombiola-2020} %citar al de la economia
+  las estadísticas del PIB indican que el PIB se distribuye en grandes porcentajes en las actividades primarias; esto implíca que nuestra economía
+   y su cecimiento depende bastante de la recolección de materias primas para el desarrollo del país; las implicaciones respecto a la sustentabilidad
+   de nuestra economía se hacen aparentes por el simple hecho de que el PIB de nuestro país tiene un peso enorme con el sector primario, lo que incentiva a seguir
+  teniendo una economía de explotación natural.\par
+\end{justifying}
+
+\newpage
+% Referencias
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias} %el archivo 'referencias.bib' debe estar dentro del mismo folder donde se encuentra el archivo .tex para citar las referencias deseadas
+
+\end{document}

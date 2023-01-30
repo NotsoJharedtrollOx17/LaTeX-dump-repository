@@ -1,0 +1,145 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{setspace} %espaciado
+\usepackage{fontspec} %manejo de distintas tipografías
+\usepackage[letterpaper, top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm]{geometry} %margenes
+\usepackage[utf8]{inputenc} %manejo de caracteres especiales
+\usepackage{fancyhdr} %formato de los encabezados de página
+\usepackage{ragged2e} %alineado real justficado
+\usepackage{graphicx} %manejo de imagenes
+\usepackage{amsmath} %manejo de notación matemática
+\usepackage{mathtools} %manejo de notación matemática
+\usepackage{blindtext} %texto de relleno
+\usepackage{amssymb} %manejo de simbología variada
+\usepackage{float} %manejo de centrado para figuras
+\usepackage{hyperref} %manejo d hipervínculos
+\usepackage{natbib} %manejo del formato apa
+\usepackage{titlesec} %tamanio de encabezados
+\usepackage{etoolbox} %permite poner el numero de pagina dentro de la portada
+\usepackage{indentfirst} %sangria del primer parrafo
+
+\titleformat*{\section}{\normalfont\bfseries} %tamanio normal de secciones
+\renewcommand{\contentsname}{\centering Contenido}
+\renewcommand\refname{\centering Referencias}
+
+\patchcmd{\titlepage} %permite poner el numero de pagina dentro de la portada
+  {\thispagestyle{empty}}
+  {}
+  {}
+  {}
+
+%color de los hipervinculos
+\hypersetup{
+    colorlinks=true,      
+    urlcolor=black,
+    linkcolor=black,
+    citecolor=black
+}
+
+%formato de los encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+
+\renewcommand{\headrulewidth}{0pt} %eliminar la barra del encabezado
+
+%fuente arial (COMPILAR DESDE LA CONSOLA CON xelatex)
+\setmainfont{Arial}
+
+%interlineado de 2
+\setstretch{2}
+
+\setlength{\parindent}{1.27cm} %espaciado de la sangria
+
+%COMO COMPILAR EL DOCUMENTO: (en consola) xelatex T1, bibtex T1, xelatex T1, xelatex T1
+\begin{document}
+
+    %PORTADA
+        \begin{titlepage}
+            \centering
+            \vspace*{\fill}
+            {\normalfont\bfseries Historia y Evolución del Concepto de Desarrollo Sustentable\par} %titulo del trabajo
+            \vspace{1cm}
+            {\normalfont Abraham Jhared Flores Azcona\par} %nombre del autor
+            {\normalfont Tecnológico Nacional de México, Instituto Tecnológico de Tijuana\par} %escuela
+            {\normalfont ACD-0908SC5C Desarrollo Sustentable\par} %materia
+            {\normalfont M.C. Trinidad Castro Villa \par} %nombre del profesor
+            {\normalfont 25 de agosto de 2021}
+            \vspace*{\fill}
+        \end{titlepage}
+
+    \newpage %indice o contenido
+        \setcounter{page}{2}
+        \tableofcontents
+
+    %EDITAR EL RESTO!!!
+
+    %CUERPO
+    \newpage
+    \section*{\centering Introducción}
+    \addcontentsline{toc}{section}{Introducción}
+    En esta breve redacción se explican los conceptos de \emph{desarrollo, sustentabilidad, sustentable y sostenible} como preámbulo relevante para aclarar la posible confusión, desarrollando en cada palabra distintos conceptos
+    ,y con ello partir hacia la historia y la evolución del concepto de \emph{desarrollo sustentable} para apreciar el cambio del concepto desde su concepción hasta
+    la actualidad.
+    \par
+    \section*{\centering Desarrollo}
+    \addcontentsline{toc}{section}{Desarrollo}
+    La primer palabra que compete el nombre de la materia. De una manera coloquial se interpreta que el desarrollo es cambio (con connotación positiva). Otro concepto con un caracter más formal y académico
+    es el de la Sociedad para el Desarrollo Internacional (\emph{SID}, por sus siglas en inglés); definen al desarrollo como un proceso que genera crecimiento, progreso, cambio positivo y la adición de componentes
+    físicos, económicos, ambientales, sociales y demográficos \cite{-2021}.
+    \\\newline
+    \noindent Para \cite{abuiyada-2018}
+    el desarrollo generalmente se confunde con ``crecimiento económico medido solamente en términos de incrementos anuales en ingresos pre-capita o producto nacional bruto, sin importar de la distribución y del grado de la participación de la gente en crecimiento efectivo''.
+    Se continua respecto a otras definiciones, una de estas es que el desarrollo debe ``Envolver mejoras cualitativas, cuantitativas o ámbas - en el úso de los recursos disponibles''.
+    \\\newline
+    \noindent En estos conceptos se coincide que el desarrollo tiene que aspirar a un bién.
+    \section*{\centering Sustentabilidad}
+    \addcontentsline{toc}{section}{Sustentabilidad}
+    Acorde al departamento de sustentabilidad de la Universidad de Los Angeles, California (\emph{UCLA} por sus siglas en inglés) la sustentabilidad es la integración de salúd ambiental, equidad social y vitalidad económica en orden para crear comunidades prosperas, saludables, diversas y resilientes para
+    la generación actual y las generaciones futuras. La práctica de la sustentabilidad reconoce como estos problemas estan interconectados y requieren un acercamiento sistemático y un reconocimiento de complejidad \cite{unknown-author-no-dateA}.
+    \\\newline
+    \noindent Para \cite{mason-no-date}
+    define a la sustentabilidad como el estudio de cómo los sistemas naturales funcionan, se mantienen diversos y producen todo lo que necesita para la ecología para permanecer en balance. También reconoces que la civilización humana toma recursos
+    para sostener nuestra vida cotidiana moderna.
+    \\\newline
+    \noindent Para \cite{grant-no-date}
+    la sustentabilidad se enfoca en alcanzar las necesidades del presente sin comprometer la habilidad de las futuras generaciones de alcanzar sus necesidades. También destaca que la sustentabilidad emergió como un componente de la ética corporativa en respuesta por el descontento público percivido del
+    daño a largo plazo causado por el enfoque de ganancias de corto plazo.
+    \\\newline
+    \noindent En los tres conceptos se observa que destacan la idea de ``dejarle algo'' a las futuras generaciones.
+    \section*{\centering Sustentable}
+    \addcontentsline{toc}{section}{Sustentable}
+    La segunda palabra que conforma el nombre de la materia. Por su parecido sintáctico a la palabra \emph{sustentable}, se puede asumír que son similares.
+    Acorde a \cite{-asale-no-dateB}
+    sustentable significa que se puede mantener sin agotar recursos. Infiriendo dicho significado con lo definido previamente para la palabra \emph{sustentabilidad}, sustentable es que se puede mantener sin agotar recursos con el afán de dejar algo a las futuras generaciones. \par
+    \section*{\centering Sostenible}
+    \addcontentsline{toc}{section}{Sostenible}
+    Acorde a la definición de \cite{cambridge-dictionary-2021}
+    sostenible significa que cause poco o núlo daño en el ambiente y por ende permita que continue por un largo periodo de tiempo. Similar a lo inferido en el concepto anterior, podemos definir la palabra sostenible comolo que no cause daño al ambiente y el entorno considerando todos los aspectos socioeconomicos
+    para que continue generación tras generación.\par
+
+    \section*{\centering Evolución del Concepto de Desarrollo Sustentable}
+    \addcontentsline{toc}{section}{Evolución del Concepto de Desarrollo Sustentable}
+    Como se mencionó anteriormente, la agenda internacional empezó a enfocarse en el desarrollo (principalmente el desarrollo sustentable) por evitar las quejas del público por malas prácticas en lo que compete
+    la sustentabilidad de sus métodos para generar ganancias. Estrictamente hablando, dicho enfoque empezó en la segunda mitad del siglo XX. \cite{-2021}
+    \\\newline
+    \noindent A travez de los años, los profesionistas y varios investigadores desarrollaron un número de definiciones y énfasis para el termino. Empezando por el aspecto coloquialmente asociado con el desarrollo sustentable, el aspecto económico. Su definición con enfoque sustentable era
+    algo que solo los principales detractores del sistema capitalista mencionaban, ya que como se apreció en la epoca de los ``Roaring 20's' de los Estados Unidos de America, lo más deseado eran más bienes por la parte del consumidor y mayores ganancias por parte de las empresas e inversionistas \citep{thulin-2021}; lo anterior se sigue apreciando en distintos
+    foros de internet de inversiones, un claro ejemplo fué la mania de Gamestop con Reddit. \cite{stewart-2021} 
+    \\\newline
+    \noindent El concepto de desarrollo sustentable recibe formalmente su primer reconocimiento internacional en 1972 en la Conferencia de la ONU del Entorno Humano dada en Estocolmo. No se le refirió de manera explicita, pero la comunidad internacional coincidió que tanto el desarrollo como el entorno pueden ser gestionadas en una manera 
+    mutuamente benéfica.
+    \\\newline
+    \noindent En 1987, el término recibió la definición clasica en el reporte Nuestro Futuro Común de la Comisión Mundial del Entorno y Desarrollo. Ahí dicho concepto se define como el desarrollo que alcanza las necesidades del presente sin comprometer la habilidad de las generaciones futuras de alcanzar sus propias necesidades.
+    \\\newline
+    \noindent Recientemente, en el año 2002 se presentó la Comisión Mundial del Entorno y Desarrollo en Johannesburgo. Aparte de la definición anterior, se definieron compromisos clave como el consumo y producción sostenibles, agua, salubridad y energía. 
+    %referencias
+    \cleardoublepage
+
+    \phantomsection
+        \thispagestyle{fancy}
+        \nocite{*}
+        \bibliography{referencias.bib}
+        \bibliographystyle{apalike} %estilo de la bibliografía
+        \addcontentsline{toc}{section}{Referencias}
+
+        \end{document}

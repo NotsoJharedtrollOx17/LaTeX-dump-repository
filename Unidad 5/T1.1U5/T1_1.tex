@@ -1,0 +1,91 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+% Portada
+\thispagestyle{empty}
+\title{\Large Censo de Población}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{ACD-0908SC5C Desarrollo Sustentable}
+\professor{M.C. Trinidad Castro Villa}
+\duedate{24 de noviembre de 2021}
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+\maketitle
+
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Censo de Población y Vivienda del INEGI AÑO 2020}
+Acorde \begin{justifying}
+  al propio instituto \citep{geografia-2020}%citar al INEGI
+  dicho censo se realizó del 2 al 27 de marzo del 2020 con el afán de obtener información sobre estas, contar a la población que vive en México
+  e indagar sobre sus principales características demográficas, socioeconómicas y culturales.\par
+\end{justifying}
+Específicamente \begin{justifying}
+  con el censo de ese año, se lleva a cabo el décimo cuarto censo de la población en la historia moderna de los cencos en México,
+  los cuales se realizan desde 1895. Para el resto de la redacción se toma como referencia la publicación ejecutiva del mismo censo \citep{inegi-2020}. %citar la versión ejecutiva
+  \par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection{Datos recabados}
+\subsubsection{Innovaciones Tecnológicas}
+Destacan \begin{justifying}
+  el levantamiento de las encuestas con dispositivos móviles y el uso de encriptación y cifrado para la información recabada. En el auge de la pandemia,
+  muchas de las preocupaciones se tornaron al ámbito digital debido a la cutre infraestructura digital \citep{moore-2021}, por lo que el implementar protocolos de seguridad digital
+  permite a los ciudadanos sentirse más tranquilos con lo provisto en dichas encuestas.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsubsection{Resultados}
+En \begin{justifying}
+  lo competente a los resultados tenemos los típicos datos:
+  \begin{itemize}
+    \item La población total del territoria mexicano es de 126014024.
+    \item El promedio anual de la tasa de crecimiento poblacional es del 1.2 desde 2010 hasta el 2020.
+    \item La cantidad de hombres dentro del país es de 61473390 mientras que la cantidad de mujeres es de 64540634.
+    \item La edad mediana de la población es de 29 años.
+    \item El estado más poblado es el Estado de México.
+    \item La município más poblado es Tijuana, BC.
+    \item La tasa de participación económica es del 62\%.
+  \end{itemize}
+\end{justifying}
+\newpage
+% Referencias
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias} %el archivo 'referencias.bib' debe estar dentro del mismo folder donde se encuentra el archivo .tex para citar las referencias deseadas
+
+\end{document}

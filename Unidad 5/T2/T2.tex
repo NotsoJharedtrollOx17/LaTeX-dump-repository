@@ -1,0 +1,117 @@
+% Preámbulo
+\documentclass[stu, 12pt, letterpaper, donotrepeattitle, floatsintext, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[spanish]{babel} 
+\usepackage{lastpage} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{ragged2e} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\usepackage{indentfirst} %para le formato que quiere la profe QUITAR SI QUIERES OG APA7
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=1pt}
+
+\selectlanguage{spanish}
+\useunder{\uline}{\ul}{}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}%QUITAR SI QUIERES OG APA7 
+\rhead{} %QUITAR SI QUIERES OG APA7
+\setcounter{secnumdepth}{3} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\setlength{\parindent}{1.27cm} %sangria forzada QUITAR SI QUIERES OG APA7
+
+% Portada
+\thispagestyle{empty}
+\title{\Large Contaminación Ambiental}
+\author{Abraham Jhared Flores Azcona} % (autores separados, consultar al docente)
+% Manera oficial de colocar los autores:
+%\author{Autor(a) I, Autor(a) II, Autor(a) III, Autor(a) X}
+\affiliation{Instituto Tecnológico de Tijuana}
+\course{ACD-0908SC5C Desarrollo Sustentable}
+\professor{M.C. Trinidad Castro Villa}
+\duedate{23 de noviembre de 2021}
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\begin{document}
+\maketitle
+
+
+% Índices
+\pagenumbering{arabic}
+    % Contenido
+\renewcommand\contentsname{Contenido}
+\tableofcontents
+
+% Cuerpo 
+    %NOTA: PARA CITAR ESTILO "Merts (2003)" usar \cite{<nombre_cita_bib>}
+    %                        "(Metz, 1978)" usar \citep{<nombre_cita_bib>}
+\newpage
+\section{Contaminación Ambiental}
+\subsection{Concepto}
+Para \cite{romero-2021} %citar a BBVA
+\begin{justifying}
+  es la presencia de componentes nocivos, bien sean de naturaleza biológica, química o de otra clase, en el medioambiente,
+  de modo que supongan un perjuicio para los seres vivos que habitan un espacio, incluyendo, por supuesto a los seres humanos.
+  Generalmente la cotaminación ambietal tiene su origen en alguna actividad humana.\par
+\end{justifying}
+Para \cite{unknown-author-no-dateA} %citar a los de lineaverde
+\begin{justifying}
+  es la presencia de componentes nocivos en el medio ambiente, que suponen un perjuicio para los seres vivos que lo habitan, incluyendo
+  a los seres humanos. Generalmente está origiada por derivados de la actividad humana, como la emisión a la atmosfera de gases de
+  efecto invernadero o la explotación desmedida de los recusos naturales.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection{Contaminación Ambiental en Agua}
+\subsubsection{Concepto}
+Para \cite{unknown-author-2020} %citar a los de iberdrola
+\begin{justifying}
+  Como la contaminación que hace sufrir cambios a la composición del agua hasta quedar inservible. Por lo anterior
+  dicha agua no se puede beber ni destinar a actividades esenciales como la agricultura.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsubsection{Ejemplo}
+Un\begin{justifying}
+  ejemplo de este tipo de contaminación es aquella de los derrames de los combustibles ya que el transporte y almacenamiento de petróleo y derivados
+  dan lugar a filtraciones que pueden llegar a las fuenntes de agua.\par
+  \end{justifying}
+\vspace{\baselineskip}
+\subsection{Contaminación Ambiental en el Aire}
+\subsubsection{Concepto}
+Acorde a \cite{unknown-author-no-dateB} %citar a medline plus
+\begin{justifying}
+  es aquella donde el aire tiene una mezcla de partículas sólidas y gases en el aire. Debido a que algunos cotasminantes
+  son tóxicos, su inhalación puede aumentar las posibilidades de tener problemas de salud.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsubsection{Ejemplo}
+Un \begin{justifying}
+  ejemplo ya muy trillado es aquel de las emisiones de gases invernadero producidas producidas por los automoviles de combustión fósil, ya que
+al quemar dicha gasolina para generar las explosiones que mueven al motor de la máquina, el excedente se expulsa por el escape de éste. Dichas emisiones
+se agravian si el automóvil está en malas condiciones de mantenimiento, cmbinando otros químicos que permiten el buen funcionamiento del carro.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsection{Contaminación Ambiental en la Tierra}
+\subsubsection{Concepto}
+Para \cite{unknown-author-2019} %citar al reciclado
+\begin{justifying}
+  es la alteración del suelo por la presencia de sustancias químicas producidas por el hombre. Curiosamente, un suelo contaminado
+  también podrá contaminar el aire y el agua, expandiendo el rango de afección.\par
+\end{justifying}
+\vspace{\baselineskip}
+\subsubsection{Ejemplo}
+Un ejemplo de la contaminación de los suelos es una muy simple, la deforestación y erosión de los suelos; al no tener
+vegetación, la tierra se vuelve seca y estéril. Esto tambien genera un ran riesgo de suelos muy inestables para construir, ya que las raíces
+de dicha vegetación permiten la comptación y firmeza de los suelos.\par
+\newpage
+% Referencias
+\setcounter{secnumdepth}{0} %permite enumerar las secciones QUITAR SI QUIERES OG APA7
+\renewcommand\refname{\textbf{Referencias}}
+\bibliography{referencias} %el archivo 'referencias.bib' debe estar dentro del mismo folder donde se encuentra el archivo .tex para citar las referencias deseadas
+
+\end{document}
